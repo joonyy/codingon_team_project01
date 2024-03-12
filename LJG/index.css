@@ -1,0 +1,61 @@
+.header {
+  background-color: skyblue;
+  display: flex;
+  height: 80px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  background-color: red;
+}
+
+.head_menu {
+  display: flex;
+  list-style-type: none;
+}
+
+main {
+  background-color: violet;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.section1, .section2, .section3, .section4 {
+  display: inline-block;
+  background-color: lightgreen;
+  height: 38vh;
+  width: 80vw;
+  margin: 10px 0;
+}
+
+.card_container {
+  display: flex;
+  width: 120vw;
+  height: 38vh;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  scrollbar-width: 0;
+}
+
+.card_container:first-child{
+  border-left: 40px;
+}
+
+footer {
+  background-color: lightpink;
+  height: 100px;
+}
+
+.card {
+  background-color: lightcoral;
+  display: inline-block;
+  width: 16vw; /* 카드 크기에 맞춰서 */
+  border: 1px solid black;
+  height: 36vh;
+}

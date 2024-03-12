@@ -31,20 +31,9 @@ main {
   height: 38vh;
   width: 80vw;
   margin: 10px 0;
-}
-
-.card_container {
-  display: flex;
-  width: 120vw;
-  height: 38vh;
   overflow-x: auto;
   overflow-y: hidden;
   white-space: nowrap;
-  scrollbar-width: 0;
-}
-
-.card_container:first-child{
-  border-left: 40px;
 }
 
 footer {

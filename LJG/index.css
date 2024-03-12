@@ -30,10 +30,14 @@ main {
   background-color: lightgreen;
   height: 38vh;
   width: 80vw;
-  margin: 10px 0;
+  margin-top : 10px;
   overflow-x: auto;
   overflow-y: hidden;
   white-space: nowrap;
+}
+
+section:last-child {
+  margin-bottom: 10px;
 }
 
 footer {
@@ -47,4 +51,10 @@ footer {
   width: 16vw; /* 카드 크기에 맞춰서 */
   border: 1px solid black;
   height: 36vh;
+  margin: 1vh calc();
+}
+
+.card_container {
+  display: inline-block;
+  padding: 0 38.5%;
 }

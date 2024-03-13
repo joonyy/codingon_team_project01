@@ -1,0 +1,89 @@
+:root {
+  --background-color-main-card : violet;
+  --background-color-card-item : skyblue;
+  --background-color-list-box : lightgreen;
+  --background-color-text-btn : gray;
+  --color-text-btn : white;
+}
+
+img {
+ vertical-align: bottom;
+}
+
+.body-main-page-card {
+  display: inline-block;
+  background-color: var(--background-color-main-card);
+  height: 550px;
+  width: 80vw;
+  margin: 10px 0;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+
+.card-container {
+  display: inline-block;
+  padding: 0 30.4vw;
+}
+
+.item {
+  background-color: var(--background-color-card-item);
+  display: inline-block;
+  border: 1px solid black;
+  height: 530px;
+  width: 310px;
+  margin: 0;
+}
+
+.category-box {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 0;
+}
+
+.category-box-item {
+  background-color: var(--background-color-list-box);
+  list-style-type: none;
+  width: 310px;
+  height: 530px;
+  border: 1px solid black;
+}
+
+.category-box-item-sort {
+  display: inline-block;
+  width: 100%;
+  height: 60px;
+  text-align: end;
+}
+
+.text-btn {
+  background-color: var(--background-color-text-btn);
+  color: var(--color-text-btn);
+  padding: 5px 10px;
+  margin: 1% 0;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.list-box {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 0;
+}
+
+.list-box-item {
+  background-color: var(--background-color-list-box);
+  display: flex;
+  list-style-type: none;
+  width: 100%;
+  height: 290px;
+  border: 1px solid black;
+  align-items: center;
+
+}
+
+.list-item-a, .list-item-img {
+  height: 90%;
+}

@@ -394,3 +394,42 @@ height: 40px;
   color:#fff;
 }
 /*button 종료*/
+
+/*input-box 시작*/
+.auth-box{
+  box-sizing: border-box;
+  width:25%;
+  position: absolute;
+  border:1px solid #000000;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  text-align: center;
+  min-width: 100px;
+  font-size: 15px;
+}
+
+.search-box{
+  position: relative;
+  width:25%;
+}
+
+.search-box > input{
+  box-sizing: border-box;
+  min-width: 50px;
+  width:100%;
+  min-width:30px;
+  border:1px solid #000000;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  text-align: center;
+  font-size: 10px;  
+}
+
+.search-box > img{
+  right:12px;
+  position: absolute;
+  width : 6px;
+  top:9px;
+  margin : 0;
+}
+/*input-box 종료*/

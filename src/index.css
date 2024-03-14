@@ -168,3 +168,123 @@
 }
 /* caution-box 끝 */
 
+
+/*category-card 시작*/
+.category-card{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 300px;
+}
+.category-card-text{
+  display: flex;
+  text-align: center;
+  justify-content: space-around;
+  height : 30px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.category-card div{
+  background-color: red;
+}
+/*category-card 종료*/
+
+/*input-box 시작*/
+.auth-box{
+  box-sizing: border-box;
+  width:25%;
+  position: absolute;
+  border:1px solid #000000;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  text-align: center;
+  min-width: 100px;
+  font-size: 15px;
+}
+.search-box{
+  position: relative;
+  width:25%;
+}
+.search-box > input{
+  box-sizing: border-box;
+  min-width: 50px;
+  width:100%;
+  min-width:30px;
+  border:1px solid #000000;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  text-align: center;
+  font-size: 10px;  
+}
+.search-box > img{
+  right:12px;
+  position: absolute;
+  width : 6px;
+  top:9px;
+  margin : 0;
+}
+
+/*input-box 종료*/
+
+.header {
+  background-color: skyblue;
+  display: flex;
+  height: 80px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  background-color: red;
+}
+
+.head_menu {
+  display: flex;
+  list-style-type: none;
+}
+
+main {
+  background-color: violet;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.section1, .section2, .section3, .section4 {
+  display: inline-block;
+  background-color: lightgreen;
+  height: 38vh;
+  width: 80vw;
+  margin-top : 10px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+
+section:last-child {
+  margin-bottom: 10px;
+}
+
+footer {
+  background-color: lightpink;
+  height: 100px;
+}
+
+.card {
+  background-color: lightcoral;
+  display: inline-block;
+  width: 16vw; /* 카드 크기에 맞춰서 */
+  border: 1px solid black;
+  height: 36vh;
+  margin: 1vh calc();
+}
+
+.card_container {
+  display: inline-block;
+  padding: 0 38.5%;
+}

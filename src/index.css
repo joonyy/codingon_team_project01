@@ -1,3 +1,24 @@
+/*category-card 목록*/
+.category-card{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 300px;
+}
+.category-card-text{
+  display: flex;
+  text-align: center;
+  justify-content: space-around;
+  height : 30px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.category-card div{
+  background-color: red;
+}
+
+/*category-card 목록 마무리*/
 .header {
   background-color: skyblue;
   display: flex;

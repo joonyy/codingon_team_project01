@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
   <script src="./index.js"></script>
   <title>index</title>
 </head>
@@ -43,22 +44,77 @@
 <body  class="main-page">
   <header>
     <nav class="nav-bar">
-        <a href="#" id="logo">
-        <img src="./img/OOTD.jpg" width="">
-        </a>
-        <ul class="center">
-          <li class="comp-name">
-            부엉이 신발장
-          </li>
-        </ul>
-        <ul id="menu">
-          <li><button class="btn search-btn"><img src="./img/search.svg" alt=""></button></li>
-          <li><button class="btn nav-btn">LOGIN</button></li> 
-          <li><button class="btn nav-btn">SIGNIN</button></li> 
-        </ul>
+        <div class="nav-bar-items">
+          <div class="nav-bar-comp-name"><a href="./index.html" class="btn">부엉이 신발장</a></div>
+          <div class="nav-bar-menu">
+            <button class="btn search-btn"><img src="./img/search.svg" alt=""></button>
+            <button class="btn nav-btn" onclick="SigninPopupOpen()"> SIGNIN </button>
+            <button class="btn nav-btn" onclick="LoginPopupOpen()"> LOGIN </button>
+          </div>
+        </div>
     </nav>
   </header>
   <main>
+    <section class="login-popup-background">
+      <div class="login-popup">
+        <div id="popup-close-btn">
+          <div class="btn" onclick="LoginPopupClose()">X</div>
+        </div>
+        <div id="ID-box">
+          <p>아이디</p>
+          <input type="text" class="auth-box-ID">
+        </div>
+        <div id="PW-box">
+          <p>비밀번호</p>
+          <input type="password" class="auth-box-ID">
+        </div>
+        <button class="btn auth-btn">로그인</button>
+        <div class="auto-login-btn-box">
+          자동로그인
+          <div class="auto-login-toggle-btn">
+            <input type="checkbox" id="toggle" hidden> 
+            <label for="toggle" class="toggleSwitch">
+              <span class="toggleButton"></span>
+            </label>
+          </div>
+        </div>
+        <div class="find-box">
+          아이디, 비밀번호를 잃어버리셨나요?<br>
+          <div class="find-btn-box">
+            <div class="find-btn"><a href="#" class="btn">아이디 찾기</a></div>
+            <div class="find-btn"><a href="#" class="btn">비밀번호 찾기</a></div>
+          </div>
+        </div>
+        <div class="signin-btn-box">
+          아직 부엉이 가족이 아닌가요?
+          <button class="btn" onclick="SigninPopupOpen()">부엉이랑 가족하기</button>
+        </div>
+      </div>
+    </section>
+    <section class="signin-popup-background">
+      <div class="signin-popup">
+        <div id="popup-close-btn">
+          <div class="btn" onclick="SigninPopupClose()">X</div>
+        </div>
+        <div id="name-box" class="ID-box">
+          <p>이름</p>
+          <input type="text" class="auth-box-ID">
+        </div>
+        <div id="ID-box" class="ID-box">
+          <p>아이디</p>
+          <input type="password" class="auth-box-ID">
+        </div>
+        <div id="PW-box" class="PW-box">
+          <p>비밀번호</p>
+          <input type="password" class="auth-box-ID">
+        </div>
+        <div id="PW-check-box" class="PW-box">
+          <p>비밀번호 확인</p>
+          <input type="password" class="auth-box-ID">
+        </div>
+        <div class="text-btn login-btn"><a href="#">부엉이랑 가족하기</a></div>
+      </div>
+    </section>
     <section class="main-page-text-box">
       <p class="main-page-text text-1">발이 편해야</p>
       <p class="main-page-text text-2">착지도 편하다.</p>

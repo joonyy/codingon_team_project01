@@ -116,16 +116,15 @@ body {
   display: inline-block;
   background-color: var(--background-color-footer-icon-container);
   height: 550px;
-  width: 100%;
+  width: 80vw;
   margin: 10px 0;
   overflow-y: hidden;
   white-space: nowrap;
-  min-width: 310px;
 }
 
 .card-container {
   display: inline-block;
-  padding: 0 40%;
+  padding: 0 30.4vw;
 }
 /* maincard-container 끝 */
 
@@ -481,3 +480,70 @@ height: 40px;
   margin : 0;
 }
 /*input-box 종료*/
+
+navbar{
+  display: flex;
+  justify-content: space-between;
+  height: 60px;
+  padding: 8px 12px;
+  background-color: beige;
+}
+/* 로고 */
+.navbar #logo {
+  line-height: 60px;
+}
+.navbar #logo img{
+  vertical-align: middle;
+}
+/* 브랜드명 */
+.navbar li{
+  display: flex;
+  list-style-type: none;
+  padding-left: 0;
+  font-size: 18px;
+  text-align: center;
+}
+/* 우측상단메뉴 */
+.navbar #menu {
+  float: right;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  
+}
+.navbar #menu li {
+  float:left;
+  margin-left: 50px;
+  line-height: 60px;
+}
+
+.navbar #menu li a {
+  text-decoration: none;
+  color: #545454 ;
+  font-size: 13px;
+  font-weight: bold;
+} 
+
+/* 배경 */
+.back{
+  background-image: url("./images/sample_01.jpg");
+  
+  /* background-color: red; */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  
+}
+
+/* footer */
+.footer{
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 80px;
+  background-color: red;
+}
+.footer a{
+  margin-left: 10px;
+  margin-right: 10px;
+  text-decoration: none;
+}

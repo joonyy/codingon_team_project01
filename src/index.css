@@ -475,7 +475,7 @@ height: 40px;
 }
 /*input-box 종료*/
 
-navbar{
+.navbar{
   display: flex;
   justify-content: space-between;
   height: 60px;

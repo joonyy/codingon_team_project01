@@ -8,7 +8,7 @@
       <p>비밀번호</p>
       <input type="password" class="auth-box-ID">
     </div>
-    <div class="text-btn login-btn"><a href="#">로그인</a></div>
+    <button class="btn auth-btn">로그인</button>
     <div class="find-box">
       아이디, 비밀번호를 잃어버리셨나요?<br>
       <div>
@@ -18,7 +18,12 @@
     </div>
     <div class="auto-login-btn-box">
       자동로그인
-      <div class="auto-login-toggle-btn">토글버튼</div>
+      <div class="auto-login-toggle-btn">
+        <input type="checkbox" id="toggle" hidden> 
+        <label for="toggle" class="toggleSwitch">
+          <span class="toggleButton"></span>
+        </label>
+      </div>
     </div>
     <div class="signin-btn-box">
       아직 부엉이 가족이 아닌가요?

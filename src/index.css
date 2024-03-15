@@ -126,16 +126,34 @@ body {
 .category-box {
   display: flex;
   flex-wrap: wrap;
+  align-items: flex-end;
   width: 100%;
   padding: 0;
 }
 
 .category-box-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background-color: var(--background-color-list-box);
   list-style-type: none;
   width: 310px;
   height: 530px;
   border: 1px solid black;
+}
+.category-box-item:hover{
+  border:2px blue solid;
+}
+.category-box-item > img{
+  width:100%;
+  height:auto;
+}
+.category-box-text{
+  display: flex;
+  height: 40px;
+  background-color: beige;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .category-box-item-sort {
@@ -540,4 +558,11 @@ height: 40px;
   margin-left: 10px;
   margin-right: 10px;
   text-decoration: none;
+}
+/*footer 종료*/
+
+/*brand-text 시작*/
+.brand-text{
+  font-size: 100px;
+  text-align: center;
 }

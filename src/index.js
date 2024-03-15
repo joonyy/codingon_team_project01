@@ -9,3 +9,9 @@ container.addEventListener("wheel", (event) => {
 });
 
 console.log("working");
+
+function elheight() {
+  let el = document.querySelector(this);
+  elheight = el.offsetHeight;
+  return elheight;
+}

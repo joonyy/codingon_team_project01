@@ -110,15 +110,16 @@ body {
   display: inline-block;
   background-color: var(--background-color-footer-icon-container);
   height: 550px;
-  width: 80vw;
+  width: 100%;
   margin: 10px 0;
   overflow-y: hidden;
   white-space: nowrap;
+  min-width: 310px;
 }
 
 .card-container {
   display: inline-block;
-  padding: 0 30.4vw;
+  padding: 0 40%;
 }
 /* maincard-container 끝 */
 

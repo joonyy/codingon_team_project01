@@ -433,12 +433,12 @@ height: 40px;
   color: #d4dfe6;
 }
 .search-btn{
-  width:80px;
+  align-items: center;
 }
 .search-btn > img{
   display: block;
   width: 100%;
-  height:auto;
+  align-items: center;
 }
 .toggleSwitch {
   width: 100px;

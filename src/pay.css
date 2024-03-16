@@ -1,0 +1,63 @@
+body {
+  font-family: "Jua", sans-serif;
+}
+.pay-page > section > div{
+  border: 1px solid black;
+  margin: 20px 100px;
+}
+#where{
+  width: 300px;
+}
+.pay-box{
+  display: flex;
+  flex-wrap : wrap;
+  height : 200px;
+  align-items: center;
+}
+.pay-box > div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 30%;
+}
+.pay-box > .pay-img-contain >img{
+  border: 1px solid black;
+  width:60px;
+  height:60px;
+  object-fit: contain; 
+}
+.pay-box > .pay-img-cover > img {
+  width:60px;
+  height: 60px;
+  object-fit: cover;
+}
+
+.pay{
+  display: flex;
+  justify-content: center;
+}
+.btn{
+  position:relative;
+  border:none;
+  display: inline-block;
+  padding: 15px 30px;
+  border-radius: 15px;
+  text-decoration: none;
+  font-weight: 600;
+  transition:0.25s;
+  text-align: center;
+}
+
+.pay-btn{
+  background-color: #6aafe6;
+  color: #d4dfe6;
+}
+
+.pay-btn:hover {
+  background-color: red;
+  color:whitesmoke;
+  letter-spacing: 2px;
+  transform: scale(1.1);
+  cursor: pointer;
+}

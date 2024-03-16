@@ -167,7 +167,7 @@ body {
 
 .category-box-item {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   justify-content: space-between;
   background-color: var(--background-color-list-box);
   list-style-type: none;
@@ -179,8 +179,8 @@ body {
   border:2px blue solid;
 }
 .category-box-item > img{
-  width:100%;
-  height:auto;
+  object-fit: fill;
+  height: 490px;
 }
 .category-box-text{
   display: flex;

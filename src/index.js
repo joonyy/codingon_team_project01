@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
       var delta = event.deltaY || event.detail || event.wheelDelta;
 
-      container.scrollLeft += (delta > 0 ? 1 : -1) * 60; // 40은 스크롤 속도 조절을 위한 값
+      container.scrollLeft += (delta > 0 ? 1 : -1) * 40; // 40은 스크롤 속도 조절을 위한 값
     });
   });
 });

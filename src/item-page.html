@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./item-page.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="./item-page.js"></script>
+  <title>item-page</title>
+</head>
+<body>
+  <header>개쩌는 헤더</header>
+  <section class="item-top-container">
+    <!-- 상단 좌측 -->
+    <div class="item-container">
+      <div class="item-summary">
+        <ul>
+        <li class="item-name">나이키 에어포스</li>
+        <li class="item-price">100만원</li>
+        <li class="item-color">이미지@ </li>
+        </ul>   
+      </div>
+    </div>
+    <!-- 상단 우측 -->
+    <div class="item-order-container">
+      <p style="font-weight: bold;">사이즈 옵션</p>
+      <div class="size-option">
+        <button class="size-option-btn">245</button>
+        <button class="size-option-btn">250</button>
+        <button class="size-option-btn">255</button>
+        <button class="size-option-btn">260</button>
+        <button class="size-option-btn">265</button>
+        <button class="size-option-btn">270</button>
+        <button class="size-option-btn">275</button>
+        <button class="size-option-btn">280</button>
+        <button class="size-option-btn">295</button>
+      </div>
+      <br/>
+      <div class="color-option">
+        <p style="font-weight: bold;">컬러 옵션</p>
+        <input type="color">
+      </div>
+      <div class="chosen-option">
+        <p style="font-weight: bold;">선택된 옵션</p>
+        <p>Size : 어쩌구</p>
+        <p>색상 : 어쩌구</p>
+      </div>
+      <div class="decision">
+        <img src="./img/empty_heart.png" alt="" id="empty-heart" >
+        <img src="./img/filled_heart.png" alt="" id="filled-heart" hidden>
+        <img src="./img/shopping cart.png" alt="장바구니">
+      </div>
+  </section>
+  <main class="item-bottom-container">
+    <header>
+      <p>상세정보</p>
+      <p>리뷰</p>
+    </header>
+    <section class="item-details">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim quos veritatis alias aliquid id fugit perferendis, omnis repudiandae molestias magni neque necessitatibus ex repellat sunt impedit debitis, ea consequatur quod voluptate eligendi iste illum minus? Laborum sed labore, sunt maxime itaque at nemo ratione nobis vero nesciunt enim? Nam, pariatur.</p>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,5 +1,6 @@
 /* 색상 정의 */
 :root {
+  --background-color-main-page: rgba(144, 238, 144, 0.66);
   --background-color-footer-icon : violet;
   --background-color-footer-icon-container : skyblue;
   --background-color-list-box : lightgreen;
@@ -16,9 +17,11 @@ body {
 }
 
 .main-page {
+  background-color: var(--background-color-main-page);
   background-image: url(./img/background.svg);
   background-position: center;
-  background-size: auto;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .main-page-text-box {
@@ -157,10 +160,17 @@ body {
 /* maincard-container 끝 */
 
 /* category-card-container 시작 */
+.category-box-container {
+  width: 100%;
+  display: flex;
+  justify-content:space-around;
+  align-items: center;
+}
+
 .category-box {
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-end;
+  align-items: center;
   width: 100%;
   padding: 0;
 }

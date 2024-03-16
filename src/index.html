@@ -17,7 +17,7 @@
         <div class="nav-bar-items">
           <div class="nav-bar-comp-name"><a href="./index.html" class="btn">부엉이 신발장</a></div>
           <div class="nav-bar-menu">
-            <button class="btn search-btn"><img src="./img/search.svg" alt=""></button>
+            <button class="btn search-btn" onclick="SearchPopupOpen()"><img src="./img/search.svg" alt=""></button>
             <button class="btn nav-btn" onclick="SigninPopupOpen()"> SIGNIN </button>
             <button class="btn nav-btn" onclick="LoginPopupOpen()"> LOGIN </button>
           </div>
@@ -25,9 +25,18 @@
     </nav>
   </header>
   <main>
-    <section class="login-popup-background">
-      <div class="login-popup">
-        <div id="popup-close-btn">
+    <section class="popup-background search-popup-background">
+      <div class="popup search-popup">
+        <div class="btn" onclick="SearchPopupClose()">X</div>
+        <div class="search-box">
+          <input type="text" id="search-input">
+          <img src="./img/search.svg" alt="">
+        </div>
+      </div>
+    </section>
+    <section class="popup-background login-popup-background">
+      <div class="popup login-popup">
+        <div class="popup-close-btn">
           <div class="btn" onclick="LoginPopupClose()">X</div>
         </div>
         <div class="ID-box">
@@ -61,9 +70,9 @@
         </div>
       </div>
     </section>
-    <section class="signin-popup-background">
-      <div class="signin-popup">
-        <div id="popup-close-btn">
+    <section class="popup-background signin-popup-background">
+      <div class="popup signin-popup">
+        <div class="popup-close-btn">
           <div class="btn" onclick="SigninPopupClose()">X</div>
         </div>
         <div id="name-box" class="ID-box">
@@ -87,7 +96,7 @@
     </section>
     <section class="main-page-text-box">
       <p class="main-page-text text-1">발이 편해야</p>
-      <p class="main-page-text text-2">착지도 편하다.</p>
+      <p class="main-page-text text-2">날갯짓도 편하다.</p>
     </section>
     <section class="body-main-page-card main-card-container">
       <div class="card-container">

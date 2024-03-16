@@ -278,12 +278,12 @@ body {
 }
 
 .footer-text-btn-SNS {
-  bottom: 500%;
+  bottom: 480%;
   right: 15%;
 }
 
 .footer-text-btn-AboutUs {
-  bottom: 970%;
+  bottom: 440%;
   right: 15%;
 }
 
@@ -349,12 +349,9 @@ height: 40px;
   height: 60vh;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   transition: visibility 0s, opacity 0.3s ease;
-}
-
-.signin-popup :not(:first-child) {
-  margin-top: 10px;
 }
 
 .ID-box, .PW-box {
@@ -364,7 +361,7 @@ height: 40px;
   align-items: center;
 }
 
-.login-popup p {
+.login-popup p, .signin-popup p {
   display: flex;
   justify-content: center;
   margin: 0;

@@ -11,36 +11,6 @@
   <script src="./index.js"></script>
   <title>index</title>
 </head>
-<body>
-  <body class="back">
-    <header>
-        <nav class="navbar">
-            <a href="#" id="logo">
-            <img src="./images/" width="">
-            </a>
-            <ul class="center">
-            <li class="1">부엉이 신발장</li>
-          </ul>
-            <ul id="menu">
-              <li><a href="#">SEARCH</a></li>
-              <li><a href="#">SIGN IN</a></li> 
-              <li><a href="#">LOGIN</a></li> 
-            </ul>
-        </nav>
-      </header>
-      <footer class="footer">
-    
-        <a href="http://facebook.com">  <!-- ex) 준규-->
-          <img src="./images/Footer_icon/facebook.png"height="20"> <!-- 페이스북아이콘 -->
-        </a>
-        <a href="http://instagram.com"> <!-- ex) 준영 -->
-          <img src="./images/Footer_icon/instargram.png"height="20"> <!-- 인스타아이콘 -->
-        </a>
-        <a href="http://twitter.com"> <!-- ex) 동명 -->
-          <img src="./images/Footer_icon/twitter.png"height="20"> <!-- 트위터아이콘 -->
-        </a>
-        <p>소개내용@@@</p>
-      </footer>
 <body  class="main-page">
   <header>
     <nav class="nav-bar">
@@ -60,7 +30,7 @@
         <div id="popup-close-btn">
           <div class="btn" onclick="LoginPopupClose()">X</div>
         </div>
-        <div id="ID-box">
+        <div class="ID-box">
           <p>아이디</p>
           <input type="text" class="auth-box-ID">
         </div>
@@ -100,11 +70,11 @@
           <p>이름</p>
           <input type="text" class="auth-box-ID">
         </div>
-        <div id="ID-box" class="ID-box">
+        <div id="signin-ID-box" class="ID-box">
           <p>아이디</p>
           <input type="password" class="auth-box-ID">
         </div>
-        <div id="PW-box" class="PW-box">
+        <div id="signin-PW-box" class="PW-box">
           <p>비밀번호</p>
           <input type="password" class="auth-box-ID">
         </div>
@@ -112,7 +82,7 @@
           <p>비밀번호 확인</p>
           <input type="password" class="auth-box-ID">
         </div>
-        <div class="text-btn login-btn"><a href="#">부엉이랑 가족하기</a></div>
+        <button class="btn" onclick="SigninPopupOpen()">부엉이랑 가족하기</button>
       </div>
     </section>
     <section class="main-page-text-box">
@@ -122,9 +92,11 @@
     <section class="body-main-page-card main-card-container">
       <div class="card-container">
         <div class="main-card">
-          <img src="./img/shoes1.png" alt="shoes1">
+          <a href="./category.html">
+            <img src="./img/shoes1.png" alt="shoes1">
+          </a>
           <div class="main-card-info-box">
-            <a href="#" class="text-btn card-text-btn">
+            <a href="./category.html" class="text-btn card-text-btn">
               <div class="main-card-info main-card-info-head">
                 headinfo1
               </div>
@@ -138,11 +110,13 @@
           </div>
         </div>
         <div class="main-card">
-          <img src="./img/shoes1.png" alt="shoes1">
+          <a href="./category.html">
+            <img src="./img/shoes1.png" alt="shoes1">
+          </a>
           <div class="main-card-info-box">
-            <a href="#" class="text-btn card-text-btn">
+            <a href="./category.html" class="text-btn card-text-btn">
               <div class="main-card-info main-card-info-head">
-                headinfo2
+                headinfo1
               </div>
               <div class="main-card-info main-card-info-body">
                 bodyinfo
@@ -154,11 +128,13 @@
           </div>
         </div>
         <div class="main-card">
-          <img src="./img/shoes1.png" alt="shoes1">
+          <a href="./category.html">
+            <img src="./img/shoes1.png" alt="shoes1">
+          </a>
           <div class="main-card-info-box">
-            <a href="#" class="text-btn card-text-btn">
+            <a href="./category.html" class="text-btn card-text-btn">
               <div class="main-card-info main-card-info-head">
-                headinfo3
+                headinfo1
               </div>
               <div class="main-card-info main-card-info-body">
                 bodyinfo
@@ -170,11 +146,13 @@
           </div>
         </div>
         <div class="main-card">
-          <img src="./img/shoes1.png" alt="shoes1">
+          <a href="./category.html">
+            <img src="./img/shoes1.png" alt="shoes1">
+          </a>
           <div class="main-card-info-box">
-            <a href="#" class="text-btn card-text-btn">
+            <a href="./category.html" class="text-btn card-text-btn">
               <div class="main-card-info main-card-info-head">
-                headinfo4
+                headinfo1
               </div>
               <div class="main-card-info main-card-info-body">
                 bodyinfo
@@ -186,11 +164,13 @@
           </div>
         </div>
         <div class="main-card">
-          <img src="./img/shoes1.png" alt="shoes1">
+          <a href="./category.html">
+            <img src="./img/shoes1.png" alt="shoes1">
+          </a>
           <div class="main-card-info-box">
-            <a href="#" class="text-btn card-text-btn">
+            <a href="./category.html" class="text-btn card-text-btn">
               <div class="main-card-info main-card-info-head">
-                headinfo5
+                headinfo1
               </div>
               <div class="main-card-info main-card-info-body">
                 bodyinfo
@@ -202,11 +182,13 @@
           </div>
         </div>
         <div class="main-card">
-          <img src="./img/shoes1.png" alt="shoes1">
+          <a href="./category.html">
+            <img src="./img/shoes1.png" alt="shoes1">
+          </a>
           <div class="main-card-info-box">
-            <a href="#" class="text-btn card-text-btn">
+            <a href="./category.html" class="text-btn card-text-btn">
               <div class="main-card-info main-card-info-head">
-                headinfo6
+                headinfo1
               </div>
               <div class="main-card-info main-card-info-body">
                 bodyinfo
@@ -222,9 +204,11 @@
     <section class="body-main-page-card main-card-container">
       <div class="card-container">
         <div class="main-card">
-          <img src="./img/shoes1.png" alt="shoes1">
+          <a href="./category.html">
+            <img src="./img/shoes1.png" alt="shoes1">
+          </a>
           <div class="main-card-info-box">
-            <a href="#" class="text-btn card-text-btn">
+            <a href="./category.html" class="text-btn card-text-btn">
               <div class="main-card-info main-card-info-head">
                 headinfo1
               </div>
@@ -238,11 +222,13 @@
           </div>
         </div>
         <div class="main-card">
-          <img src="./img/shoes1.png" alt="shoes1">
+          <a href="./category.html">
+            <img src="./img/shoes1.png" alt="shoes1">
+          </a>
           <div class="main-card-info-box">
-            <a href="#" class="text-btn card-text-btn">
+            <a href="./category.html" class="text-btn card-text-btn">
               <div class="main-card-info main-card-info-head">
-                headinfo2
+                headinfo1
               </div>
               <div class="main-card-info main-card-info-body">
                 bodyinfo
@@ -254,11 +240,13 @@
           </div>
         </div>
         <div class="main-card">
-          <img src="./img/shoes1.png" alt="shoes1">
+          <a href="./category.html">
+            <img src="./img/shoes1.png" alt="shoes1">
+          </a>
           <div class="main-card-info-box">
-            <a href="#" class="text-btn card-text-btn">
+            <a href="./category.html" class="text-btn card-text-btn">
               <div class="main-card-info main-card-info-head">
-                headinfo3
+                headinfo1
               </div>
               <div class="main-card-info main-card-info-body">
                 bodyinfo
@@ -270,11 +258,13 @@
           </div>
         </div>
         <div class="main-card">
-          <img src="./img/shoes1.png" alt="shoes1">
+          <a href="./category.html">
+            <img src="./img/shoes1.png" alt="shoes1">
+          </a>
           <div class="main-card-info-box">
-            <a href="#" class="text-btn card-text-btn">
+            <a href="./category.html" class="text-btn card-text-btn">
               <div class="main-card-info main-card-info-head">
-                headinfo4
+                headinfo1
               </div>
               <div class="main-card-info main-card-info-body">
                 bodyinfo
@@ -286,11 +276,13 @@
           </div>
         </div>
         <div class="main-card">
-          <img src="./img/shoes1.png" alt="shoes1">
+          <a href="./category.html">
+            <img src="./img/shoes1.png" alt="shoes1">
+          </a>
           <div class="main-card-info-box">
-            <a href="#" class="text-btn card-text-btn">
+            <a href="./category.html" class="text-btn card-text-btn">
               <div class="main-card-info main-card-info-head">
-                headinfo5
+                headinfo1
               </div>
               <div class="main-card-info main-card-info-body">
                 bodyinfo
@@ -302,11 +294,13 @@
           </div>
         </div>
         <div class="main-card">
-          <img src="./img/shoes1.png" alt="shoes1">
+          <a href="./category.html">
+            <img src="./img/shoes1.png" alt="shoes1">
+          </a>
           <div class="main-card-info-box">
-            <a href="#" class="text-btn card-text-btn">
+            <a href="./category.html" class="text-btn card-text-btn">
               <div class="main-card-info main-card-info-head">
-                headinfo6
+                headinfo1
               </div>
               <div class="main-card-info main-card-info-body">
                 bodyinfo
@@ -322,9 +316,11 @@
     <section class="body-main-page-card main-card-container">
       <div class="card-container">
         <div class="main-card">
-          <img src="./img/shoes1.png" alt="shoes1">
+          <a href="./category.html">
+            <img src="./img/shoes1.png" alt="shoes1">
+          </a>
           <div class="main-card-info-box">
-            <a href="#" class="text-btn card-text-btn">
+            <a href="./category.html" class="text-btn card-text-btn">
               <div class="main-card-info main-card-info-head">
                 headinfo1
               </div>
@@ -338,11 +334,13 @@
           </div>
         </div>
         <div class="main-card">
-          <img src="./img/shoes1.png" alt="shoes1">
+          <a href="./category.html">
+            <img src="./img/shoes1.png" alt="shoes1">
+          </a>
           <div class="main-card-info-box">
-            <a href="#" class="text-btn card-text-btn">
+            <a href="./category.html" class="text-btn card-text-btn">
               <div class="main-card-info main-card-info-head">
-                headinfo2
+                headinfo1
               </div>
               <div class="main-card-info main-card-info-body">
                 bodyinfo
@@ -354,11 +352,13 @@
           </div>
         </div>
         <div class="main-card">
-          <img src="./img/shoes1.png" alt="shoes1">
+          <a href="./category.html">
+            <img src="./img/shoes1.png" alt="shoes1">
+          </a>
           <div class="main-card-info-box">
-            <a href="#" class="text-btn card-text-btn">
+            <a href="./category.html" class="text-btn card-text-btn">
               <div class="main-card-info main-card-info-head">
-                headinfo3
+                headinfo1
               </div>
               <div class="main-card-info main-card-info-body">
                 bodyinfo
@@ -370,11 +370,13 @@
           </div>
         </div>
         <div class="main-card">
-          <img src="./img/shoes1.png" alt="shoes1">
+          <a href="./category.html">
+            <img src="./img/shoes1.png" alt="shoes1">
+          </a>
           <div class="main-card-info-box">
-            <a href="#" class="text-btn card-text-btn">
+            <a href="./category.html" class="text-btn card-text-btn">
               <div class="main-card-info main-card-info-head">
-                headinfo4
+                headinfo1
               </div>
               <div class="main-card-info main-card-info-body">
                 bodyinfo
@@ -386,11 +388,13 @@
           </div>
         </div>
         <div class="main-card">
-          <img src="./img/shoes1.png" alt="shoes1">
+          <a href="./category.html">
+            <img src="./img/shoes1.png" alt="shoes1">
+          </a>
           <div class="main-card-info-box">
-            <a href="#" class="text-btn card-text-btn">
+            <a href="./category.html" class="text-btn card-text-btn">
               <div class="main-card-info main-card-info-head">
-                headinfo5
+                headinfo1
               </div>
               <div class="main-card-info main-card-info-body">
                 bodyinfo
@@ -402,11 +406,13 @@
           </div>
         </div>
         <div class="main-card">
-          <img src="./img/shoes1.png" alt="shoes1">
+          <a href="./category.html">
+            <img src="./img/shoes1.png" alt="shoes1">
+          </a>
           <div class="main-card-info-box">
-            <a href="#" class="text-btn card-text-btn">
+            <a href="./category.html" class="text-btn card-text-btn">
               <div class="main-card-info main-card-info-head">
-                headinfo6
+                headinfo1
               </div>
               <div class="main-card-info main-card-info-body">
                 bodyinfo
@@ -452,9 +458,7 @@
         AboutUs
         <div class="footer-text-btn-box footer-text-btn-AboutUs">
           <div class="footer-text-btn-info">
-            <a href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, repellendus.
-            </a>
-            <a href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, repellendus.
+            <a href="#">우리는 부엉씨의 가족분들이 잠든 시간에 몰래 선물해드리는 모임입니다..!
             </a>
           </div>
         </div>

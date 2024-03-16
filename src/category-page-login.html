@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="./index.js"></script>
+  <title>index</title>
+</head>
+<html lang="en">
+  <body>
+    <header>
+      <nav class="nav-bar">
+          <div class="nav-bar-items">
+            <div class="nav-bar-comp-name"><a href="./main-page-login.html" class="btn" style="color: black">부엉이 신발장</a></div>
+            <div class="nav-bar-menu">
+              <button class="btn search-btn" onclick="SearchPopupOpen()"><img src="./img/search.svg" alt=""></button>
+              <a href="./mypage.html" class="btn nav-btn">MYPAGE</a>
+              <a href="./category-page-logout.html" class="btn nav-btn">LOGOUT</a>
+            </div>
+          </div>
+      </nav>
+    </header>
+    <section class="popup-background search-popup-background">
+      <div class="popup search-popup">
+        <div class="btn" onclick="SearchPopupClose()">X</div>
+        <div class="search-box">
+          <input type="text" id="search-input">
+          <a href="./category.html"><img src="./img/search.svg" alt=""></a>
+        </div>
+      </div>
+    </section>
+    <section class="popup-background login-popup-background">
+      <div class="popup login-popup">
+        <div class="popup-close-btn">
+          <div class="btn" onclick="LoginPopupClose()">X</div>
+        </div>
+        <div class="ID-box">
+          <p>아이디</p>
+          <input type="text" class="auth-box-ID">
+        </div>
+        <div id="PW-box">
+          <p>비밀번호</p>
+          <input type="password" class="auth-box-ID">
+        </div>
+        <button class="btn auth-btn">로그인</button>
+        <div class="auto-login-btn-box">
+          자동로그인
+          <div class="auto-login-toggle-btn">
+            <input type="checkbox" id="toggle" hidden> 
+            <label for="toggle" class="toggleSwitch">
+              <span class="toggleButton"></span>
+            </label>
+          </div>
+        </div>
+        <div class="find-box">
+          아이디, 비밀번호를 잃어버리셨나요?<br>
+          <div class="find-btn-box">
+            <div class="find-btn"><a href="#" class="btn">아이디 찾기</a></div>
+            <div class="find-btn"><a href="#" class="btn">비밀번호 찾기</a></div>
+          </div>
+        </div>
+        <div class="signin-btn-box">
+          아직 부엉이랑 친구가 아닌가요?
+          <button class="btn" onclick="SigninPopupOpen()">부엉이랑 친구하기</button>
+        </div>
+      </div>
+    </section>
+    <section class="popup-background signin-popup-background">
+      <div class="popup signin-popup">
+        <div class="popup-close-btn">
+          <div class="btn" onclick="SigninPopupClose()">X</div>
+        </div>
+        <div id="name-box" class="ID-box">
+          <p>이름</p>
+          <input type="text" class="auth-box-ID">
+        </div>
+        <div id="signin-ID-box" class="ID-box">
+          <p>아이디</p>
+          <input type="text" class="auth-box-ID">
+        </div>
+        <div id="signin-PW-box" class="PW-box">
+          <p>비밀번호</p>
+          <input type="password" class="auth-box-ID">
+        </div>
+        <div id="PW-check-box" class="PW-box">
+          <p>비밀번호 확인</p>
+          <input type="password" class="auth-box-ID">
+        </div>
+        <button class="btn" onclick="SigninPopupClose()">부엉이랑 친구하기</button>
+      </div>
+    </section>
+    <main class="category-card-container">
+      <nav class="category-box-item-sort">
+        <a href="#" class="btn btn-active">
+          <span>인기상품 순</span>
+        </a>
+        <a href="#" class="btn btn-active">
+          <span>찜 많은 순</span>
+        </a>
+        <a href="#" class="btn btn-active">
+          <span>높은 가격 순</span>
+        </a>
+        <a href="#" class="btn btn-active">
+          <span>낮은 가격 순</span>
+        </a>
+      </nav>
+      <div class="category-item-box">
+        <ul class="category-box">
+          <li class="category-box-item" style="background-image:url(./img/shoes.svg)">
+            <div class="category-box-text">
+              <div class="card-price">100만원</div>
+              <div class="card-name">신발이름!</div>
+            </div>
+          </li>
+          <li class="category-box-item" style="background-image:url(./img/shoes.svg)">
+            <div class="category-box-text">
+              <div class="card-price">100만원</div>
+              <div class="card-name">신발이름!</div>
+            </div></li>
+            <li class="category-box-item" style="background-image:url(./img/shoes.svg)">
+            <div class="category-box-text">
+              <div class="card-price">100만원</div>
+              <div class="card-name">신발이름!</div>
+            </div>
+          </li>
+          <li class="category-box-item" style="background-image:url(./img/shoes.svg)">
+            <div class="category-box-text">
+              <div class="card-price">100만원</div>
+              <div class="card-name">신발이름!</div>
+            </div>
+          </li>
+          <li class="category-box-item" style="background-image:url(./img/shoes.svg)">
+            <div class="category-box-text">
+              <div class="card-price">100만원</div>
+              <div class="card-name">신발이름!</div>
+            </div>
+          </li>
+          <li class="category-box-item" style="background-image:url(./img/shoes.svg)">
+            <div class="category-box-text">
+              <div class="card-price">100만원</div>
+              <div class="card-name">신발이름!</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </main>
+    <footer>
+      <div class="footer-text-btn-group">
+        <div class="text-btn footer-text-btn">
+          CS
+          <div class="footer-text-btn-box">
+            <div class="footer-text-btn-info">
+              <a href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, repellendus.
+              </a>
+              <a href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, repellendus.
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="text-btn footer-text-btn">
+          SNS
+          <div class="footer-text-btn-box ">
+            <div class="footer-text-btn-info footer-text-btn-SNS">
+              <ul>
+                <li><a href="#"><img src="./img/insta_icon_1x.svg" alt="facebook">
+                </a></li>
+                <li><a href="#"><img src="./img/facebook_icon_1x.svg" alt="facebook">
+                </a></li>
+                <li><a href="#"><img src="./img/twitter_icon_1x.svg" alt="facebook">
+                </a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="text-btn footer-text-btn">
+          About us
+          <div class="footer-text-btn-box">
+            <div class="footer-text-btn-info">
+              <a href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, repellendus.
+              </a>
+              <a href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, repellendus.
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="./category.js"></script>
+  </body>
+</html>

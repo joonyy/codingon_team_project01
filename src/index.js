@@ -38,6 +38,7 @@ function SearchPopupClose() {
 }
 // Signin-popup, Login-popup 페이지 보이기, 숨기기 끝
 
+// 메인페이지 카드 가로 스크롤로 세로스크롤 이동하기 시작
 document.addEventListener("DOMContentLoaded", function() {
   var containers = document.querySelectorAll('.body-main-page-card');
 
@@ -47,7 +48,16 @@ document.addEventListener("DOMContentLoaded", function() {
 
       var delta = event.deltaY || event.detail || event.wheelDelta;
 
-      container.scrollLeft += (delta > 0 ? 1 : -1) * 40; // 40은 스크롤 속도 조절을 위한 값
+      if (container.scrollLeft === 0 && delta < 0) {
+        // 가로 스크롤이 가장 왼쪽에 있고, 스크롤 방향이 위쪽으로 이동할 때
+        window.scrollBy({ top: delta, left: 0, behavior: 'smooth' });
+      } else if (container.scrollLeft >= (container.scrollWidth - container.clientWidth) && delta > 0) {
+        // 가로 스크롤이 가장 오른쪽에 있고, 스크롤 방향이 아래쪽으로 이동할 때
+        window.scrollBy({ top: delta, left: 0, behavior: 'smooth' });
+      } else {
+        container.scrollLeft += (delta > 0 ? 1 : -1) * 40; // 가로 스크롤 이동
+      }
     });
   });
 });
+// 메인페이지 카드 가로 스크롤로 세로스크롤 이동하기 끝

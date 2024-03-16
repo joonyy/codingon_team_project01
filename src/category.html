@@ -9,21 +9,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
   <title>index</title>
 </head>
-  <header>
-    <nav class="navbar">
-        <a href="#" id="logo">
-        <img src="./images/" width="">
-        </a>
-        <ul class="center">
-        <li class="1">부엉이 신발장</li>
-      </ul>
-        <ul id="menu">
-          <li><a href="#">SEARCH</a></li>
-          <li><a href="#">SIGN IN</a></li> 
-          <li><a href="#">LOGIN</a></li> 
-        </ul>
-    </nav>
-  </header>
+<header>
+  <nav class="nav-bar">
+      <div class="nav-bar-items">
+        <div class="nav-bar-comp-name"><a href="./index.html" class="btn" style="color: black;">부엉이 신발장</a></div>
+        <div class="nav-bar-menu">
+          <button class="btn search-btn"><img src="./img/search.svg" alt=""></button>
+          <button class="btn nav-btn" onclick="SigninPopupOpen()"> SIGNIN </button>
+          <button class="btn nav-btn" onclick="LoginPopupOpen()"> LOGIN </button>
+        </div>
+      </div>
+  </nav>
+</header>
 
 <body>
   <main class="category-card-container">

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./pay.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="./pay.js"></script>
+  <title>index</title>
+</head>
+<body>
+  <header>개쩌는헤더</header>
+  
+  <main class="pay-page">
+    <section class="ship-info">
+      <p>배송정보</p>
+      <div class="ship-box">
+        <p>배송지 : <input type="text" id="where"> <button> 확인 </button></p>
+      <p>주문자 : <input type="text"> <button> 확인 </button></p>
+      </div>
+    </section>
+    <br/>
+    <section class="pay-method"> 
+      <p>결제방법</p>
+      <div class="pay-box">
+        <div class="pay-img-contain"><input type="radio" id="credit-card" name="pay-method"> <img src="./img/credit-card.png" alt=""></div>
+        <div class="pay-img-cover"><input type="radio" id="payco" name="pay-method"> <img src="./img/payco.png" alt=""></div>
+        <div class="pay-img-contain"><input type="radio" id="kakao" name="pay-method"> <img src="./img/kakao.png" alt=""></div>
+        <div class="pay-img-contain"><input type="radio" id="naver" name="pay-method"> <img src="./img/naver.png" alt=""></div>
+        <div class="pay-img-cover"><input type="radio" id="toss" name="pay-method"> <img src="./img/toss.png" alt=""></div>
+      </div>
+    </section>
+    <section class="pay">
+      <button class="btn pay-btn">결제하기</button>
+    </section>
+  </main>
+
+  <footer class="pay-footer">
+    <div class="caution-box">
+      <ul class="caution-list">
+        <li>제주, 도서산간 지형은 추가 배송요금이 부과 됩니다.</li>
+        <li>2개 이상의 브렌드에서 주문할 경우 개별 배송 요금이 부과됩니다.</li>
+        <li>아 몰랑 아무거나 사 입엉</li>
+        <li>부엉이 신발장은 야간에만 배송됩니다.</li>
+        <li>부엉이가 야행성이라 ㅎㅎ...</li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

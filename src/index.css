@@ -5,16 +5,24 @@
   --background-color-list-box : lightgreen;
   --background-color-text-btn : gray;
   --background-color-caution-box : ivory;
-  --background-color-footer-text: pink;
+  --background-color-footer-text: rgb(84, 44, 24);
   --background-color-login-popup-background: rgb(232, 232, 232);
   --background-color-popup-background: rgba(0, 0, 0, 0.5);
   --background-color-main-card: rgba(36, 168, 36, 0.516);
+  --background-color-tree-brown: rgb(84, 44, 24);
   --color-text-btn : white;
   --color-caution-text : rgb(143, 143, 143);
+  --color-btn: #20ad45;
 }
 
-body {
+body * {
   font-family: "Jua", sans-serif;
+}
+
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 .main-page {
@@ -174,25 +182,35 @@ body {
   overflow-inline: hidden;
   width: auto;
   padding: 0;
+  margin-left: 6%;
 }
 
 .category-box-item {
-  display: flex;
-  flex-direction: column-reverse;
-  justify-content: space-between;
+  display: inline-block;
   background-color: var(--background-color-list-box);
   list-style-type: none;
+  margin-bottom: 5px;
   width: 310px;
   height: 530px;
   border: 1px solid black;
 }
-.category-box-item:hover{
-  border:2px blue solid;
+
+.category-item-box{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
 }
+
+.category-box-item:hover{
+  border:2px green solid;
+}
+
 .category-box-item > img{
   object-fit: fill;
   height: 490px;
 }
+
 .category-box-text{
   display: flex;
   height: 40px;
@@ -202,10 +220,16 @@ body {
 }
 
 .category-box-item-sort {
+  border: 1px solid black;
+  border-radius: 20px;
   display: inline-block;
   width: 100%;
   height: 60px;
   text-align: end;
+}
+
+.category-box-item-sort > a {
+  color: green;
 }
 /* category-card-container 끝 */
 
@@ -250,7 +274,7 @@ body {
 .footer-text-btn {
   height: 20px;
   width: 70px;
-  background-color: var(--background-color-footer-text);
+  background-color: var(--color-btn);
   border-radius: 20px;
   position: relative;
   display: inline-block;
@@ -275,7 +299,7 @@ body {
   transform: scale(0);
   transition: all .2s ease;
   z-index: 999;
-  border-radius: 20px;
+  border-radius: 15px;
 }
 
 .footer-text-btn-info {
@@ -284,17 +308,17 @@ body {
 }
 
 .footer-text-btn-CS {
-  bottom: 100px;
+  bottom: 103.5px;
   right: 15%;
 }
 
 .footer-text-btn-SNS {
-  bottom: 70px;
+  bottom: 72.5px;
   right: 15%;
 }
 
 .footer-text-btn-AboutUs {
-  bottom: 60px;
+  bottom: 59.5px;
   right: 15%;
 }
 
@@ -325,7 +349,7 @@ height: 40px;
 
 /* login-popup 시작 */
 .popup-background {
-  background-color: var(--background-color-login-popup-background);
+  background-color: var(--background-color-tree-brown);
   position: fixed;
 	top: 0;
 	left: 0;
@@ -354,15 +378,19 @@ height: 40px;
 }
 
 .popup {
-    background-color: var(--background-color-caution-box);
+    background-color: var(--background-color-tree-brown);
     border-radius: 1vw;
     width: 25vw;
     height: 520px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     transition: visibility 0s, opacity 0.3s ease;
+}
+
+.popup-close-btn .btn {
+  padding: 0;
 }
 
 .search-popup {
@@ -433,6 +461,7 @@ height: 40px;
 }
 
 .auto-login-btn-box, .signin-btn-box {
+  font-size: small;
   position: relative;
   font-size: 15px;
   display: flex;
@@ -455,10 +484,6 @@ height: 40px;
 .auto-login-btn-box .toggleSwitch {
   margin: 0;
 }
-
-.signin-btn-box {
-  font-size: small;
-}
 /* login-popup 끝 */
 
 /*button 시작*/
@@ -473,10 +498,10 @@ height: 40px;
   font-weight: 600;
   transition:0.25s;
   text-align: center;
+  color: var(--color-btn);
 }
 
 .find-btn .btn, .signin-btn-box .btn {
-  color: green;
   padding: 5px 10px;
   margin: 1% 0;
   text-decoration: none;
@@ -495,15 +520,19 @@ height: 40px;
   cursor: pointer;
 }
 
+.signin-btn-box > .btn, .signin-popup .btn{
+  background-color: var(--background-color-tree-brown);
+}
+
 /* login, logout, 회원가입 버튼에 적용되는 설정 */
 .auth-btn{
-  background-color: #443fc1;
+  background-color: var(--color-btn);
   color: #000000;
 }
 
 .auth-btn:hover {
-  background-color: #6aafe6;
-  color: #d4dfe6;
+  background-color: var(--color-btn);
+  color: var(--background-color-tree-brown);
 }
 
 .search-btn{
@@ -556,8 +585,9 @@ height: 40px;
 }
 
 .nav-btn{
-  background: #0821db;
+  background: #08db40;
   color:#fff;
+  font-size: 16px;
 }
 
 .search-popup > .btn {
@@ -597,7 +627,7 @@ height: 40px;
   font-size: 160%;  
 }
 
-.search-box > img{
+.search-box img{
   right:12px;
   position: absolute;
   height: 80%;

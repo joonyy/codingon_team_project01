@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="./index.js"></script>
+  <title>index</title>
+</head>
+<body  class="main-page">
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="./index.js"></script>
+  <title>index</title>
+</head>
+<body  class="main-page">
+  <header>
+    <nav class="nav-bar">
+        <div class="nav-bar-items">
+          <div class="nav-bar-comp-name"><a href="./index.html" class="btn">부엉이 신발장</a></div>
+          <div class="nav-bar-menu">
+            <button class="btn search-btn" onclick="SearchPopupOpen()"><img src="./img/search.svg" alt=""></button>
+            <a href="./mypage.html" class="btn nav-btn"> MYPAGE </a>
+            <a href="./main-page-logout.html" class="btn nav-btn"> LOGOUT </a>
+          </div>
+        </div>
+    </nav>
+  </header>
+  <main>
+    <section class="popup-background search-popup-background">
+      <div class="popup search-popup">
+        <div class="btn" onclick="SearchPopupClose()">X</div>
+        <div class="search-box">
+          <input type="text" id="search-input">
+          <img src="./img/search.svg" alt="">
+        </div>
+      </div>
+    </section>
+    <section class="popup-background login-popup-background">
+      <div class="popup login-popup">
+        <div class="popup-close-btn">
+          <div class="btn" onclick="LoginPopupClose()">X</div>
+        </div>
+        <div class="ID-box">
+          <p>아이디</p>
+          <input type="text" class="auth-box-ID">
+        </div>
+        <div id="PW-box">
+          <p>비밀번호</p>
+          <input type="password" class="auth-box-ID">
+        </div>
+        <button class="btn auth-btn">로그인</button>
+        <div class="auto-login-btn-box">
+          자동로그인
+          <div class="auto-login-toggle-btn">
+            <input type="checkbox" id="toggle" hidden> 
+            <label for="toggle" class="toggleSwitch">
+              <span class="toggleButton"></span>
+            </label>
+          </div>
+        </div>
+        <div class="find-box">
+          아이디, 비밀번호를 잃어버리셨나요?<br>
+          <div class="find-btn-box">
+            <div class="find-btn"><a href="#" class="btn">아이디 찾기</a></div>
+            <div class="find-btn"><a href="#" class="btn">비밀번호 찾기</a></div>
+          </div>
+        </div>
+        <div class="signin-btn-box">
+          아직 부엉랑 친구가 아닌가요?
+          <button class="btn" onclick="SigninPopupOpen()">부엉이랑 친구하기</button>
+        </div>
+      </div>
+    </section>
+    <section class="popup-background signin-popup-background">
+      <div class="popup signin-popup">
+        <div class="popup-close-btn">
+          <div class="btn" onclick="SigninPopupClose()">X</div>
+        </div>
+        <div id="name-box" class="ID-box">
+          <p>이름</p>
+          <input type="text" class="auth-box-ID">
+        </div>
+        <div id="signin-ID-box" class="ID-box">
+          <p>아이디</p>
+          <input type="text" class="auth-box-ID">
+        </div>
+        <div id="signin-PW-box" class="PW-box">
+          <p>비밀번호</p>
+          <input type="password" class="auth-box-ID">
+        </div>
+        <div id="PW-check-box" class="PW-box">
+          <p>비밀번호 확인</p>
+          <input type="password" class="auth-box-ID">
+        </div>
+        <button class="btn" onclick="SigninPopupClose()">부엉이랑 친구하기</button>
+      </div>
+    </section>
+    <section class="main-page-text-box">
+      <p class="main-page-text text-1">발이 편해야</p>
+      <p class="main-page-text text-2">날갯짓도 편하다.</p>
+    </section>
+    <section class="body-main-page-card main-card-container">
+      <div class="card-container">
+        <div class="main-card">
+          <a href="./category-page-login.html">
+            <img src="./img/shoes1.png" alt="shoes1">
+          </a>
+          <div class="main-card-info-box">
+            <a href="./category-page-login.html" class="text-btn card-text-btn">
+              <div class="main-card-info main-card-info-head">
+                에어포스 1
+              </div>
+              <div class="main-card-info main-card-info-body">
+                <div class="sizes">240 245 250 255 260 265 270 275 280 285</div>
+                <div class="colors">
+                  RED BLACK WHITE IVORY
+                </div>
+              </div>
+              <div class="main-card-info main-card-info-footer">
+                136,000깃털
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="main-card">
+          <a href="./category-page-login.html">
+            <img src="./img/shoes1.png" alt="shoes1">
+          </a>
+          <div class="main-card-info-box">
+            <a href="./category-page-login.html" class="text-btn card-text-btn">
+              <div class="main-card-info main-card-info-head">
+                에어포스 1
+              </div>
+              <div class="main-card-info main-card-info-body">
+                <div class="sizes">240 245 250 255 260 265 270 275 280 285</div>
+                <div class="colors">
+                  RED BLACK WHITE IVORY
+                </div>
+              </div>
+              <div class="main-card-info main-card-info-footer">
+                136,000깃털
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="main-card">
+          <a href="./category-page-login.html">
+            <img src="./img/shoes1.png" alt="shoes1">
+          </a>
+          <div class="main-card-info-box">
+            <a href="./category-page-login.html" class="text-btn card-text-btn">
+              <div class="main-card-info main-card-info-head">
+                에어포스 1
+              </div>
+              <div class="main-card-info main-card-info-body">
+                <div class="sizes">240 245 250 255 260 265 270 275 280 285</div>
+                <div class="colors">
+                  RED BLACK WHITE IVORY
+                </div>
+              </div>
+              <div class="main-card-info main-card-info-footer">
+                136,000깃털
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="main-card">
+          <a href="./category-page-login.html">
+            <img src="./img/shoes1.png" alt="shoes1">
+          </a>
+          <div class="main-card-info-box">
+            <a href="./category-page-login.html" class="text-btn card-text-btn">
+              <div class="main-card-info main-card-info-head">
+                에어포스 1
+              </div>
+              <div class="main-card-info main-card-info-body">
+                <div class="sizes">240 245 250 255 260 265 270 275 280 285</div>
+                <div class="colors">
+                  RED BLACK WHITE IVORY
+                </div>
+              </div>
+              <div class="main-card-info main-card-info-footer">
+                136,000깃털
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="main-card">
+          <a href="./category-page-login.html">
+            <img src="./img/shoes1.png" alt="shoes1">
+          </a>
+          <div class="main-card-info-box">
+            <a href="./category-page-login.html" class="text-btn card-text-btn">
+              <div class="main-card-info main-card-info-head">
+                에어포스 1
+              </div>
+              <div class="main-card-info main-card-info-body">
+                <div class="sizes">240 245 250 255 260 265 270 275 280 285</div>
+                <div class="colors">
+                  RED BLACK WHITE IVORY
+                </div>
+              </div>
+              <div class="main-card-info main-card-info-footer">
+                136,000깃털
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="main-card">
+          <a href="./category-page-login.html">
+            <img src="./img/shoes1.png" alt="shoes1">
+          </a>
+          <div class="main-card-info-box">
+            <a href="./category-page-login.html" class="text-btn card-text-btn">
+              <div class="main-card-info main-card-info-head">
+                에어포스 1
+              </div>
+              <div class="main-card-info main-card-info-body">
+                <div class="sizes">240 245 250 255 260 265 270 275 280 285</div>
+                <div class="colors">
+                  RED BLACK WHITE IVORY
+                </div>
+              </div>
+              <div class="main-card-info main-card-info-footer">
+                136,000깃털
+              </div>
+            </a>
+          </div>
+        </div>  
+      </div>
+    </section>
+    <section class="body-main-page-card main-card-container">
+      <div class="card-container">
+        <div class="main-card">
+          <a href="./category-page-login.html">
+            <img src="./img/shoes1.png" alt="shoes1">
+          </a>
+          <div class="main-card-info-box">
+            <a href="./category-page-login.html" class="text-btn card-text-btn">
+              <div class="main-card-info main-card-info-head">
+                에어포스 1
+              </div>
+              <div class="main-card-info main-card-info-body">
+                <div class="sizes">240 245 250 255 260 265 270 275 280 285</div>
+                <div class="colors">
+                  RED BLACK WHITE IVORY
+                </div>
+              </div>
+              <div class="main-card-info main-card-info-footer">
+                136,000깃털
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="main-card">
+          <a href="./category-page-login.html">
+            <img src="./img/shoes1.png" alt="shoes1">
+          </a>
+          <div class="main-card-info-box">
+            <a href="./category-page-login.html" class="text-btn card-text-btn">
+              <div class="main-card-info main-card-info-head">
+                에어포스 1
+              </div>
+              <div class="main-card-info main-card-info-body">
+                <div class="sizes">240 245 250 255 260 265 270 275 280 285</div>
+                <div class="colors">
+                  RED BLACK WHITE IVORY
+                </div>
+              </div>
+              <div class="main-card-info main-card-info-footer">
+                136,000깃털
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="main-card">
+          <a href="./category-page-login.html">
+            <img src="./img/shoes1.png" alt="shoes1">
+          </a>
+          <div class="main-card-info-box">
+            <a href="./category-page-login.html" class="text-btn card-text-btn">
+              <div class="main-card-info main-card-info-head">
+                에어포스 1
+              </div>
+              <div class="main-card-info main-card-info-body">
+                <div class="sizes">240 245 250 255 260 265 270 275 280 285</div>
+                <div class="colors">
+                  RED BLACK WHITE IVORY
+                </div>
+              </div>
+              <div class="main-card-info main-card-info-footer">
+                136,000깃털
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="main-card">
+          <a href="./category-page-login.html">
+            <img src="./img/shoes1.png" alt="shoes1">
+          </a>
+          <div class="main-card-info-box">
+            <a href="./category-page-login.html" class="text-btn card-text-btn">
+              <div class="main-card-info main-card-info-head">
+                에어포스 1
+              </div>
+              <div class="main-card-info main-card-info-body">
+                <div class="sizes">240 245 250 255 260 265 270 275 280 285</div>
+                <div class="colors">
+                  RED BLACK WHITE IVORY
+                </div>
+              </div>
+              <div class="main-card-info main-card-info-footer">
+                136,000깃털
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="main-card">
+          <a href="./category-page-login.html">
+            <img src="./img/shoes1.png" alt="shoes1">
+          </a>
+          <div class="main-card-info-box">
+            <a href="./category-page-login.html" class="text-btn card-text-btn">
+              <div class="main-card-info main-card-info-head">
+                에어포스 1
+              </div>
+              <div class="main-card-info main-card-info-body">
+                <div class="sizes">240 245 250 255 260 265 270 275 280 285</div>
+                <div class="colors">
+                  RED BLACK WHITE IVORY
+                </div>
+              </div>
+              <div class="main-card-info main-card-info-footer">
+                136,000깃털
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="main-card">
+          <a href="./category-page-login.html">
+            <img src="./img/shoes1.png" alt="shoes1">
+          </a>
+          <div class="main-card-info-box">
+            <a href="./category-page-login.html" class="text-btn card-text-btn">
+              <div class="main-card-info main-card-info-head">
+                에어포스 1
+              </div>
+              <div class="main-card-info main-card-info-body">
+                <div class="sizes">240 245 250 255 260 265 270 275 280 285</div>
+                <div class="colors">
+                  RED BLACK WHITE IVORY
+                </div>
+              </div>
+              <div class="main-card-info main-card-info-footer">
+                136,000깃털
+              </div>
+            </a>
+          </div>
+        </div>  
+      </div>
+    </section>
+    <section class="body-main-page-card main-card-container">
+      <div class="card-container">
+        <div class="main-card">
+          <a href="./category-page-login.html">
+            <img src="./img/shoes1.png" alt="shoes1">
+          </a>
+          <div class="main-card-info-box">
+            <a href="./category-page-login.html" class="text-btn card-text-btn">
+              <div class="main-card-info main-card-info-head">
+                에어포스 1
+              </div>
+              <div class="main-card-info main-card-info-body">
+                <div class="sizes">240 245 250 255 260 265 270 275 280 285</div>
+                <div class="colors">
+                  RED BLACK WHITE IVORY
+                </div>
+              </div>
+              <div class="main-card-info main-card-info-footer">
+                136,000깃털
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="main-card">
+          <a href="./category-page-login.html">
+            <img src="./img/shoes1.png" alt="shoes1">
+          </a>
+          <div class="main-card-info-box">
+            <a href="./category-page-login.html" class="text-btn card-text-btn">
+              <div class="main-card-info main-card-info-head">
+                에어포스 1
+              </div>
+              <div class="main-card-info main-card-info-body">
+                <div class="sizes">240 245 250 255 260 265 270 275 280 285</div>
+                <div class="colors">
+                  RED BLACK WHITE IVORY
+                </div>
+              </div>
+              <div class="main-card-info main-card-info-footer">
+                136,000깃털
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="main-card">
+          <a href="./category-page-login.html">
+            <img src="./img/shoes1.png" alt="shoes1">
+          </a>
+          <div class="main-card-info-box">
+            <a href="./category-page-login.html" class="text-btn card-text-btn">
+              <div class="main-card-info main-card-info-head">
+                에어포스 1
+              </div>
+              <div class="main-card-info main-card-info-body">
+                <div class="sizes">240 245 250 255 260 265 270 275 280 285</div>
+                <div class="colors">
+                  RED BLACK WHITE IVORY
+                </div>
+              </div>
+              <div class="main-card-info main-card-info-footer">
+                136,000깃털
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="main-card">
+          <a href="./category-page-login.html">
+            <img src="./img/shoes1.png" alt="shoes1">
+          </a>
+          <div class="main-card-info-box">
+            <a href="./category-page-login.html" class="text-btn card-text-btn">
+              <div class="main-card-info main-card-info-head">
+                에어포스 1
+              </div>
+              <div class="main-card-info main-card-info-body">
+                <div class="sizes">240 245 250 255 260 265 270 275 280 285</div>
+                <div class="colors">
+                  RED BLACK WHITE IVORY
+                </div>
+              </div>
+              <div class="main-card-info main-card-info-footer">
+                136,000깃털
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="main-card">
+          <a href="./category-page-login.html">
+            <img src="./img/shoes1.png" alt="shoes1">
+          </a>
+          <div class="main-card-info-box">
+            <a href="./category-page-login.html" class="text-btn card-text-btn">
+              <div class="main-card-info main-card-info-head">
+                에어포스 1
+              </div>
+              <div class="main-card-info main-card-info-body">
+                <div class="sizes">240 245 250 255 260 265 270 275 280 285</div>
+                <div class="colors">
+                  RED BLACK WHITE IVORY
+                </div>
+              </div>
+              <div class="main-card-info main-card-info-footer">
+                136,000깃털
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="main-card">
+          <a href="./category-page-login.html">
+            <img src="./img/shoes1.png" alt="shoes1">
+          </a>
+          <div class="main-card-info-box">
+            <a href="./category-page-login.html" class="text-btn card-text-btn">
+              <div class="main-card-info main-card-info-head">
+                에어포스 1
+              </div>
+              <div class="main-card-info main-card-info-body">
+                <div class="sizes">240 245 250 255 260 265 270 275 280 285</div>
+                <div class="colors">
+                  RED BLACK WHITE IVORY
+                </div>
+              </div>
+              <div class="main-card-info main-card-info-footer">
+                136,000깃털
+              </div>
+            </a>
+          </div>
+        </div>  
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="footer-text-btn-group">
+      <div class="text-btn footer-text-btn">
+        CS
+        <div class="footer-text-btn-box footer-text-btn-CS">
+          <div class="footer-text-btn-info">
+            <a href="#">고객지원 센터
+            </a>
+            <a href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, repellendus.
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="text-btn footer-text-btn">
+        SNS
+        <div class="footer-text-btn-box footer-text-btn-SNS">
+          <div class="footer-text-btn-info">
+            <ul>
+              <li><a href="https://www.instagram.com/"><img src="./img/insta_icon_1x.svg" alt="facebook">
+              </a></li>
+              <li><a href="https://www.facebook.com/"><img src="./img/facebook_icon_1x.svg" alt="facebook">
+              </a></li>
+              <li><a href="https://twitter.com/"><img src="./img/twitter_icon_1x.svg" alt="facebook">
+              </a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="text-btn footer-text-btn">
+        AboutUs
+        <div class="footer-text-btn-box footer-text-btn-AboutUs">
+          <div class="footer-text-btn-info">
+            <a href="#">우리는 부엉씨의 가족분들이 잠든 시간에 몰래 선물해드리는 모임입니다..!
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
+</body>
+</html>

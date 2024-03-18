@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./mypage.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="./mypage.js"></script>
+  <title>mypage</title>
+</head>
+<body  class="main-page">
+  <header>
+    <nav class="nav-bar">
+        <div class="nav-bar-items">
+          <div class="nav-bar-comp-name"><a href="./mypage.html" class="btn">부엉이 신발장</a></div>
+          <div class="nav-bar-menu">
+            <button class="btn search-btn" onclick="SearchPopupOpen()"><img src="./img/search.svg" alt=""></button>
+            <a href="./mypage.html" class="btn nav-btn"> MYPAGE </a>
+            <a href="./main-page-logout.html" class="btn nav-btn"> LOGOUT </a>
+          </div>
+        </div>
+    </nav>
+  </header>
+  <hr class="line1">
+  <main>
+    <section class="popup-background search-popup-background">
+      <div class="popup search-popup">
+        <div class="btn" onclick="SearchPopupClose()">X</div>
+        <div class="search-box">
+          <input type="text" id="search-input">
+          <a href="./category-page-login.html"><img src="./img/search.svg" alt=""></a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+    <div class="my-container">
+      <aside class="my-left-container">
+        <div class="my-name-container"><span>반가워요 부엉씨</span></div>
+        <div class="my-menu-container">
+          <nav class="my-menu">
+            <ul class="my-menu-lists">
+              <hr class="line2" width="100%" color="brown">
+              <li class="my-menu-list"><a href="#" class="btn text-btn btn-active">
+                <span>찜한 목록</span>
+              </a>  </li>
+              <li class="my-menu-list"><a href="#" class="btn text-btn btn-active">
+                <span>장바구니</span>
+              </a>  </li>
+              <li class="my-menu-list"><a href="#" class="btn text-btn btn-active">
+                <span>주문 내역</span>
+              </a>  </li>
+              <li class="my-menu-list"><a href="#" class="btn text-btn btn-active">
+                <span>회원 정보</span>
+              </a>  </li>
+              <li class="my-menu-list"><a href="#" class="btn text-btn btn-active">
+                <span>계정 탈퇴</span>
+              </a>  </li>
+            </ul>
+          </nav>
+        </div>
+      </aside>
+    <main class="my-right-container">
+    <p>카테고리 정보창</p>
+    </main>
+    
+</body>
+</html>

@@ -1,0 +1,541 @@
+/* 색상 정의 */
+:root {
+    --background-color-main-page: rgba(144, 238, 144, 0.66);
+    --background-color-footer-icon : violet;
+    --background-color-list-box : lightgreen;
+    --background-color-text-btn : gray;
+    --background-color-caution-box : ivory;
+    --background-color-footer-text: rgb(84, 44, 24);
+    --background-color-login-popup-background: rgb(232, 232, 232);
+    --background-color-popup-background: rgba(0, 0, 0, 0.5);
+    --background-color-main-card: rgba(36, 168, 36, 0.516);
+    --background-color-tree-brown: rgb(84, 44, 24);
+    --color-text-btn : white;
+    --color-caution-text : rgb(143, 143, 143);
+    --color-btn: #20ad45;
+  }
+  
+  body * {
+    font-family: "Jua", sans-serif;
+  }
+  
+  button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+  
+  .main-page {
+    background-image: url(./img/background.svg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+  .main-page-text-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 500px;
+  }
+  
+  .main-page-text {
+    font-size: 80px;
+    color: white;
+    margin: 0;
+  }
+  
+  /* text-btn 시작 */
+  .text-btn{
+    background-color: var(--background-color-text-btn);
+    color: var(--color-text-btn);
+    padding: 5px 10px;
+    margin: 1% 0;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+  
+  .text-btn a {
+    text-decoration: none;
+    color: var(--color-text-btn);
+  }
+  /* text-btn 끝 */
+  
+  
+  
+  /* login-popup 시작 */
+  .popup-background {
+    background-color: var(--background-color-tree-brown);
+    position: fixed;
+      top: 0;
+      left: 0;
+    width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      visibility: hidden;
+      opacity: 0;
+      transition: visibility 0s, opacity 0.3s ease;
+    z-index: 999;
+  }
+  
+  .search-popup-background {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+      background-color: var(--background-color-popup-background);
+      top: 20%;
+      left: 25%;
+    width: 50%;
+      height: 50%;
+    border-radius: 20px;  
+  }
+  
+  .popup {
+      background-color: var(--background-color-tree-brown);
+      border-radius: 1vw;
+      width: 25vw;
+      height: 520px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      transition: visibility 0s, opacity 0.3s ease;
+  }
+  
+  .popup-close-btn .btn {
+    padding: 0;
+  }
+  
+  .search-popup {
+    display: flex;
+    align-items: flex-end;
+    margin-top: 2%;
+    width: 70%;
+    height: 20%;
+    background-color: var(--background-color-popup-background);
+  }
+  
+  .search-popup .btn {
+    padding: 0;
+    color: white;
+  }
+  
+  .ID-box, .PW-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .login-popup p, .signin-popup p {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    font-size: 30px;
+  }
+  
+  .auth-box-ID{
+    box-sizing: border-box;
+    width: 100%;
+    height: 60%;
+    border:1px solid #000000;
+    padding: 10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    text-align: center;
+    min-width: 100px;
+    font-size: 20px;
+  }
+  
+  .login-btn {
+    font-size: 20px;
+  }
+  
+  .find-box {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    font-size: 15px;
+  }
+  
+  .find-btn-box {
+    display: flex;
+    align-items: center;
+  }
+  
+  .auto-login-btn-box, .signin-btn-box {
+    font-size: small;
+    position: relative;
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 10px 0;
+  }
+  
+  .auto-login-toggle-btn {
+    position: relative;
+    right: 40%;
+    text-align: center;
+    display: inline-block;
+    width: 10%;
+    height: 5%;
+    margin: 0;
+  }
+  
+  .auto-login-btn-box .toggleSwitch {
+    margin: 0;
+  }
+  /* login-popup 끝 */
+  
+  /*button 시작*/
+  /*전체 버튼에 적용되는 설정*/
+  .btn{
+    position:relative;
+    border:none;
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 15px;
+    text-decoration: none;
+    font-weight: 600;
+    transition:0.25s;
+    text-align: center;
+    color: var(--color-btn);
+  }
+  
+  .find-btn .btn, .signin-btn-box .btn {
+    padding: 5px 10px;
+    margin: 1% 0;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .btn:active{
+    transform:scale(1.3);
+  }
+  
+  .btn:hover{
+    letter-spacing: 2px;
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+  
+  .signin-btn-box > .btn, .signin-popup .btn{
+    background-color: var(--background-color-tree-brown);
+  }
+  
+  /* login, logout, 회원가입 버튼에 적용되는 설정 */
+  .auth-btn{
+    background-color: var(--color-btn);
+    color: #000000;
+  }
+  
+  .auth-btn:hover {
+    background-color: var(--color-btn);
+    color: var(--background-color-tree-brown);
+  }
+  
+  .search-btn{
+    align-items: center;
+    height: 100%;
+  }
+  
+  .search-btn > img{
+    display: inline-block;
+    height: 100%;
+    align-items: center;
+  }
+  
+  .toggleSwitch {
+    width: 80px;
+    height: 30px;
+    display: block;
+    position: relative;
+    right: inherit;
+    border-radius: 30px;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 0 0 3px 3px rgba(0 0 0 / 15%);
+    cursor: pointer;
+    margin: 15px;
+  }
+  
+  .toggleSwitch .toggleButton {
+    width: 30%;
+    height: 80%;
+    position: absolute;
+    top: 50%;
+    left: 4px;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    background: #000000;
+  }
+  
+  #toggle:checked ~ .toggleSwitch {
+    background: #000000;
+  }
+  
+  #toggle:checked ~ .toggleSwitch .toggleButton {
+    left: calc(100% - 30px);
+    background: #fff;
+  }
+  
+  .toggleSwitch, .toggleButton {
+    transition: all 0.2s ease-in;
+  }
+  
+  .nav-btn{
+    background: #08db40;
+    color:#fff;
+    font-size: 16px;
+  }
+  
+  .search-popup > .btn {
+    position: absolute;
+    right: 2%;
+  }
+  /*button 종료*/
+  
+  /*input-box 시작*/
+  .auth-box{
+    box-sizing: border-box;
+    width:25%;
+    position: absolute;
+    border:1px solid #000000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    text-align: center;
+    min-width: 100px;
+    font-size: 15px;
+  }
+  
+  .search-box{
+    position: relative;
+    width:100%;
+    height: 100%;
+  }
+  
+  #search-input{
+    height: 100%;
+    box-sizing: border-box;
+    width:100%;
+    min-width:30px;
+    border:1px solid #000000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    text-align: center;
+    font-size: 160%;  
+  }
+  
+  .search-box img{
+    right:12px;
+    position: absolute;
+    height: 80%;
+    top:9px;
+    margin : 0;
+  }
+  /*input-box 종료*/
+  
+  .nav-bar{
+    display: flex;
+    height: 60px;
+    padding: 8px 0;
+    width: 100%;
+  }
+  
+  .nav-bar-items {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .nav-bar-comp-name {
+    font-size: 40px;
+    color: var(--color-text-btn);
+  }
+  
+  .nav-bar-menu {
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  /* 로고 */
+  .nav-bar-logo {
+    display: inline-block;
+    height: 100%;
+    width: 60px;
+    margin-left: 2%;
+  }
+  
+  .nav-bar-logo img{
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+  }
+  
+  /* 브랜드명 */
+  .center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .nav-bar-comp-name > a{
+    color: black;
+  }
+  
+  /* 우측상단메뉴 */
+  .nav-bar-menu :not(:first-child){
+    margin-left: 3%;
+  }
+  
+  /* 배경 */
+  .back{
+    background-image: url("./images/sample_01.jpg");
+    
+    /* background-color: red; */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    
+  }
+  
+  /*brand-text 시작*/
+  .brand-text{
+    font-size: 100px;
+    text-align: center;
+  }
+  
+  
+  
+  
+  .my-container{
+    display: flex;
+  }
+  /*my-left-container 시작*/
+  .my-left-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 30vw;
+    height:100vh;
+    border-right:1px var(--background-color-tree-brown) solid ;
+    
+  }
+  /* 헤더,메뉴 구분hr */
+  .line1 {
+    border: none;
+  border-bottom: 1px solid var(--background-color-tree-brown);
+  text-align: center;
+  overflow: visible;
+  margin-bottom: 0;
+  }
+  
+  .line1::after {
+    position: relative;
+    top: -15px;
+    padding: 0 10px;
+    background-color: white;
+    color: black;
+    font-size: 20px;
+    -webkit-transform: rotate(60deg);
+    -moz-transform: rotate(60edg);
+    transform: rotate(60deg);
+  }
+    /* 헤더,메뉴 구분hr 종료 */
+  
+  .my-menu{
+    /* 메뉴 제일 상위 () */
+    display: flex;
+    justify-content: center;
+  }
+  .my-name-container{ /* 이름박스 css */
+    position: relative;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-family: "paybooc-Light", sans-serif;
+    margin-top: 30px;
+    width:25vw;
+    height:20vh;
+    background-color: var(--background-color-tree-brown);
+    border-radius: 15px;
+    color: white;
+    font-size: 30px;
+  
+  }
+  
+  /* 이름,카테고리 hr */
+  .line2{
+    border: none;
+  border-top: 1px solid var(--background-color-tree-brown);
+  text-align: center;
+  overflow: visible;
+  
+  }
+  /* 이름카테고리 hr종료 */
+  
+  .my-menu-lists{
+    /*ul박스 */
+    padding: 5px 0;
+    width:30vw; 
+    
+  }
+  .my-menu-list{
+    list-style-type: none;
+    padding: 10px 0;
+    width:85%;
+    height: auto;
+    margin: auto;
+  
+  }
+  /*button 시작*/
+  .btn {
+    position:relative;
+    border:none;
+    display: block;
+    padding: 15px 30px;
+    border-radius: 15px;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 600;
+    transition:0.25s;
+  }
+  
+  .btn:active{
+    transform:scale(1.3);
+  }
+  .btn:hover{
+    letter-spacing: 2px;
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+  
+  .text-btn{
+    background-color: var(--background-color-tree-brown);
+    color: white;
+  }
+  /*button 종료*/
+  /*my-left-container 종료*/
+  /*my-right-container 시작*/
+  .my-right-container{
+    width:70vw;
+    height: 100vh;
+  }
+  
+  

@@ -1,0 +1,39 @@
+/* 중복 코드 목록 */
+/* 색상 정의 */
+:root {
+  --background-color-main-page: rgba(144, 238, 144, 0.66);
+  --background-color-footer-icon : violet;
+  --background-color-list-box : lightgreen;
+  --background-color-text-btn : gray;
+  --background-color-caution-box : ivory;
+  --background-color-footer-text: rgb(84, 44, 24);
+  --background-color-login-popup-background: rgb(232, 232, 232);
+  --background-color-popup-background: rgba(0, 0, 0, 0.5);
+  --background-color-main-card: rgba(36, 168, 36, 0.516);
+  --background-color-tree-brown: rgb(84, 44, 24);
+  --color-text-btn : white;
+  --color-caution-text : rgb(143, 143, 143);
+  --color-btn: #20ad45;
+}
+
+body * {
+  font-family: "Jua", sans-serif;
+}
+.btn{
+  position:relative;
+  border:none;
+  display: inline-block;
+  padding: 15px 30px;
+  border-radius: 15px;
+  text-decoration: none;
+  font-weight: 600;
+  transition:0.25s;
+  text-align: center;
+  color: var(--color-btn);
+}
+/* 중복 코드 종료*/
+.fail-payment{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}

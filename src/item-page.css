@@ -1,0 +1,117 @@
+body {
+  font-family: "Jua", sans-serif;
+}
+/* item-top-container */
+.item-top-container{
+  background-color: rgb(84, 82, 82);
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+
+/* item-top-container 좌측 */
+.item-container{
+  width:400px;
+  height: 550px;;
+  background-color: red;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  background-image: url("./img/shoes1.png");
+  background-size: 100% 100%;
+  color: antiquewhite;
+}
+.item-summary{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  width:100%;
+  height: 70px;
+  background-color: rgba(128, 50, 50, 0.676);
+}
+.item-summary > ul {
+  list-style-type: none;
+  font-size: 15px;
+  padding: 0 0 0 0;
+}
+
+/* item-top-container 우측 */
+.item-order-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 400px;
+  height: 550px;
+  background-color: rgb(177, 172, 172);
+  text-align: center;
+  color: antiquewhite;
+}
+.size-option{
+  display: flex;
+  flex-wrap:  wrap;
+  justify-content: center;
+  width:350px;
+  border: 1px solid white;
+}
+.size-option-btn{
+  width: 100px;
+  height: 40px;
+  border-radius: 10%;
+  margin: 2px 2px;
+}
+.color-option{
+  display: flex;
+  align-items: center;
+  border : 1px solid white;
+  width: 350px;
+  justify-content: space-around;
+}
+.color-option > input{
+  width:180px;
+}
+.chosen-option{
+  margin-top: 30px;
+  border : 1px solid white;
+  width: 350px;
+}
+
+.decision{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+  width:350px;
+  border : 1px solid white;
+}
+
+.decision > img{
+  width: 50px;
+  height : 50px;
+}
+
+/* item-bottom-container */
+.item-bottom-container{
+  background-color: #8e8d8d;
+}
+.item-bottom-container > header{
+  display: flex;
+  justify-content: space-around;
+  height: 50px;
+  margin: 0;
+}
+.item-bottom-container > header > p{
+  border:1px solid #000;
+  text-align:center;
+  width: 50%;
+  height : 30px;
+  margin : 0;
+  padding : 12px 0 6px 0;
+}
+.item-details{
+  background-color: #787777;
+  margin: 0;
+}
+.item-details > p{
+  margin: 0;
+}

@@ -12,29 +12,45 @@
   <title>index</title>
 </head>
 <body>
-  <header>개쩌는헤더</header>
+  <header>
+  <nav class="nav-bar">
+      <div class="nav-bar-items">
+        <div class="nav-bar-comp-name"><a href="./index.html" class="btn" style="color: black;">부엉이 신발장</a></div>
+        <div class="nav-bar-menu">
+          <button class="btn search-btn" onclick="SearchPopupOpen()"><img src="./img/search.svg" alt=""></button>
+          <button class="btn nav-btn" onclick="SigninPopupOpen()"> SIGNIN </button>
+          <button class="btn nav-btn" onclick="LoginPopupOpen()"> LOGIN </button>
+        </div>
+      </div>
+  </nav>
+</header>
   
   <main class="pay-page">
     <section class="ship-info">
       <p>배송정보</p>
       <div class="ship-box">
-        <p>배송지 : <input type="text" id="where"> <button> 확인 </button></p>
-      <p>주문자 : <input type="text"> <button> 확인 </button></p>
+        <p>배송지 : <input type="text" id="where"></p>
+        <p>주문자 : <input type="text" id="who"></p>
+      </div>
+      <div class="ship-box-button"><button class="btn confirm-btn" onclick="confirmed()"> 확인 </button></div>
+    </section>
+    <section class="ship-confirmed-info">
+      <div class="ship-confirmed-box">
+        <img src="./img/mail.jpeg" alt="">
       </div>
     </section>
-    <br/>
     <section class="pay-method"> 
       <p>결제방법</p>
       <div class="pay-box">
-        <div class="pay-img-contain"><input type="radio" id="credit-card" name="pay-method"> <img src="./img/credit-card.png" alt=""></div>
-        <div class="pay-img-cover"><input type="radio" id="payco" name="pay-method"> <img src="./img/payco.png" alt=""></div>
-        <div class="pay-img-contain"><input type="radio" id="kakao" name="pay-method"> <img src="./img/kakao.png" alt=""></div>
-        <div class="pay-img-contain"><input type="radio" id="naver" name="pay-method"> <img src="./img/naver.png" alt=""></div>
-        <div class="pay-img-cover"><input type="radio" id="toss" name="pay-method"> <img src="./img/toss.png" alt=""></div>
+        <div class="pay-img-contain"><input type="radio" id="credit-card" name="pay-method"> <label for="credit-card"><img src="./img/credit-card.png" alt=""></label></div>
+        <div class="pay-img-cover"><input type="radio" id="payco" name="pay-method"><label for="payco"> <img src="./img/payco.png" alt=""></label></div>
+        <div class="pay-img-contain"><input type="radio" id="kakao" name="pay-method"> <label for="kakao"><img src="./img/kakao.png" alt="" style="background-color:yellow"></label></div>
+        <div class="pay-img-contain"><input type="radio" id="naver" name="pay-method"><label for="naver"><img src="./img/naver.png" alt="" style="background-color: green;"></label></div>
+        <div class="pay-img-cover"><input type="radio" id="toss" name="pay-method"><label for="toss"><img src="./img/toss.png" alt=""></label></div>
       </div>
     </section>
     <section class="pay">
-      <button class="btn pay-btn">결제하기</button>
+      <a href="./paid.html"><button class="btn pay-btn">결제하기</button></a>
     </section>
   </main>
 

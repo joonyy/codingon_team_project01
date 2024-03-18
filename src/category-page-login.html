@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,16 +11,15 @@
   <script src="./index.js"></script>
   <title>index</title>
 </head>
-<html lang="en">
   <body>
     <header>
       <nav class="nav-bar">
           <div class="nav-bar-items">
-            <div class="nav-bar-comp-name"><a href="./main-page-login.html" class="btn" style="color: black">부엉이 신발장</a></div>
+            <div class="nav-bar-comp-name"><a href="./index.html" class="btn">부엉이 신발장</a></div>
             <div class="nav-bar-menu">
               <button class="btn search-btn" onclick="SearchPopupOpen()"><img src="./img/search.svg" alt=""></button>
-              <a href="./mypage.html" class="btn nav-btn">MYPAGE</a>
-              <a href="./category-page-logout.html" class="btn nav-btn">LOGOUT</a>
+              <button class="btn nav-btn" onclick="SigninPopupOpen()"> SIGNIN </button>
+              <button class="btn nav-btn" onclick="LoginPopupOpen()"> LOGIN </button>
             </div>
           </div>
       </nav>

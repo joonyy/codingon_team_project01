@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,9 +31,9 @@
     <div class="item-container">
       <div class="item-summary">
         <ul>
-        <li class="item-name">나이키 에어포스</li>
-        <li class="item-price">100만원</li>
-        <li class="item-color">이미지@ </li>
+        <li class="item-name">Owl AirShose</li>
+        <li class="item-price">100만 깃털</li>
+        <li class="item-color">이미지</li>
         </ul>   
       </div>
     </div>
@@ -62,81 +62,13 @@
         <p>색상 : 어쩌구</p>
       </div>
       <div class="decision">
-        <img src="./img/empty_heart.png" alt="" id="empty-heart" >
-        <img src="./img/filled_heart.png" alt="" id="filled-heart" hidden>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+            <path id="heart" d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" id="Like"/>
+          </svg>
         <img src="./img/shopping cart.png" alt="장바구니">
       </div>
   </section>
   <main class="item-bottom-container">
-    <section class="popup-background search-popup-background">
-      <div class="popup search-popup">
-        <div class="btn" onclick="SearchPopupClose()">X</div>
-        <div class="search-box">
-          <input type="text" id="search-input">
-          <a href="./category-page-logout.html"><img src="./img/search.svg" alt=""></a>
-        </div>
-      </div>
-    </section>
-    <section class="popup-background login-popup-background">
-      <div class="popup login-popup">
-        <div class="popup-close-btn">
-          <div class="btn" onclick="LoginPopupClose()">X</div>
-        </div>
-        <div class="ID-box">
-          <p>아이디</p>
-          <input type="text" class="auth-box-ID">
-        </div>
-        <div id="PW-box">
-          <p>비밀번호</p>
-          <input type="password" class="auth-box-ID">
-        </div>
-        <a href="./item-page-login.html" class="btn auth-btn">로그인</a>
-        <div class="auto-login-btn-box">
-          자동로그인
-          <div class="auto-login-toggle-btn">
-            <input type="checkbox" id="toggle" hidden> 
-            <label for="toggle" class="toggleSwitch">
-              <span class="toggleButton"></span>
-            </label>
-          </div>
-        </div>
-        <div class="find-box">
-          아이디, 비밀번호를 잃어버리셨나요?<br>
-          <div class="find-btn-box">
-            <div class="find-btn"><a href="#" class="btn">아이디 찾기</a></div>
-            <div class="find-btn"><a href="#" class="btn">비밀번호 찾기</a></div>
-          </div>
-        </div>
-        <div class="signin-btn-box">
-          아직 부엉랑 친구가 아닌가요?
-          <button class="btn" onclick="SigninPopupOpen(), LoginPopupClose()">부엉이랑 친구하기</button>
-        </div>
-      </div>
-    </section>
-    <section class="popup-background signin-popup-background">
-      <div class="popup signin-popup">
-        <div class="popup-close-btn">
-          <div class="btn" onclick="SigninPopupClose()">X</div>
-        </div>
-        <div id="name-box" class="ID-box">
-          <p>이름</p>
-          <input type="text" class="auth-box-ID">
-        </div>
-        <div id="signin-ID-box" class="ID-box">
-          <p>아이디</p>
-          <input type="text" class="auth-box-ID">
-        </div>
-        <div id="signin-PW-box" class="PW-box">
-          <p>비밀번호</p>
-          <input type="password" class="auth-box-ID">
-        </div>
-        <div id="PW-check-box" class="PW-box">
-          <p>비밀번호 확인</p>
-          <input type="password" class="auth-box-ID">
-        </div>
-        <button class="btn" onclick="SigninPopupClose(), LoginPopupOpen()">부엉이랑 친구하기</button>
-      </div>
-    </section>
     <header>
       <p>상세정보</p>
       <p>리뷰</p>
@@ -145,5 +77,74 @@
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim quos veritatis alias aliquid id fugit perferendis, omnis repudiandae molestias magni neque necessitatibus ex repellat sunt impedit debitis, ea consequatur quod voluptate eligendi iste illum minus? Laborum sed labore, sunt maxime itaque at nemo ratione nobis vero nesciunt enim? Nam, pariatur.</p>
     </section>
   </main>
+  <section class="popup-background search-popup-background">
+    <div class="popup search-popup">
+      <div class="btn" onclick="SearchPopupClose()">X</div>
+      <div class="search-box">
+        <input type="text" id="search-input">
+        <a href="./category-page-logout.html"><img src="./img/search.svg" alt=""></a>
+      </div>
+    </div>
+  </section>
+  <section class="popup-background login-popup-background">
+    <div class="popup login-popup">
+      <div class="popup-close-btn">
+        <div class="btn" onclick="LoginPopupClose()">X</div>
+      </div>
+      <div class="ID-box">
+        <p>아이디</p>
+        <input type="text" class="auth-box-ID">
+      </div>
+      <div id="PW-box">
+        <p>비밀번호</p>
+        <input type="password" class="auth-box-ID">
+      </div>
+      <a href="./item-page-login.html" class="btn auth-btn">로그인</a>
+      <div class="auto-login-btn-box">
+        자동로그인
+        <div class="auto-login-toggle-btn">
+          <input type="checkbox" id="toggle" hidden> 
+          <label for="toggle" class="toggleSwitch">
+            <span class="toggleButton"></span>
+          </label>
+        </div>
+      </div>
+      <div class="find-box">
+        아이디, 비밀번호를 잃어버리셨나요?<br>
+        <div class="find-btn-box">
+          <div class="find-btn"><a href="#" class="btn">아이디 찾기</a></div>
+          <div class="find-btn"><a href="#" class="btn">비밀번호 찾기</a></div>
+        </div>
+      </div>
+      <div class="signin-btn-box">
+        아직 부엉랑 친구가 아닌가요?
+        <button class="btn" onclick="SigninPopupOpen(), LoginPopupClose()">부엉이랑 친구하기</button>
+      </div>
+    </div>
+  </section>
+  <section class="popup-background signin-popup-background">
+    <div class="popup signin-popup">
+      <div class="popup-close-btn">
+        <div class="btn" onclick="SigninPopupClose()">X</div>
+      </div>
+      <div id="name-box" class="ID-box">
+        <p>이름</p>
+        <input type="text" class="auth-box-ID">
+      </div>
+      <div id="signin-ID-box" class="ID-box">
+        <p>아이디</p>
+        <input type="text" class="auth-box-ID">
+      </div>
+      <div id="signin-PW-box" class="PW-box">
+        <p>비밀번호</p>
+        <input type="password" class="auth-box-ID">
+      </div>
+      <div id="PW-check-box" class="PW-box">
+        <p>비밀번호 확인</p>
+        <input type="password" class="auth-box-ID">
+      </div>
+      <button class="btn" onclick="SigninPopupClose(), LoginPopupOpen()">부엉이랑 친구하기</button>
+    </div>
+  </section>
 </body>
 </html>

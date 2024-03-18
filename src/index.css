@@ -186,7 +186,8 @@ button {
 }
 
 .category-box-item {
-  display: inline-block;
+  display: inline-flex;
+  flex-direction: column-reverse;
   background-color: var(--background-color-list-box);
   list-style-type: none;
   margin-bottom: 5px;
@@ -196,7 +197,7 @@ button {
 }
 
 .category-item-box{
-  display: flex;
+  display: inline;
   justify-content: space-between;
   flex-direction: column;
   align-items: center;
@@ -209,6 +210,10 @@ button {
 .category-box-item > img{
   object-fit: fill;
   height: 490px;
+}
+
+.category-box > a {
+  text-decoration: none;
 }
 
 .category-box-text{
@@ -717,4 +722,17 @@ height: 40px;
 .brand-text{
   font-size: 100px;
   text-align: center;
+}
+
+.main-size-option{
+  display: flex;
+  flex-wrap:  wrap;
+  justify-content: center;
+  width:310px;
+}
+.main-size-option-btn{
+  width: 90px;
+  height: 40px;
+  border-radius: 10px;
+  margin: 2px 2px;
 }

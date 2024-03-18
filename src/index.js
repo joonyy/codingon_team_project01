@@ -61,3 +61,28 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 // 메인페이지 카드 가로 스크롤로 세로스크롤 이동하기 끝
+
+// 찜하기 버튼 시작
+// const heart = document.querySelector(".bi-heart");
+// heart.addEventListener('click', function() {
+//   heart.classList.toggle("bi-heart-fill");
+//   heart.classList.toggle("bi-heart-charge");
+// });
+// 찜하기 버튼 끝
+
+// 사이즈 선택 시작
+function selectSize(size) {
+  let selectedSize = document.getElementById("selectedSize");
+  selectedSize.innerHTML = "size : " + size + "mm";
+}
+// 사이즈 선택 끝
+
+// 색상 선택 시작
+const selectedcolor = document.getElementById("selectedColor");
+const changedcolor = document.getElementById("changedColor");
+
+selectedcolor.addEventListener('input', () => {
+  const selectColor = selectedcolor.value;
+  changedcolor.style.backgroundColor = selectColor;
+});
+// 색상 선택 끝

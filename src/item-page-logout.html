@@ -8,22 +8,19 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <script src="./item-page.js"></script>
-  <script src="./index.js"></script>
   <title>item-page</title>
 </head>
 <body>
   <header>
     <nav class="nav-bar">
-        <div class="nav-bar-items">
-          <div class="nav-bar-comp-name"><a href="./main-page-logout.html" class="btn"  style="color: black;">부엉이 신발장</a></div>
-          <div class="nav-bar-menu">
-            <button class="btn search-btn" onclick="SearchPopupOpen()"><img src="./img/search.svg" alt=""></button>
-            <button class="btn nav-btn" onclick="SigninPopupOpen()"> SIGNIN </button>
-            <button class="btn nav-btn" onclick="LoginPopupOpen()"> LOGIN </button>
-          </div>
+      <div class="nav-bar-items">
+        <div class="nav-bar-comp-name"><a href="./main-page-logout.html" class="btn" style="color: black;">부엉이 신발장</a></div>
+        <div class="nav-bar-menu">
+          <button class="btn search-btn" onclick="SearchPopupOpen()"><img src="./img/search.svg" alt=""></button>
+          <button class="btn nav-btn" onclick="SigninPopupOpen()"> SIGNIN </button>
+          <button class="btn nav-btn" onclick="LoginPopupOpen()"> LOGIN </button>
         </div>
+      </div>
     </nav>
   </header>
   <section class="item-top-container">
@@ -31,9 +28,9 @@
     <div class="item-container">
       <div class="item-summary">
         <ul>
-        <li class="item-name">Owl AirShose</li>
-        <li class="item-price">100만 깃털</li>
-        <li class="item-color">이미지</li>
+        <li class="item-name">Owl AirFly</li>
+        <li class="item-price">10만 깃털</li>
+        <li class="item-color"></li>
         </ul>   
       </div>
     </div>
@@ -41,110 +38,129 @@
     <div class="item-order-container">
       <p style="font-weight: bold;">사이즈 옵션</p>
       <div class="size-option">
-        <button class="size-option-btn">245</button>
-        <button class="size-option-btn">250</button>
-        <button class="size-option-btn">255</button>
-        <button class="size-option-btn">260</button>
-        <button class="size-option-btn">265</button>
-        <button class="size-option-btn">270</button>
-        <button class="size-option-btn">275</button>
-        <button class="size-option-btn">280</button>
-        <button class="size-option-btn">295</button>
+        <button class="size-option-btn" onclick="selectSize(245)">245</button>
+        <button class="size-option-btn" onclick="selectSize(250)">250</button>
+        <button class="size-option-btn" onclick="selectSize(255)">255</button>
+        <button class="size-option-btn" onclick="selectSize(260)">260</button>
+        <button class="size-option-btn" onclick="selectSize(265)">265</button>
+        <button class="size-option-btn" onclick="selectSize(270)">270</button>
+        <button class="size-option-btn" onclick="selectSize(275)">275</button>
+        <button class="size-option-btn" onclick="selectSize(280)">280</button>
+        <button class="size-option-btn" onclick="selectSize(295)">295</button>
       </div>
       <br/>
       <div class="color-option">
         <p style="font-weight: bold;">컬러 옵션</p>
-        <input type="color">
+        <input type="color" id="selectedColor">
       </div>
       <div class="chosen-option">
         <p style="font-weight: bold;">선택된 옵션</p>
-        <p>Size : 어쩌구</p>
-        <p>색상 : 어쩌구</p>
+        <span id="selectedSize">Size : </span>
+        <div class="selectedcolor-box">
+          <p>색상 : <div id="changedColor"></div></p>
+        </div>
       </div>
       <div class="decision">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
-            <path id="heart" d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" id="Like"/>
+        <div class="like">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi" viewBox="0 0 16 16" id="heart">
+            <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
           </svg>
-        <img src="./img/shopping cart.png" alt="장바구니">
+        </div>
+        <div class="wishlist"><img src="./img/shopping cart.png" alt="장바구니"></div>
       </div>
   </section>
   <main class="item-bottom-container">
+    <section class="popup-background search-popup-background">
+      <div class="popup search-popup">
+        <div class="btn" onclick="SearchPopupClose()">X</div>
+        <div class="search-box">
+          <input type="text" id="search-input">
+          <a href="./category-page-logout.html"><img src="./img/search.svg" alt=""></a>
+        </div>
+      </div>
+    </section>
+    <section class="popup-background login-popup-background">
+      <div class="popup login-popup">
+        <div class="popup-close-btn">
+          <div class="btn" onclick="LoginPopupClose()">X</div>
+        </div>
+        <div class="ID-box">
+          <p>아이디</p>
+          <input type="text" class="auth-box-ID">
+        </div>
+        <div id="PW-box">
+          <p>비밀번호</p>
+          <input type="password" class="auth-box-ID">
+        </div>
+        <a href="./item-page-login.html" class="btn auth-btn">로그인</a>
+        <div class="auto-login-btn-box">
+          자동로그인
+          <div class="auto-login-toggle-btn">
+            <input type="checkbox" id="toggle" hidden> 
+            <label for="toggle" class="toggleSwitch">
+              <span class="toggleButton"></span>
+            </label>
+          </div>
+        </div>
+        <div class="find-box">
+          아이디, 비밀번호를 잃어버리셨나요?<br>
+          <div class="find-btn-box">
+            <div class="find-btn"><a href="#" class="btn">아이디 찾기</a></div>
+            <div class="find-btn"><a href="#" class="btn">비밀번호 찾기</a></div>
+          </div>
+        </div>
+        <div class="signin-btn-box">
+          아직 부엉이랑 친구가 아닌가요?
+          <button class="btn" onclick="SigninPopupOpen(), LoginPopupClose()">부엉이랑 친구하기</button>
+        </div>
+      </div>
+    </section>
+    <section class="popup-background signin-popup-background">
+      <div class="popup signin-popup">
+        <div class="popup-close-btn">
+          <div class="btn" onclick="SigninPopupClose()">X</div>
+        </div>
+        <div id="name-box" class="ID-box">
+          <p>이름</p>
+          <input type="text" class="auth-box-ID">
+        </div>
+        <div id="signin-ID-box" class="ID-box">
+          <p>아이디</p>
+          <input type="text" class="auth-box-ID">
+        </div>
+        <div id="signin-PW-box" class="PW-box">
+          <p>비밀번호</p>
+          <input type="password" class="auth-box-ID">
+        </div>
+        <div id="PW-check-box" class="PW-box">
+          <p>비밀번호 확인</p>
+          <input type="password" class="auth-box-ID">
+        </div>
+        <button class="btn" onclick="SigninPopupClose(), LoginPopupOpen()">부엉이랑 친구하기</button>
+      </div>
+    </section>
+    <section class="popup-background search-popup-background">
+      <div class="popup search-popup">
+        <div class="btn" onclick="SearchPopupClose()">X</div>
+        <div class="search-box">
+          <input type="text" id="search-input">
+          <a href="./category-page-login.html"><img src="./img/search.svg" alt=""></a>
+        </div>
+      </div>
+    </section>
     <header>
-      <p>상세정보</p>
-      <p>리뷰</p>
+      <button class="more-info-select selected" onclick="select()">상세정보</button>
+      <button class="review-select" onclick="select()" >리뷰</button>
     </header>
     <section class="item-details">
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim quos veritatis alias aliquid id fugit perferendis, omnis repudiandae molestias magni neque necessitatibus ex repellat sunt impedit debitis, ea consequatur quod voluptate eligendi iste illum minus? Laborum sed labore, sunt maxime itaque at nemo ratione nobis vero nesciunt enim? Nam, pariatur.</p>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident iusto quae ratione, maiores fuga doloremque quidem hic eligendi consequuntur dicta atque temporibus fugiat saepe nemo porro dolorum nihil blanditiis voluptas at reprehenderit. Explicabo ullam odio at necessitatibus ipsum ab, temporibus eveniet nostrum quaerat quisquam architecto, illum sapiente eligendi deleniti ut molestiae eum. Voluptate, laborum provident voluptatum odio esse aliquid quae delectus laboriosam ab harum magni placeat dolores modi adipisci voluptates vel porro eaque eius veritatis! Voluptate consectetur eligendi laborum dolore quae itaque ipsa dolorum, corrupti dolores, expedita fugiat velit et porro excepturi minima veniam ut a cum eaque? Dolor illo, inventore laboriosam deserunt distinctio possimus quas nam. Cumque omnis incidunt ipsam non molestiae, exercitationem sint delectus in labore, atque veniam dolor explicabo molestias tempora maxime assumenda placeat tempore accusantium, quibusdam sit voluptates doloribus. Autem ratione, quisquam veniam perferendis veritatis sapiente itaque deleniti nihil tempora placeat possimus, minima maiores impedit voluptatum eligendi. Nemo et minus dicta nihil inventore, recusandae mollitia aliquid iste rerum corporis repudiandae dolores maxime excepturi unde fugiat culpa laudantium modi. Laboriosam sapiente doloremque adipisci necessitatibus molestias aliquid debitis eveniet quaerat quasi saepe rerum, nobis ad ex nemo illum laudantium consequatur ut dolorum id corrupti nesciunt non? Sit quos harum fugiat autem placeat minima quia iusto, cumque quam delectus, vel ipsum? Aliquam doloremque sint sed officia doloribus vero ut numquam tenetur quibusdam, nulla minus aperiam ab a fuga alias assumenda animi magnam labore consequatur nobis dolorem ipsa incidunt quidem vel. Quam facere, minus perspiciatis odit illo soluta eum quisquam ipsam deserunt nemo facilis aliquam esse cupiditate officia pariatur incidunt unde error atque? Quam necessitatibus at officia soluta corrupti est ad earum perspiciatis accusantium nihil quisquam blanditiis, harum autem molestias enim nulla suscipit dolor nisi! Libero, eligendi. Impedit, officia magnam dolor ducimus illo facere ea commodi eligendi dolores sint omnis!</p>
+    </section>
+    <section class="review">
+      <p>우왕 부엉이 짱 선물 고마워~~~</p>
     </section>
   </main>
-  <section class="popup-background search-popup-background">
-    <div class="popup search-popup">
-      <div class="btn" onclick="SearchPopupClose()">X</div>
-      <div class="search-box">
-        <input type="text" id="search-input">
-        <a href="./category-page-logout.html"><img src="./img/search.svg" alt=""></a>
-      </div>
-    </div>
-  </section>
-  <section class="popup-background login-popup-background">
-    <div class="popup login-popup">
-      <div class="popup-close-btn">
-        <div class="btn" onclick="LoginPopupClose()">X</div>
-      </div>
-      <div class="ID-box">
-        <p>아이디</p>
-        <input type="text" class="auth-box-ID">
-      </div>
-      <div id="PW-box">
-        <p>비밀번호</p>
-        <input type="password" class="auth-box-ID">
-      </div>
-      <a href="./item-page-login.html" class="btn auth-btn">로그인</a>
-      <div class="auto-login-btn-box">
-        자동로그인
-        <div class="auto-login-toggle-btn">
-          <input type="checkbox" id="toggle" hidden> 
-          <label for="toggle" class="toggleSwitch">
-            <span class="toggleButton"></span>
-          </label>
-        </div>
-      </div>
-      <div class="find-box">
-        아이디, 비밀번호를 잃어버리셨나요?<br>
-        <div class="find-btn-box">
-          <div class="find-btn"><a href="#" class="btn">아이디 찾기</a></div>
-          <div class="find-btn"><a href="#" class="btn">비밀번호 찾기</a></div>
-        </div>
-      </div>
-      <div class="signin-btn-box">
-        아직 부엉랑 친구가 아닌가요?
-        <button class="btn" onclick="SigninPopupOpen(), LoginPopupClose()">부엉이랑 친구하기</button>
-      </div>
-    </div>
-  </section>
-  <section class="popup-background signin-popup-background">
-    <div class="popup signin-popup">
-      <div class="popup-close-btn">
-        <div class="btn" onclick="SigninPopupClose()">X</div>
-      </div>
-      <div id="name-box" class="ID-box">
-        <p>이름</p>
-        <input type="text" class="auth-box-ID">
-      </div>
-      <div id="signin-ID-box" class="ID-box">
-        <p>아이디</p>
-        <input type="text" class="auth-box-ID">
-      </div>
-      <div id="signin-PW-box" class="PW-box">
-        <p>비밀번호</p>
-        <input type="password" class="auth-box-ID">
-      </div>
-      <div id="PW-check-box" class="PW-box">
-        <p>비밀번호 확인</p>
-        <input type="password" class="auth-box-ID">
-      </div>
-      <button class="btn" onclick="SigninPopupClose(), LoginPopupOpen()">부엉이랑 친구하기</button>
-    </div>
-  </section>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="./item-page.js"></script>
+  <script src="./index.js"></script>
 </body>
 </html>

@@ -227,5 +227,57 @@ button {
 .auto-login-btn-box .toggleSwitch {
   margin: 0;
 }
+.btn:active{
+  transform:scale(1.3);
+}
+
+.btn:hover{
+  letter-spacing: 2px;
+  transform: scale(1.1);
+  cursor: pointer;
+}
 /* 중복코드 종료 */
 
+.bought-items{
+  background-color: green;
+  border: 2px solid brown;
+  width:100%;
+  height:auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.bought-item{
+  list-style-type: none;
+  margin-right: 20px;
+}
+.bought-item > li{
+  text-align: end;
+}
+.bought-item > button{
+  margin-right: 0px;
+}
+.bought-item-image > img{
+  width: 100px;
+  height: 100px;
+}
+
+.total-paid-price{
+  font-size: 50px;
+  text-align: center;
+  margin-top:30px;
+  padding: 40px;
+  background-color: brown;
+}
+.go-to-site{
+  margin-top:30px;
+  padding: 40px;
+  background-color: brown;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.go-to-site > a{
+  margin : 16px 0;
+}

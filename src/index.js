@@ -1,23 +1,3 @@
-// 가상 유저 만들기
-window.userInfo  = [
-  {
-    username: "이준규",
-    userpasswd: "qwer2024!",
-    userid: "ningdol"
-  },
-  {
-    username: "배동명",
-    userpasswd: "dong",
-    userid: "bae"
-  },
-  {
-    username: "김준영",
-    userpasswd: "Jun",
-    userid: "kim"
-  },
-];
-// 가상 유저 만들기 끝
-
 console.log("working");
 
 // Signin-popup, Login-popup 페이지 보이기, 숨기기 시작

@@ -191,7 +191,7 @@ function Signin() {
       let newUser = {
         username: signinName,
         userid: signinId,
-        userpw: signinPw,
+        userpasswd: signinPw,
       }
       userInfo.push(newUser);
       console.log(userInfo);

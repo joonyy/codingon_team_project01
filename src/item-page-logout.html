@@ -14,7 +14,7 @@
   <header>
     <nav class="nav-bar">
       <div class="nav-bar-items">
-        <div class="nav-bar-comp-name"><a href="./main-page-logout.html" class="btn" style="color: black;">부엉이 신발장</a></div>
+        <div class="nav-bar-comp-name"><a href="./main-page-logout.html" class="btn">부엉이 신발장</a></div>
         <div class="nav-bar-menu">
           <button class="btn search-btn" onclick="SearchPopupOpen()"><img src="./img/search.svg" alt=""></button>
           <button class="btn nav-btn" onclick="SigninPopupOpen()"> SIGNIN </button>
@@ -86,13 +86,13 @@
         </div>
         <div class="ID-box">
           <p>아이디</p>
-          <input type="text" class="auth-box-ID">
+          <input type="text" class="auth-box-ID" id="login-id">
         </div>
-        <div id="PW-box">
+        <div class="PW-box">
           <p>비밀번호</p>
-          <input type="password" class="auth-box-ID">
+          <input type="password" class="auth-box-ID" id="login-pw">
         </div>
-        <a href="./item-page-login.html" class="btn auth-btn">로그인</a>
+        <button onclick="login()" class="btn auth-btn">로그인</button>
         <div class="auto-login-btn-box">
           자동로그인
           <div class="auto-login-toggle-btn">
@@ -120,23 +120,23 @@
         <div class="popup-close-btn">
           <div class="btn" onclick="SigninPopupClose()">X</div>
         </div>
-        <div id="name-box" class="ID-box">
+        <div class="ID-box">
           <p>이름</p>
-          <input type="text" class="auth-box-ID">
+          <input type="text" class="auth-box-ID" id="signin-name">
         </div>
-        <div id="signin-ID-box" class="ID-box">
+        <div class="ID-box">
           <p>아이디</p>
-          <input type="text" class="auth-box-ID">
+          <input type="text" class="auth-box-ID" id="signin-id">
         </div>
-        <div id="signin-PW-box" class="PW-box">
+        <div class="PW-box">
           <p>비밀번호</p>
-          <input type="password" class="auth-box-ID">
+          <input type="password" class="auth-box-ID" id="signin-pw">
         </div>
-        <div id="PW-check-box" class="PW-box">
+        <div class="PW-box">
           <p>비밀번호 확인</p>
-          <input type="password" class="auth-box-ID">
+          <input type="password" class="auth-box-ID" id="signin-pw-check">
         </div>
-        <button class="btn" onclick="SigninPopupClose(), LoginPopupOpen()">부엉이랑 친구하기</button>
+        <button class="btn" onclick=Signin()>부엉이랑 친구하기</button>
       </div>
     </section>
     <header>

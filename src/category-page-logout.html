@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +11,6 @@
   <script src="./index.js"></script>
   <title>index</title>
 </head>
-<html lang="en">
   <body>
     <header>
       <nav class="nav-bar">
@@ -29,7 +28,7 @@
       <div class="popup search-popup">
         <div class="btn" onclick="SearchPopupClose()">X</div>
         <div class="search-box">
-          <input type="text" id="search-input">
+          <input type="text" id="search-input" onkeyup="search()">
           <a href="./category-page-logout.html"><img src="./img/search.svg" alt=""></a>
         </div>
       </div>
@@ -194,7 +193,7 @@
           AboutUs
           <div class="footer-text-btn-box footer-text-btn-AboutUs">
             <div class="footer-text-btn-info">
-              <a href="#">우리는 부엉씨의 가족분들이 잠든 시간에 몰래 선물해드리는 모임입니다..!
+              <a href="#">우리는 부엉씨의 친구분들이 잠든 시간에 몰래 선물해드리는 모임입니다..!
               </a>
             </div>
           </div>

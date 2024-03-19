@@ -50,10 +50,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
       if (container.scrollLeft === 0 && delta < 0) {
         // 가로 스크롤이 가장 왼쪽에 있고, 스크롤 방향이 위쪽으로 이동할 때
-        window.scrollBy({ top: delta, left: 0, behavior: 'smooth' });
+        window.scrollBy({ top: delta, left: 0});
       } else if (container.scrollLeft >= (container.scrollWidth - container.clientWidth) && delta > 0) {
         // 가로 스크롤이 가장 오른쪽에 있고, 스크롤 방향이 아래쪽으로 이동할 때
-        window.scrollBy({ top: delta, left: 0, behavior: 'smooth' });
+        window.scrollBy({ top: delta, left: 0});
       } else {
         container.scrollLeft += (delta > 0 ? 1 : -1) * 40; // 가로 스크롤 이동
       }

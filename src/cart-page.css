@@ -1,0 +1,96 @@
+/* 중복 코드 목록 */
+:root {
+  --background-color-main-page: rgba(144, 238, 144, 0.66);
+  --background-color-footer-icon : violet;
+  --background-color-list-box : lightgreen;
+  --background-color-text-btn : gray;
+  --background-color-caution-box : ivory;
+  --background-color-footer-text: rgb(84, 44, 24);
+  --background-color-login-popup-background: rgb(232, 232, 232);
+  --background-color-popup-background: rgba(0, 0, 0, 0.5);
+  --background-color-main-card: rgba(36, 168, 36, 0.516);
+  --background-color-tree-brown: rgb(84, 44, 24);
+  --color-text-btn : white;
+  --color-caution-text : rgb(143, 143, 143);
+  --color-btn: #20ad45;
+}
+
+body * {
+  font-family: "Jua", sans-serif;
+}
+
+.nav-bar{
+  display: flex;
+  height: 60px;
+  padding: 8px 0;
+  width: 100%;
+  background-color: red;
+}
+.list-box-container {
+  width: 100%;
+  padding: 0;
+  font-size: 15px;
+  display: table;
+}
+
+.list-box-item {
+  background-color: var(--background-color-list-box);
+  /* height: 50%; */
+  border: 1px solid black;
+  align-items: center;
+}
+
+.wish-list-table th {
+  display: table-cell;
+}
+
+.pay-btn{
+  background-color: #6aafe6;
+  color: #d4dfe6;
+}
+
+.pay-btn:hover {
+  background-color: red;
+  color:whitesmoke;
+  letter-spacing: 2px;
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.btn{
+  position:relative;
+  border:none;
+  display: inline-block;
+  padding: 15px 30px;
+  border-radius: 15px;
+  text-decoration: none;
+  font-weight: 600;
+  transition:0.25s;
+  text-align: center;
+}
+
+/*중복 종료*/
+
+.list-box-container{
+  display: flex;
+  justify-content: center;
+}
+
+.cart-sum{
+  border : 1px solid red;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.cart-sum > div{
+  display: flex;
+  height: 60px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.pay-cart-btn{
+  display: flex;
+  justify-content: center;
+}

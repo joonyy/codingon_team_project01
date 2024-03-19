@@ -186,7 +186,8 @@ button {
 }
 
 .category-box-item {
-  display: inline-block;
+  display: inline-flex;
+  flex-direction: column-reverse;
   background-color: var(--background-color-list-box);
   list-style-type: none;
   margin-bottom: 5px;
@@ -196,7 +197,7 @@ button {
 }
 
 .category-item-box{
-  display: flex;
+  display: inline;
   justify-content: space-between;
   flex-direction: column;
   align-items: center;
@@ -209,6 +210,10 @@ button {
 .category-box-item > img{
   object-fit: fill;
   height: 490px;
+}
+
+.category-box > a {
+  text-decoration: none;
 }
 
 .category-box-text{
@@ -412,6 +417,14 @@ height: 40px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.signin-popup {
+  justify-content: flex-start;
+}
+
+.signin-popup > * {
+  margin-top: 10px;
 }
 
 .login-popup p, .signin-popup p {
@@ -710,4 +723,238 @@ height: 40px;
 .brand-text{
   font-size: 100px;
   text-align: center;
+}
+
+.main-size-option{
+  display: flex;
+  flex-wrap:  wrap;
+  justify-content: center;
+  width:310px;
+}
+.main-size-option-btn{
+  width: 90px;
+  height: 40px;
+  border-radius: 10px;
+  margin: 2px 2px;
+}
+
+.item-top-container{
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 4px solid var(--background-color-tree-brown);
+  border-radius: 20px;
+}
+
+/* item-top-container 좌측 */
+.item-container{
+  width:400px;
+  height: 550px;;
+  background-color: red;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  background-image: url("./img/shoes1.png");
+  background-size: 100% 100%;
+  color: antiquewhite;
+}
+
+.item-summary{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  width:100%;
+  height: 70px;
+  background-color: rgba(128, 50, 50, 0.676);
+}
+
+.item-summary > ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  list-style-type: none;
+  font-size: 150%;
+  padding: 0 0 0 0;
+}
+
+/* item-top-container 우측 */
+.item-order-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 400px;
+  height: 550px;
+  background-color: var(--background-color-tree-brown);
+  text-align: center;
+  color: var(--color-btn);
+  font-size: 19px;
+}
+
+.size-option{
+  display: flex;
+  flex-wrap:  wrap;
+  justify-content: center;
+  width:350px;
+}
+
+.size-option-btn{
+  width: 100px;
+  height: 40px;
+  border-radius: 10px;
+  margin: 2px 2px;
+}
+
+.selectedcolor-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.color-option{
+  display: flex;
+  align-items: center;
+  width: 350px;
+  justify-content: space-around;
+}
+
+.color-option > input{
+  width:180px;
+}
+
+#changedColor {
+  margin-left: 10px;
+  width: 50px;
+  height: 20px;
+  border: 2px solid white;
+  border-radius: 10px;
+}
+
+.chosen-option{
+  width: 350px;
+}
+
+.decision{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 15px;
+  width:350px;
+  padding: 10px 0;
+}
+
+.bi {
+  color: white;
+}
+
+.like-btn:hover {
+  cursor: pointer;
+}
+
+.bi-heart-fill{
+  color: red;
+}
+
+.decision img, .decision svg{
+  width: 50px;
+  height : 50px;
+}
+
+/* item-bottom-container */
+.item-bottom-container{
+  border:3px solid var(--background-color-tree-brown);
+  border-radius: 20px;
+  background-color: rgb(0, 160, 0);
+}
+
+.item-bottom-container > header{
+  display: flex;
+  justify-content: space-around;
+  height: 50px;
+  margin: 0;
+}
+
+.item-bottom-container > header > p{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  /* padding : 12px 0 6px 0; */
+}
+
+.item-details, .review{
+  margin: 0;
+  padding: 15px;
+}
+
+.review {
+  border-top: 2px solid var(--background-color-tree-brown);
+}
+
+.item-details > p{
+  margin: 0;
+}
+
+.review-select, .more-info-select {
+  background-color: rgb(0,94,0);
+  border: none;
+  height: 100%;
+  width: 50%;
+  border-radius: 17px;
+}
+
+.selected {
+  background-color: rgb(0, 160, 0);
+}
+
+.pay-page > section > div{
+  border: 1px solid black;
+  margin: 20px 100px;
+}
+#where{
+  width: 300px;
+}
+.pay-box{
+  display: flex;
+  flex-wrap : wrap;
+  height : 200px;
+  align-items: center;
+}
+.pay-box > div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 30%;
+}
+.pay-box > .pay-img-contain >img{
+  border: 1px solid black;
+  width:60px;
+  height:60px;
+  object-fit: contain; 
+}
+.pay-box > .pay-img-cover > img {
+  width:60px;
+  height: 60px;
+  object-fit: cover;
+}
+
+.pay{
+  display: flex;
+  justify-content: center;
+}
+
+.pay-btn{
+  background-color: #6aafe6;
+  color: #d4dfe6;
+}
+
+.pay-btn:hover {
+  background-color: red;
+  color:whitesmoke;
+  letter-spacing: 2px;
+  transform: scale(1.1);
+  cursor: pointer;
 }

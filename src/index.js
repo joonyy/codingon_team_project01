@@ -62,46 +62,73 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 // 메인페이지 카드 가로 스크롤로 세로스크롤 이동하기 끝
 
-// 찜하기 버튼 시작
-const heart = document.querySelector("#heart");
-heart.addEventListener('click', function() {
-  heart.classList.toggle("bi-heart-fill");
-});
-// 찜하기 버튼 끝
+// main-page-card 갯수 만들기 시작
+// main-card를 삽입할 부모 요소를 선택합니다.
+const numofcardcontainer = (document.querySelectorAll(".card-container")).length;
 
-// 사이즈 선택 시작
-function selectSize(size) {
-  let selectedSize = document.getElementById("selectedSize");
-  selectedSize.innerHTML = "size : " + size;
+// 새로운 main-card를 만들기 위한 함수를 정의합니다.
+for(let i=0;i<numofcardcontainer;i++) {
+  function createMainCard() {
+    const cardContainer = document.querySelectorAll(".card-container")[i];
+
+    // main-card 요소를 생성합니다.
+    const mainCard = document.createElement('div');
+    mainCard.classList.add('main-card');
+  
+    // main-card 내부의 요소들을 생성 및 추가합니다.
+    mainCard.innerHTML = `
+    <a href="./item-page-login.html">
+      <img src="./img/shoes1.png" alt="shoes1">
+    </a>
+    <div class="main-card-info-box">
+      <a href="./item-page-login.html" class="text-btn card-text-btn">
+        <div class="main-card-info main-card-info-head">
+          에어포스 1
+        </div>
+        <div class="main-card-info main-card-info-body">
+          <div class="sizes">240 245 250 255 260 265 270 275 280 285</div>
+          <div class="colors">
+            RED BLACK WHITE IVORY
+          </div>
+        </div>
+        <div class="main-card-info main-card-info-footer">
+          136,000깃털
+        </div>
+      </a>
+    </div>
+    `;
+  
+    // 새로운 main-card를 cardContainer에 추가합니다.
+    cardContainer.appendChild(mainCard);
+  }
+
+  // main-card 갯수 지정
+  const numberOfCards = 5;
+  for (let i = 0; i < numberOfCards; i++) {
+  createMainCard();
 }
-// 사이즈 선택 끝
+}
+// main-page-card 갯수
 
-// 색상 선택 시작
-const selectedcolor = document.getElementById("selectedColor");
-const changedcolor = document.getElementById("changedColor");
+// 로그인 시작
+const userId = document.querySelector("#login-id").value;
+const userPw = document.querySelector("#login-pw").value;
 
-selectedcolor.addEventListener('input', () => {
-  const selectColor = selectedcolor.value;
-  changedcolor.style.backgroundColor = selectColor;
-});
-// 색상 선택 끝
+function checklogin(id, pw) {
+  for(let i=0;i<userInfo.length;i++) {
+    if(userInfo[i].userid == userId && userInfo[i].userpasswd == userPw) {
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
+}
 
-// 상세정보 리뷰 선택 시작
-const button1 = document.getElementsByClassName("more-info-select")[0];
-const button2 = document.getElementsByClassName("review-select")[0];
+if (checklogin(userId, userPw)) {
+  window.location.href="./main-page-login.html"
+} 
 
-const section1 = document.querySelector(".item-details");
-const section2 = document.querySelector(".review");
-
-button1.addEventListener('click', () => {
-  window.scrollBy({top: section1.getBoundingClientRect().top, behavior: 'smooth'});
-  button1.classList.add("selected");
-  button2.classList.remove("selected");
-});
-
-button2.addEventListener('click', () => {
-  window.scrollBy({top: section2.getBoundingClientRect().top, behavior: 'smooth'});
-  button1.classList.remove("selected");
-  button2.classList.add("selected");
-});
-// 상세정보 리뷰 선택 끝
+else {
+  alert("아이디 혹은 비밀번호가 잘못된거 같아요!");
+}

@@ -97,7 +97,7 @@ button {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  left: 108.3%;
+  left: 106.5%;
   top: -101%;
   transform: scale(0);
   transition: all .2s ease;
@@ -312,8 +312,14 @@ button {
   width: 100%;
 }
 
+.footer-text-btn-info > ul{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
 .footer-text-btn-CS {
-  bottom: 103.5px;
+  bottom: 86px;
   right: 15%;
 }
 
@@ -420,7 +426,7 @@ height: 40px;
 }
 
 .signin-popup {
-  justify-content: flex-start;
+  justify-content: space-evenly;
 }
 
 .signin-popup > * {
@@ -573,11 +579,11 @@ height: 40px;
   left: 4px;
   transform: translateY(-50%);
   border-radius: 50%;
-  background: #000000;
+  background: #09b53f;
 }
 
 #toggle:checked ~ .toggleSwitch {
-  background: #000000;
+  background: #09b53f;
 }
 
 #toggle:checked ~ .toggleSwitch .toggleButton {
@@ -641,7 +647,7 @@ height: 40px;
 }
 /*input-box 종료*/
 
-/*  */
+/* nav-bar 시작 */
 .nav-bar{
   display: flex;
   height: 60px;
@@ -667,70 +673,16 @@ height: 40px;
   justify-content: flex-end;
   align-items: center;
 }
+/* nav-bar 종료 */
 
-/* 로고 */
-.nav-bar-logo {
-  display: inline-block;
-  height: 100%;
-  width: 60px;
-  margin-left: 2%;
-}
-
-.nav-bar-logo img{
-  display: inline-block;
-  height: 100%;
-  width: 100%;
-}
-
-/* 브랜드명 */
-.center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.nav-bar-comp-name > a{
-  color: white;
-}
-
-/* 우측상단메뉴 */
-.nav-bar-menu :not(:first-child){
-  margin-left: 3%;
-}
-
-/* 배경 */
-.back{
-  background-image: url("./images/sample_01.jpg");
-  
-  /* background-color: red; */
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-  
-}
-
-/* footer */
-.footer{
-  text-align: center;
-  margin-top: 20px auto;
-}
-.footer a{
-  margin:0 10px;
-  text-decoration: none;
-}
-/*footer 종료*/
-
-/*brand-text 시작*/
-.brand-text{
-  font-size: 100px;
-  text-align: center;
-}
-
+/* size-option-btn */
 .main-size-option{
   display: flex;
   flex-wrap:  wrap;
   justify-content: center;
   width:310px;
 }
+
 .main-size-option-btn{
   width: 90px;
   height: 40px;

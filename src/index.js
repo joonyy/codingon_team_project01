@@ -201,3 +201,17 @@ function Signin() {
     }
   }
 }
+// 로그인 종료
+
+// 엔터시 검색 시작
+document.getElementById("search-input").addEventListener("keypress", function(event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    var searchInputValue = document.getElementById("search-input").value;
+    if (searchInputValue.trim() !== "") {
+      var searchUrl = "./category-page-logout.html?q=" + encodeURIComponent(searchInputValue);
+      window.location.href = searchUrl;
+    }
+  }
+});
+// 엔터시 검색 종료

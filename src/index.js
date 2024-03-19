@@ -1,3 +1,23 @@
+// 가상 유저 만들기
+window.userInfo  = [
+  {
+    username: "이준규",
+    userpasswd: "qwer2024!",
+    userid: "ningdol"
+  },
+  {
+    username: "배동명",
+    userpasswd: "dong",
+    userid: "bae"
+  },
+  {
+    username: "김준영",
+    userpasswd: "Jun",
+    userid: "kim"
+  },
+];
+// 가상 유저 만들기 끝
+
 console.log("working");
 
 // Signin-popup, Login-popup 페이지 보이기, 숨기기 시작
@@ -105,30 +125,79 @@ for(let i=0;i<numofcardcontainer;i++) {
   // main-card 갯수 지정
   const numberOfCards = 5;
   for (let i = 0; i < numberOfCards; i++) {
-  createMainCard();
-}
-}
+    createMainCard();
+  }
+} 
 // main-page-card 갯수
 
 // 로그인 시작
-const userId = document.querySelector("#login-id").value;
-const userPw = document.querySelector("#login-pw").value;
-
-function checklogin(id, pw) {
+function checklogin(userId, userPw) {
   for(let i=0;i<userInfo.length;i++) {
-    if(userInfo[i].userid == userId && userInfo[i].userpasswd == userPw) {
+    if(userInfo[i].userid === userId && userInfo[i].userpasswd === userPw) {
       return true;
     }
+  }
+  return false;
+}
+
+function login() {
+  const userId = document.querySelector("#login-id").value;
+  const userPw = document.querySelector("#login-pw").value;
+
+  if (checklogin(userId, userPw)) {
+    window.location.href="./main-page-login.html"
+  } 
+  
+  else {
+    alert("아이디 혹은 비밀번호가 잘못된거 같아요!");
+  }
+}
+
+function SigninCheck(signinName, signinId, signinPw, signinPwCheck) {
+  for(let i=0;i<userInfo.length;i++) {
+    if(userInfo[i].userid == signinId) {
+      console.log(userInfo[i].userid);
+      console.log(signinId);
+      return 1;
+    }
+    else if(signinPw != signinPwCheck) {
+      return 2;
+    }
     else {
-      return false;
+      return 3;
     }
   }
 }
 
-if (checklogin(userId, userPw)) {
-  window.location.href="./main-page-login.html"
-} 
+function Signin() {
+  const signinName = document.querySelector("#signin-name").value;
+  const signinId = document.querySelector("#signin-id").value;
+  const signinPw = document.querySelector("#signin-pw").value;
+  const signinPwCheck = document.querySelector("#signin-pw-check").value;
 
-else {
-  alert("아이디 혹은 비밀번호가 잘못된거 같아요!");
+  switch(SigninCheck(signinName, signinId, signinPw, signinPwCheck)) {
+    case 1: {
+      window.alert("이미 동일한 아이디를 사용중이에요...");
+      break;
+    }
+
+    case 2: {
+      window.alert("비밀번호를 다시 확인해주세요!");
+      break;
+    }
+
+    case 3: {
+      window.alert("넌 이제 내친구!");
+      let newUser = {
+        username: signinName,
+        userid: signinId,
+        userpw: signinPw,
+      }
+      userInfo.push(newUser);
+      console.log(userInfo);
+      SigninPopupClose();
+      LoginPopupOpen();
+      break;
+    }
+  }
 }

@@ -9,7 +9,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
   <script defer src="./index.js"></script>
-  <script defer src="./user-info/user-info.js"></script>
   <title>index</title>
 </head>
 <body  class="main-page">
@@ -48,7 +47,7 @@
           <p>비밀번호</p>
           <input type="password" class="auth-box-ID" id="login-pw">
         </div>
-        <button onclick="checklogin()" class="btn auth-btn">로그인</button>
+        <button onclick="login()" class="btn auth-btn">로그인</button>
         <div class="auto-login-btn-box">
           자동로그인
           <div class="auto-login-toggle-btn">
@@ -78,7 +77,7 @@
         </div>
         <div class="ID-box">
           <p>이름</p>
-          <input type="text" class="auth-box-ID" id="sigin-name">
+          <input type="text" class="auth-box-ID" id="signin-name">
         </div>
         <div class="ID-box">
           <p>아이디</p>
@@ -90,9 +89,9 @@
         </div>
         <div class="PW-box">
           <p>비밀번호 확인</p>
-          <input type="password" class="auth-box-ID">
+          <input type="password" class="auth-box-ID" id="signin-pw-check">
         </div>
-        <button class="btn" onclick="SigninPopupClose(), LoginPopupOpen()">부엉이랑 친구하기</button>
+        <button class="btn" onclick=Signin()>부엉이랑 친구하기</button>
       </div>
     </section>
     <section class="main-page-text-box">

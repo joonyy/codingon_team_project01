@@ -37,3 +37,16 @@ function SearchPopupClose() {
   LoginPopup.style.opacity = '0';
 }
 // Signin-popup, Login-popup 페이지 보이기, 숨기기 끝
+
+
+function FavoritePopupOpen() {
+    var FavoritePopupOpen = document.querySelector('.list-popup-background');
+    FavoritePopupOpen.style.visibility = "visible";
+    FavoritePopupOpen.style.opacity = '1';
+}
+
+function FavoritePopupClose() {
+    var FavoritePopupOpen = document.querySelector('.list-popup-background');
+    FavoritePopupOpen.style.visibility = "hidden";
+    FavoritePopupOpen.style.opacity = '0';
+}

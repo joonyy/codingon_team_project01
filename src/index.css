@@ -97,8 +97,8 @@ button {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  left: 106.5%;
-  top: -101%;
+  left: 335px;
+  bottom: 535px;
   transform: scale(0);
   transition: all .2s ease;
   z-index: 999;

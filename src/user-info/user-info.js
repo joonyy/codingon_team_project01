@@ -1,4 +1,4 @@
-let userInfo  = [
+window.userInfo  = [
   {
     username: "이준규",
     userpasswd: "qwer2024!",

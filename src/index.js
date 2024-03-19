@@ -105,108 +105,93 @@ for(let i=0;i<numofcardcontainer;i++) {
   // main-card 갯수 지정
   const numberOfCards = 5;
   for (let i = 0; i < numberOfCards; i++) {
-  createMainCard();
-}
-}
+    createMainCard();
+  }
+} 
 // main-page-card 갯수
 
 // 로그인 시작
-const userId = document.querySelector("#login-id").value;
-const userPw = document.querySelector("#login-pw").value;
-
-function checklogin(id, pw) {
+function checklogin(userId, userPw) {
   for(let i=0;i<userInfo.length;i++) {
-    if(userInfo[i].userid == userId && userInfo[i].userpasswd == userPw) {
+    if(userInfo[i].userid === userId && userInfo[i].userpasswd === userPw) {
       return true;
     }
+  }
+  return false;
+}
+
+function login() {
+  const userId = document.querySelector("#login-id").value;
+  const userPw = document.querySelector("#login-pw").value;
+
+  if (checklogin(userId, userPw)) {
+    window.location.href="./main-page-login.html"
+  } 
+  
+  else {
+    alert("아이디 혹은 비밀번호가 잘못된거 같아요!");
+  }
+}
+
+function SigninCheck(signinName, signinId, signinPw, signinPwCheck) {
+  for(let i=0;i<userInfo.length;i++) {
+    if(userInfo[i].userid == signinId) {
+      console.log(userInfo[i].userid);
+      console.log(signinId);
+      return 1;
+    }
+    else if(signinPw != signinPwCheck) {
+      return 2;
+    }
     else {
-      return false;
+      return 3;
     }
   }
 }
 
-if (checklogin(userId, userPw)) {
-  window.location.href="./main-page-login.html"
-} 
+function Signin() {
+  const signinName = document.querySelector("#signin-name").value;
+  const signinId = document.querySelector("#signin-id").value;
+  const signinPw = document.querySelector("#signin-pw").value;
+  const signinPwCheck = document.querySelector("#signin-pw-check").value;
 
-else {
-  alert("아이디 혹은 비밀번호가 잘못된거 같아요!");
-}
+  switch(SigninCheck(signinName, signinId, signinPw, signinPwCheck)) {
+    case 1: {
+      window.alert("이미 동일한 아이디를 사용중이에요...");
+      break;
+    }
 
-function confirmed(){
-  if(document.getElementById('where').value === "") {
-    alert('주소를 입력하세요!')
-  };
-  if(document.getElementById('who').value===""){
-    alert("이름을 입력하세요!")
-  };
+    case 2: {
+      window.alert("비밀번호를 다시 확인해주세요!");
+      break;
+    }
 
-  if(document.getElementById('where').value != "" && document.getElementById('who').value!==""){
-    var ship_info = document.querySelector('.ship-info');
-    var ship_confirmed_info = document.querySelector('.ship-confirmed-info');
-    ship_info.style.visibility = "hidden";
-    ship_info.style.display="none";
-    ship_confirmed_info.style.visibility = "visible";
-    ship_confirmed_info.style.display = "flex";
-    const text = document.getElementById('where').value +" (으)로 선물해드릴게요 " + document.getElementById('who').value +"님!";
-    const newSpan = document.createElement('span');
-    newSpan.textContent=text;
-    var ship_confirmed_box = document.querySelector(".ship-confirmed-box");
-    ship_confirmed_box.innerHTML = ''; // 기존 내용 지우기
-    ship_confirmed_box.appendChild(newSpan);
-  }
-}
-// cart-page.js
-document.querySelector('#checkAll');
-
-checkAll.addEventListener('click', function(){
-  const isChecked = checkAll.checked;
-
-  if(isChecked){
-    const checkboxes = document.querySelectorAll('.check');
-
-    for(const checkbox of checkboxes){
-      checkbox.checked=true;
+    case 3: {
+      window.alert("넌 이제 내친구!");
+      let newUser = {
+        username: signinName,
+        userid: signinId,
+        userpasswd: signinPw,
+      }
+      userInfo.push(newUser);
+      console.log(userInfo);
+      SigninPopupClose();
+      LoginPopupOpen();
+      break;
     }
   }
-  else{
-    const checkboxes = document.querySelectorAll('.check');
-    for(checkbox of checkboxes){
-      checkbox.checked =false;
+}
+// 로그인 종료
+
+// 엔터시 검색 시작
+document.getElementById("search-input").addEventListener("keypress", function(event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    var searchInputValue = document.getElementById("search-input").value;
+    if (searchInputValue.trim() !== "") {
+      var searchUrl = "./category-page-logout.html?q=" + encodeURIComponent(searchInputValue);
+      window.location.href = searchUrl;
     }
   }
-})
-
-function count1(type) {
-  const resultElement = document.getElementsByClassName('quantity-result')[0];
-
-  let number = resultElement.innerText;
-  if(type==='plus') number = parseInt(number) + 1;
-  if(type==='minus') {
-    if(number>0)number = parseInt(number) -1;
-  }
-
-  resultElement.innerText = number;
-}
-function count2(type) {
-  const resultElement = document.getElementsByClassName('quantity-result')[1];
-
-  let number = resultElement.innerText;
-  if(type==='plus') number = parseInt(number) + 1;
-  if(type==='minus') {
-    if(number>0)number = parseInt(number) -1;
-  }
-
-  resultElement.innerText = number;
-}
-function count3(type) {
-  const resultElement = document.getElementsByClassName('quantity-result')[2];
-
-  let number = resultElement.innerText;
-  if(type==='plus') number = parseInt(number) + 1;
-  if(type==='minus') {
-    if(number>0)number = parseInt(number) -1;
-  }
-
-  resultElement.innerText = number;
-}
+});
+// 엔터시 검색 종료

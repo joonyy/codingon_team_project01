@@ -244,9 +244,11 @@ button {
 
 .list-box-item {
   background-color: var(--background-color-list-box);
-  /* height: 50%; */
+  height: 100px;
   border: 1px solid black;
-  align-items: center;
+}
+.list-box-item > input {
+  align-self: center;
 }
 
 .wish-list-table th {
@@ -721,7 +723,10 @@ height: 40px;
 }
 
 .cart-sum{
-  border : 1px solid red;
+  margin-top: 40px;
+  border-radius: 10px;
+  background-color: var(--background-color-tree-brown);
+  color: white;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -750,4 +755,49 @@ height: 40px;
   letter-spacing: 2px;
   transform: scale(1.1);
   cursor: pointer;
+}
+
+.list-box-item > img{
+  width:100px;
+  height:100px;
+}
+
+.wish-list-table{
+  width: 100%;
+}
+.check-item{
+  width: 5%;
+}
+
+.cart-item-image{
+  width : 15%;
+  min-width: 100px;
+}
+.cart-item-name{
+  width:40%;
+}
+.cart-item-price{
+  width:20%;
+}
+.cart-item-quantity{
+  width: 10%;
+}
+.cart-item-ship-price{
+  width:15%;
+}
+.item-quantity-counter{
+  display:flex;
+  border: 1px solid black;
+  width:calc(22.5px * 2 + 20px);
+  align-items: center;
+  justify-content: center;
+}
+.quantity-result{
+  width: 20px;
+  text-align: center;
+}
+.calc-btn{
+  border-radius: 5px;
+  background-color: var(--background-color-text-btn);
+  color:white;
 }

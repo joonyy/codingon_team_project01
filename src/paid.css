@@ -240,7 +240,7 @@ button {
 
 .bought-items{
   background-color: green;
-  border: 2px solid brown;
+  border: 3px solid var(--background-color-tree-brown);
   width:100%;
   height:auto;
   display: flex;
@@ -267,12 +267,13 @@ button {
   text-align: center;
   margin-top:30px;
   padding: 40px;
-  background-color: brown;
+  background-color: var(--background-color-tree-brown);
+  color:white;
 }
 .go-to-site{
   margin-top:30px;
   padding: 40px;
-  background-color: brown;
+  background-color: var(--background-color-tree-brown);
   display: flex;
   flex-direction: column;
   align-items: center;

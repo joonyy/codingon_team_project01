@@ -19,6 +19,10 @@ body * {
   font-family: "Jua", sans-serif;
 }
 
+body li {
+  list-style-type: none;
+}
+
 button {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -173,16 +177,19 @@ button {
 /* category-card-container 시작 */
 .category-box-container {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
 .category-box {
-  display: inline-block;
-  overflow-inline: hidden;
-  width: auto;
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
   padding: 0;
-  margin-left: 6%;
+  margin: 0 auto;
 }
 
 .category-box-item {
@@ -190,26 +197,22 @@ button {
   flex-direction: column-reverse;
   background-color: var(--background-color-list-box);
   list-style-type: none;
-  margin-bottom: 5px;
+  margin: 5px;
   width: 310px;
   height: 530px;
   border: 1px solid black;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 490px;
 }
 
 .category-item-box{
-  display: inline;
-  justify-content: space-between;
-  flex-direction: column;
-  align-items: center;
+  display: flex;
+  padding: 0 auto;
 }
 
 .category-box-item:hover{
   border:2px green solid;
-}
-
-.category-box-item > img{
-  object-fit: fill;
-  height: 490px;
 }
 
 .category-box a {

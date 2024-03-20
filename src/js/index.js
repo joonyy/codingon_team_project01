@@ -85,8 +85,10 @@ function createMainCard(i) {
   mainCard.classList.add('main-card');
 
   const nowlocation = window.location.pathname;
+  const nowpage = nowlocation.split("/");
+
   // main-card 내부의 요소들을 생성 및 추가합니다.
-  if(nowlocation.lastIndexOf("main-page-login.html")) {
+  if(nowpage[nowpage.length - 1] === "main-page-login.html") {
     mainCard.innerHTML = ` 
     <a href="item-page-login.html">
       <img src="../img/shoes${maincardno}.png" alt="shoes${maincardno}">
@@ -108,7 +110,7 @@ function createMainCard(i) {
       </a>
     </div>`;
   }
-  else if(nowlocation.lastIndexOf("main-page-logout.html")) {
+  else if(nowpage[nowpage.length - 1] === "main-page-logout.html") {
     mainCard.innerHTML = `
     <a href="item-page-logout.html">
       <img src="../img/shoes${maincardno}.png" alt="shoes${maincardno}">
@@ -139,7 +141,7 @@ function createitemCard(i) {
   const itemContainer = document.querySelector(".category-box");
 
   // category-card 요소를 생성합니다.
-  const itemCard = document.createElement('span');
+  const itemCard = document.createElement('li');
 
   // 현재 주소 불러오기
   const nowlocation = window.location.pathname;
@@ -147,24 +149,24 @@ function createitemCard(i) {
   if(nowlocation.lastIndexOf("category-page-login.html")) {
     itemCard.innerHTML = `
     <a href="item-page-login.html">
-      <li class="category-box-item" style="background-image:url(../img/shoes${i+1}.png)">
+      <div class="category-box-item" style="background-image:url(../img/shoes${i+1}.png)">
         <div class="category-box-text">
           <div class="card-price">100만원</div>
           <div class="card-name">신발이름!</div>
         </div>
-      </li>
+      </div>
     </a>
     `;
   } 
   else if (nowlocation.lastIndexOf("category-page-logout.html")) {
     itemCard.innerHTML = `
     <a href="item-page-logout.html">
-      <li class="category-box-item" style="background-image:url(../img/shoes${i+1}.png)">
+      <div class="category-box-item" style="background-image:url(../img/shoes${i+1}.png)">
         <div class="category-box-text">
           <div class="card-price">100만원</div>
           <div class="card-name">신발이름!</div>
         </div>
-      </li>
+      </div>
     </a>
   `;
   }
@@ -194,7 +196,8 @@ function login() {
   const userPw = document.querySelector("#login-pw").value;
 
   if (checklogin(userId, userPw)) {
-    window.location.href="../pages/main-page-login.html"
+    const loginpage = window.location
+    window.location.href="main-page-login.html"
   } 
   
   else {
@@ -202,7 +205,7 @@ function login() {
   }
 }
 
-function SigninCheck(signinName, signinId, signinPw, signinPwCheck) {
+function SigninCheck(signinId, signinPw, signinPwCheck) {
   for(let i=0;i<userInfo.length;i++) {
     if(userInfo[i].userid == signinId) {
       console.log(userInfo[i].userid);
@@ -224,7 +227,7 @@ function Signin() {
   const signinPw = document.querySelector("#signin-pw").value;
   const signinPwCheck = document.querySelector("#signin-pw-check").value;
 
-  switch(SigninCheck(signinName, signinId, signinPw, signinPwCheck)) {
+  switch(SigninCheck(signinId, signinPw, signinPwCheck)) {
     case 1: {
       window.alert("이미 동일한 아이디를 사용중이에요...");
       break;
@@ -253,12 +256,12 @@ function Signin() {
 // 로그인 종료
 
 // 엔터시 검색 시작
-document.getElementById("search-input").addEventListener("keypress", function(event) {
+document.querySelector("#search-input").addEventListener("keypress", function(event) {
   if (event.keyCode === 13) {
     event.preventDefault();
     var searchInputValue = document.getElementById("search-input").value;
     if (searchInputValue.trim() !== "") { 
-      var searchUrl = "./category-page-logout.html?q=" + encodeURIComponent(searchInputValue);
+      var searchUrl = "category-page-logout.html?q=" + encodeURIComponent(searchInputValue);
       window.location.href = searchUrl;
     }
   }

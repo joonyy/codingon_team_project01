@@ -1,17 +1,17 @@
 window.userInfo  = [
   {
     username: "이준규",
+    userid: "ningdol",
     userpasswd: "qwer2024!",
-    userid: "ningdol"
   },
   {
     username: "배동명",
+    userid: "bae",
     userpasswd: "dong",
-    userid: "bae"
   },
   {
     username: "김준영",
+    userid: "kim",
     userpasswd: "Jun",
-    userid: "kim"
   },
 ];

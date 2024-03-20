@@ -68,14 +68,17 @@ const numofcardcontainer = document.querySelectorAll(".card-container").length;
 const numberOfCards = 5;
 
 // 새로운 main-card를 만들기 위한 함수를 정의합니다.
-for(let i=1;i<=numofcardcontainer;i++) {
+let maincardno = 1;
+
+for(let i=0;i<numofcardcontainer;i++) {
   for(let j=1;j<=numberOfCards;j++) {
-    createMainCard(i, j);
+    createMainCard(i);
+    maincardno++;
   }
 }
 
-function createMainCard(i, j) {
-  const cardContainer = document.querySelectorAll(".card-container")[i-1];
+function createMainCard(i) {
+  const cardContainer = document.querySelectorAll(".card-container")[i];
 
   // main-card 요소를 생성합니다.
   const mainCard = document.createElement('div');
@@ -83,10 +86,10 @@ function createMainCard(i, j) {
 
   const nowlocation = window.location.pathname;
   // main-card 내부의 요소들을 생성 및 추가합니다.
-  if(nowlocation == "/codingon_team_project01/src/pages/main-page-login.html") {
+  if(nowlocation.lastIndexOf("main-page-login.html")) {
     mainCard.innerHTML = ` 
     <a href="item-page-login.html">
-      <img src="../img/shoes${i*j}.png" alt="shoes${i*j}">
+      <img src="../img/shoes${maincardno}.png" alt="shoes${maincardno}">
     </a>
     <div class="main-card-info-box">
       <a href="item-page-login.html" class="text-btn card-text-btn">
@@ -105,10 +108,10 @@ function createMainCard(i, j) {
       </a>
     </div>`;
   }
-  else if(nowlocation == "/codingon_team_project01/src/pages/main-page-logout.html") {
+  else if(nowlocation.lastIndexOf("main-page-logout.html")) {
     mainCard.innerHTML = `
     <a href="item-page-logout.html">
-      <img src="../img/shoes${i*j}.png" alt="shoes${i*j}">
+      <img src="../img/shoes${maincardno}.png" alt="shoes${maincardno}">
     </a>
     <div class="main-card-info-box">
       <a href="item-page-logout.html" class="text-btn card-text-btn">
@@ -132,7 +135,7 @@ function createMainCard(i, j) {
 // main-page-card 갯수 만들기 끝
 
 // category-page-card 갯수 만들기 시작
-function createitemCard() {
+function createitemCard(i) {
   const itemContainer = document.querySelector(".category-box");
 
   // category-card 요소를 생성합니다.
@@ -141,10 +144,10 @@ function createitemCard() {
   // 현재 주소 불러오기
   const nowlocation = window.location.pathname;
 
-  if(nowlocation === "/codingon_team_project01/src/pages/category-page-login.html") {
+  if(nowlocation.lastIndexOf("category-page-login.html")) {
     itemCard.innerHTML = `
     <a href="item-page-login.html">
-      <li class="category-box-item" style="background-image:url(../img/shoes.svg)">
+      <li class="category-box-item" style="background-image:url(../img/shoes${i+1}.png)">
         <div class="category-box-text">
           <div class="card-price">100만원</div>
           <div class="card-name">신발이름!</div>
@@ -153,10 +156,10 @@ function createitemCard() {
     </a>
     `;
   } 
-  else if (nowlocation === "/codingon_team_project01/src/pages/category-page-logout.html") {
+  else if (nowlocation.lastIndexOf("category-page-logout.html")) {
     itemCard.innerHTML = `
     <a href="item-page-logout.html">
-      <li class="category-box-item" style="background-image:url(../img/shoes.svg)">
+      <li class="category-box-item" style="background-image:url(../img/shoes${i+1}.png)">
         <div class="category-box-text">
           <div class="card-price">100만원</div>
           <div class="card-name">신발이름!</div>
@@ -172,7 +175,7 @@ function createitemCard() {
 // category-card 갯수 지정
 const numberofcategory = 10;
 for (let i = 0; i < numberofcategory; i++)   {
-  createitemCard();
+  createitemCard(i);
 }
 // item-page-card 갯수 만들기 끝
 

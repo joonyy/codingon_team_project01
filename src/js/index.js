@@ -51,10 +51,14 @@ document.addEventListener("DOMContentLoaded", function() {
       if (container.scrollLeft === 0 && delta < 0) {
         // 가로 스크롤이 가장 왼쪽에 있고, 스크롤 방향이 위쪽으로 이동할 때
         window.scrollBy({ top: delta, left: 0});
-      } else if (container.scrollLeft >= (container.scrollWidth - container.clientWidth) && delta > 0) {
+      } 
+
+      else if (container.scrollLeft >= (container.scrollWidth - container.clientWidth) && delta > 0) {
         // 가로 스크롤이 가장 오른쪽에 있고, 스크롤 방향이 아래쪽으로 이동할 때
         window.scrollBy({ top: delta, left: 0});
-      } else {
+      } 
+
+      else {
         container.scrollLeft += (delta > 0 ? 1 : -1) * 40; // 가로 스크롤 이동
       }
     });
@@ -67,7 +71,6 @@ document.addEventListener("DOMContentLoaded", function() {
 const numofcardcontainer = (document.querySelectorAll(".card-container")).length;
 
 // 새로운 main-card를 만들기 위한 함수를 정의합니다.
-for(let i=0;i<numofcardcontainer;i++) {
   function createMainCard() {
     const cardContainer = document.querySelectorAll(".card-container")[i];
 
@@ -76,12 +79,39 @@ for(let i=0;i<numofcardcontainer;i++) {
     mainCard.classList.add('main-card');
   
     // main-card 내부의 요소들을 생성 및 추가합니다.
-    mainCard.innerHTML = `
-    <a href="/src/pages/item-page-login.html">
-      <img src="/src/img/shoes1.png" alt="shoes1">
+    const nowlocation = window.location.pathname;
+    console.log(nowlocation);
+
+    if(nowlocation === "/codingon_team_project01/src/pages/main-page-login.html") {
+      mainCard.innerHTML = `
+      <a href="./item-page-logout.html">
+      <img src="../img/shoes1.png" alt="shoes1">
     </a>
     <div class="main-card-info-box">
-      <a href="/src/pages/item-page-login.html" class="text-btn card-text-btn">
+    <a href="./item-page-logout.html" class="text-btn card-text-btn">
+      <div class="main-card-info main-card-info-head">
+        에어포스 1
+      </div>
+      <div class="main-card-info main-card-info-body">
+        <div class="sizes">240 245 250 255 260 265 270 275 280 285</div>
+        <div class="colors">
+          RED BLACK WHITE IVORY
+        </div>
+      </div>
+      <div class="main-card-info main-card-info-footer">
+        136,000깃털
+      </div>
+    </a>
+  </div>
+      `;
+    } 
+    else if (nowlocation === "/codingon_team_project01/src/pages/main-page-logout.html") {
+      mainCard.innerHTML = `
+      <a href="./item-page-logout.html">
+        <img src="../img/shoes1.png" alt="shoes1">
+      </a>
+      <div class="main-card-info-box">
+      <a href="./item-page-logout.html" class="text-btn card-text-btn">
         <div class="main-card-info main-card-info-head">
           에어포스 1
         </div>
@@ -97,18 +127,65 @@ for(let i=0;i<numofcardcontainer;i++) {
       </a>
     </div>
     `;
-  
+    }
     // 새로운 main-card를 cardContainer에 추가합니다.
     cardContainer.appendChild(mainCard);
   }
 
   // main-card 갯수 지정
-  const numberOfCards = 5;
-  for (let i = 0; i < numberOfCards; i++) {
-    createMainCard();
+  for(let i=0;i<numofcardcontainer.length;i++){
+    const numberOfCards = 5;
+    for (let i = 0; i < numberOfCards; i++) {
+      createMainCard();
+    }
   }
-} 
-// main-page-card 갯수
+// main-page-card 갯수 만들기 끝
+
+// category-page-card 갯수 만들기 시작
+function createitemCard() {
+  const itemContainer = document.querySelector(".category-box");
+
+  // category-card 요소를 생성합니다.
+  const itemCard = document.createElement('span');
+
+  // 현재 주소 불러오기
+  const nowlocation = window.location.pathname;
+  console.log(nowlocation);
+
+  if(nowlocation === "/codingon_team_project01/src/pages/category-page-login.html") {
+    itemCard.innerHTML = `
+    <a href="item-page-login.html">
+      <li class="category-box-item" style="background-image:url(../img/shoes.svg)">
+        <div class="category-box-text">
+          <div class="card-price">100만원</div>
+          <div class="card-name">신발이름!</div>
+        </div>
+      </li>
+    </a>
+    `;
+  } 
+  else if (nowlocation === "/codingon_team_project01/src/pages/category-page-logout.html") {
+    itemCard.innerHTML = `
+    <a href="item-page-logout.html">
+      <li class="category-box-item" style="background-image:url(../img/shoes.svg)">
+        <div class="category-box-text">
+          <div class="card-price">100만원</div>
+          <div class="card-name">신발이름!</div>
+        </div>
+      </li>
+    </a>
+  `;
+  }
+  // 새로운 main-card를 cardContainer에 추가합니다.
+  itemContainer.appendChild(itemCard);
+}
+
+// main-card 갯수 지정
+const numberOfCards = 10;
+for (let i = 0; i < numberOfCards; i++) {
+  createitemCard();
+}
+// item-page-card 갯수 만들기 끝
 
 // 로그인 시작
 function checklogin(userId, userPw) {
@@ -125,7 +202,7 @@ function login() {
   const userPw = document.querySelector("#login-pw").value;
 
   if (checklogin(userId, userPw)) {
-    window.location.href="/src/pages/main-page-login.html"
+    window.location.href="../pages/main-page-login.html"
   } 
   
   else {

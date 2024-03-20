@@ -27,7 +27,7 @@ button {
 
 .main-page {
   background-color: var(--background-color-main-page);
-  background-image: url(/src/img/background.svg);
+  background-image: url(../img/background.svg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -212,7 +212,7 @@ button {
   height: 490px;
 }
 
-.category-box > a {
+.category-box a {
   text-decoration: none;
 }
 

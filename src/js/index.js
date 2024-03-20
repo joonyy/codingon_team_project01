@@ -64,24 +64,32 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // main-page-card 갯수 만들기 시작
 // main-card를 삽입할 부모 요소를 선택합니다.
-const numofcardcontainer = (document.querySelectorAll(".card-container")).length;
+const numofcardcontainer = document.querySelectorAll(".card-container").length;
+const numberOfCards = 5;
 
 // 새로운 main-card를 만들기 위한 함수를 정의합니다.
-for(let i=0;i<numofcardcontainer;i++) {
-  function createMainCard() {
-    const cardContainer = document.querySelectorAll(".card-container")[i];
+for(let i=1;i<=numofcardcontainer;i++) {
+  for(let j=1;j<=numberOfCards;j++) {
+    createMainCard(i, j);
+  }
+}
 
-    // main-card 요소를 생성합니다.
-    const mainCard = document.createElement('div');
-    mainCard.classList.add('main-card');
-  
-    // main-card 내부의 요소들을 생성 및 추가합니다.
-    mainCard.innerHTML = `
-    <a href="/src/pages/item-page-login.html">
-      <img src="/src/img/shoes1.png" alt="shoes1">
+function createMainCard(i, j) {
+  const cardContainer = document.querySelectorAll(".card-container")[i-1];
+
+  // main-card 요소를 생성합니다.
+  const mainCard = document.createElement('div');
+  mainCard.classList.add('main-card');
+
+  const nowlocation = window.location.pathname;
+  // main-card 내부의 요소들을 생성 및 추가합니다.
+  if(nowlocation == "/codingon_team_project01/src/pages/main-page-login.html") {
+    mainCard.innerHTML = ` 
+    <a href="item-page-login.html">
+      <img src="../img/shoes${i*j}.png" alt="shoes${i*j}">
     </a>
     <div class="main-card-info-box">
-      <a href="/src/pages/item-page-login.html" class="text-btn card-text-btn">
+      <a href="item-page-login.html" class="text-btn card-text-btn">
         <div class="main-card-info main-card-info-head">
           에어포스 1
         </div>
@@ -95,20 +103,78 @@ for(let i=0;i<numofcardcontainer;i++) {
           136,000깃털
         </div>
       </a>
-    </div>
-    `;
-  
-    // 새로운 main-card를 cardContainer에 추가합니다.
-    cardContainer.appendChild(mainCard);
+    </div>`;
   }
+  else if(nowlocation == "/codingon_team_project01/src/pages/main-page-logout.html") {
+    mainCard.innerHTML = `
+    <a href="item-page-logout.html">
+      <img src="../img/shoes${i*j}.png" alt="shoes${i*j}">
+    </a>
+    <div class="main-card-info-box">
+      <a href="item-page-logout.html" class="text-btn card-text-btn">
+        <div class="main-card-info main-card-info-head">
+          에어포스 1
+        </div>
+        <div class="main-card-info main-card-info-body">
+          <div class="sizes">240 245 250 255 260 265 270 275 280 285</div>
+          <div class="colors">
+            RED BLACK WHITE IVORY
+          </div>
+        </div>
+        <div class="main-card-info main-card-info-footer">
+          136,000깃털
+        </div>
+      </a>
+    </div>`;
+  }  
+  cardContainer.appendChild(mainCard);
+}
+// main-page-card 갯수 만들기 끝
 
-  // main-card 갯수 지정
-  const numberOfCards = 5;
-  for (let i = 0; i < numberOfCards; i++) {
-    createMainCard();
+// category-page-card 갯수 만들기 시작
+function createitemCard() {
+  const itemContainer = document.querySelector(".category-box");
+
+  // category-card 요소를 생성합니다.
+  const itemCard = document.createElement('span');
+
+  // 현재 주소 불러오기
+  const nowlocation = window.location.pathname;
+
+  if(nowlocation === "/codingon_team_project01/src/pages/category-page-login.html") {
+    itemCard.innerHTML = `
+    <a href="item-page-login.html">
+      <li class="category-box-item" style="background-image:url(../img/shoes.svg)">
+        <div class="category-box-text">
+          <div class="card-price">100만원</div>
+          <div class="card-name">신발이름!</div>
+        </div>
+      </li>
+    </a>
+    `;
+  } 
+  else if (nowlocation === "/codingon_team_project01/src/pages/category-page-logout.html") {
+    itemCard.innerHTML = `
+    <a href="item-page-logout.html">
+      <li class="category-box-item" style="background-image:url(../img/shoes.svg)">
+        <div class="category-box-text">
+          <div class="card-price">100만원</div>
+          <div class="card-name">신발이름!</div>
+        </div>
+      </li>
+    </a>
+  `;
   }
-} 
-// main-page-card 갯수
+  // 새로운 main-card를 cardContainer에 추가합니다.
+  itemContainer.appendChild(itemCard);
+}
+
+// category-card 갯수 지정
+const numberofcategory = 10;
+for (let i = 0; i < numberofcategory; i++)   {
+  createitemCard();
+}
+// item-page-card 갯수 만들기 끝
 
 // 로그인 시작
 function checklogin(userId, userPw) {
@@ -125,7 +191,7 @@ function login() {
   const userPw = document.querySelector("#login-pw").value;
 
   if (checklogin(userId, userPw)) {
-    window.location.href="/src/pages/main-page-login.html"
+    window.location.href="../pages/main-page-login.html"
   } 
   
   else {
@@ -188,8 +254,8 @@ document.getElementById("search-input").addEventListener("keypress", function(ev
   if (event.keyCode === 13) {
     event.preventDefault();
     var searchInputValue = document.getElementById("search-input").value;
-    if (searchInputValue.trim() !== "") {
-      var searchUrl = "/src/pages/category-page-logout.html?q=" + encodeURIComponent(searchInputValue);
+    if (searchInputValue.trim() !== "") { 
+      var searchUrl = "./category-page-logout.html?q=" + encodeURIComponent(searchInputValue);
       window.location.href = searchUrl;
     }
   }
@@ -219,4 +285,58 @@ function confirmed(){
     ship_confirmed_box.innerHTML = ''; // 기존 내용 지우기
     ship_confirmed_box.appendChild(newSpan);
   }
+=======
+// cart-page.js
+document.querySelector('#checkAll');
+
+checkAll.addEventListener('click', function(){
+  const isChecked = checkAll.checked;
+
+  if(isChecked){
+    const checkboxes = document.querySelectorAll('.check');
+
+    for(const checkbox of checkboxes){
+      checkbox.checked=true;
+    }
+  }
+  else{
+    const checkboxes = document.querySelectorAll('.check');
+    for(checkbox of checkboxes){
+      checkbox.checked =false;
+    }
+  }
+})
+
+function count1(type) {
+  const resultElement = document.getElementsByClassName('quantity-result')[0];
+
+  let number = resultElement.innerText;
+  if(type==='plus') number = parseInt(number) + 1;
+  if(type==='minus') {
+    if(number>0)number = parseInt(number) -1;
+  }
+
+  resultElement.innerText = number;
+}
+function count2(type) {
+  const resultElement = document.getElementsByClassName('quantity-result')[1];
+
+  let number = resultElement.innerText;
+  if(type==='plus') number = parseInt(number) + 1;
+  if(type==='minus') {
+    if(number>0)number = parseInt(number) -1;
+  }
+
+  resultElement.innerText = number;
+}
+function count3(type) {
+  const resultElement = document.getElementsByClassName('quantity-result')[2];
+
+  let number = resultElement.innerText;
+  if(type==='plus') number = parseInt(number) + 1;
+  if(type==='minus') {
+    if(number>0)number = parseInt(number) -1;
+  }
+
+  resultElement.innerText = number;
 }

@@ -77,11 +77,11 @@ for(let i=0;i<numofcardcontainer;i++) {
   
     // main-card 내부의 요소들을 생성 및 추가합니다.
     mainCard.innerHTML = `
-    <a href="./item-page-login.html">
-      <img src="./img/shoes1.png" alt="shoes1">
+    <a href="/src/pages/item-page-login.html">
+      <img src="/src/img/shoes1.png" alt="shoes1">
     </a>
     <div class="main-card-info-box">
-      <a href="./item-page-login.html" class="text-btn card-text-btn">
+      <a href="/src/pages/item-page-login.html" class="text-btn card-text-btn">
         <div class="main-card-info main-card-info-head">
           에어포스 1
         </div>
@@ -125,7 +125,7 @@ function login() {
   const userPw = document.querySelector("#login-pw").value;
 
   if (checklogin(userId, userPw)) {
-    window.location.href="./main-page-login.html"
+    window.location.href="/src/pages/main-page-login.html"
   } 
   
   else {
@@ -189,7 +189,7 @@ document.getElementById("search-input").addEventListener("keypress", function(ev
     event.preventDefault();
     var searchInputValue = document.getElementById("search-input").value;
     if (searchInputValue.trim() !== "") {
-      var searchUrl = "./category-page-logout.html?q=" + encodeURIComponent(searchInputValue);
+      var searchUrl = "/src/pages/category-page-logout.html?q=" + encodeURIComponent(searchInputValue);
       window.location.href = searchUrl;
     }
   }

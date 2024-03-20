@@ -86,7 +86,7 @@ function createMainCard(i) {
 
   const nowlocation = window.location.pathname;
   // main-card 내부의 요소들을 생성 및 추가합니다.
-  if(nowlocation == "/codingon_team_project01/src/pages/main-page-login.html") {
+  if(nowlocation.lastIndexOf("main-page-login.html")) {
     mainCard.innerHTML = ` 
     <a href="item-page-login.html">
       <img src="../img/shoes${maincardno}.png" alt="shoes${maincardno}">
@@ -108,7 +108,7 @@ function createMainCard(i) {
       </a>
     </div>`;
   }
-  else if(nowlocation == "/codingon_team_project01/src/pages/main-page-logout.html") {
+  else if(nowlocation.lastIndexOf("main-page-logout.html")) {
     mainCard.innerHTML = `
     <a href="item-page-logout.html">
       <img src="../img/shoes${maincardno}.png" alt="shoes${maincardno}">
@@ -144,7 +144,7 @@ function createitemCard(i) {
   // 현재 주소 불러오기
   const nowlocation = window.location.pathname;
 
-  if(nowlocation === "/codingon_team_project01/src/pages/category-page-login.html") {
+  if(nowlocation.lastIndexOf("category-page-login.html")) {
     itemCard.innerHTML = `
     <a href="item-page-login.html">
       <li class="category-box-item" style="background-image:url(../img/shoes${i+1}.png)">
@@ -156,7 +156,7 @@ function createitemCard(i) {
     </a>
     `;
   } 
-  else if (nowlocation === "/codingon_team_project01/src/pages/category-page-logout.html") {
+  else if (nowlocation.lastIndexOf("category-page-logout.html")) {
     itemCard.innerHTML = `
     <a href="item-page-logout.html">
       <li class="category-box-item" style="background-image:url(../img/shoes${i+1}.png)">

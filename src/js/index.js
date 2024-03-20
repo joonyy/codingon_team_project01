@@ -285,7 +285,7 @@ function confirmed(){
     ship_confirmed_box.innerHTML = ''; // 기존 내용 지우기
     ship_confirmed_box.appendChild(newSpan);
   }
-=======
+}
 // cart-page.js
 document.querySelector('#checkAll');
 
@@ -318,6 +318,7 @@ function count1(type) {
 
   resultElement.innerText = number;
 }
+
 function count2(type) {
   const resultElement = document.getElementsByClassName('quantity-result')[1];
 

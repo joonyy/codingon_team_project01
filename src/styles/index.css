@@ -27,7 +27,7 @@ button {
 
 .main-page {
   background-color: var(--background-color-main-page);
-  background-image: url(./img/background.svg);
+  background-image: url(/src/img/background.svg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -707,7 +707,7 @@ height: 40px;
   display: flex;
   flex-direction: column-reverse;
   justify-content: space-between;
-  background-image: url("./img/shoes1.png");
+  background-image: url("/src/img/shoes1.png");
   background-size: 100% 100%;
   color: antiquewhite;
 }
@@ -1065,7 +1065,7 @@ height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url(./img/mail.jpeg);
+  background-image: url(/src/img/mail.jpeg);
   width:100%;
   height: 100%;
 }
@@ -1095,7 +1095,7 @@ height: 40px;
   display: flex;
   flex-direction: column-reverse;
   justify-content: space-between;
-  background-image: url("./img/shoes1.png");
+  background-image: url("/src/img/shoes1.png");
   background-size: 100% 100%;
   color: antiquewhite;
 }

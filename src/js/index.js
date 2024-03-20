@@ -85,8 +85,10 @@ function createMainCard(i) {
   mainCard.classList.add('main-card');
 
   const nowlocation = window.location.pathname;
+  const nowpage = nowlocation.split("/");
+
   // main-card 내부의 요소들을 생성 및 추가합니다.
-  if(nowlocation.lastIndexOf("main-page-login.html")) {
+  if(nowpage[nowpage.length - 1] === "main-page-login.html") {
     mainCard.innerHTML = ` 
     <a href="item-page-login.html">
       <img src="../img/shoes${maincardno}.png" alt="shoes${maincardno}">
@@ -108,7 +110,7 @@ function createMainCard(i) {
       </a>
     </div>`;
   }
-  else if(nowlocation.lastIndexOf("main-page-logout.html")) {
+  else if(nowpage[nowpage.length - 1] === "main-page-logout.html") {
     mainCard.innerHTML = `
     <a href="item-page-logout.html">
       <img src="../img/shoes${maincardno}.png" alt="shoes${maincardno}">
@@ -194,7 +196,8 @@ function login() {
   const userPw = document.querySelector("#login-pw").value;
 
   if (checklogin(userId, userPw)) {
-    window.location.href="../pages/main-page-login.html"
+    const loginpage = window.location
+    window.location.href="main-page-login.html"
   } 
   
   else {
@@ -202,7 +205,7 @@ function login() {
   }
 }
 
-function SigninCheck(signinName, signinId, signinPw, signinPwCheck) {
+function SigninCheck(signinId, signinPw, signinPwCheck) {
   for(let i=0;i<userInfo.length;i++) {
     if(userInfo[i].userid == signinId) {
       console.log(userInfo[i].userid);
@@ -224,7 +227,7 @@ function Signin() {
   const signinPw = document.querySelector("#signin-pw").value;
   const signinPwCheck = document.querySelector("#signin-pw-check").value;
 
-  switch(SigninCheck(signinName, signinId, signinPw, signinPwCheck)) {
+  switch(SigninCheck(signinId, signinPw, signinPwCheck)) {
     case 1: {
       window.alert("이미 동일한 아이디를 사용중이에요...");
       break;

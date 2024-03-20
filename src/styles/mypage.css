@@ -26,7 +26,7 @@
   }
   
   .main-page {
-    background-image: url(./img/background.svg);
+    background-image: url(/src/img/background.svg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -404,7 +404,7 @@
   
   /* 배경 */
   .back{
-    background-image: url("./images/sample_01.jpg");
+    background-image: url("/src/images/sample_01.jpg");
     
     /* background-color: red; */
     background-repeat: no-repeat;

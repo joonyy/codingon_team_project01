@@ -15,6 +15,10 @@
   --color-btn: #20ad45;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 body * {
   font-family: "Jua", sans-serif;
 }
@@ -880,7 +884,7 @@ height: 40px;
   width: 50%;
   height: 30%;
 }
-.pay-box > .pay-img-contain >img{
+.pay-box > .pay-img-contain > img{
   border: 1px solid black;
   width:60px;
   height:60px;
@@ -977,13 +981,11 @@ height: 40px;
   height: 30%;
 }
 .pay-box > .pay-img-contain > label >img{
-  border: 1px solid white;
   width:60px;
   height:60px;
   object-fit: contain; 
 }
 .pay-box > .pay-img-cover > label > img {
-  border: 1px solid white;
   width:60px;
   height: 60px;
   object-fit: cover;
@@ -1032,6 +1034,7 @@ height: 40px;
   color: white;
   padding : 10px 0;
 }
+
 .ship-box{
   display: flex;
   flex-direction: column;
@@ -1039,6 +1042,7 @@ height: 40px;
   padding:10px;
   width:100%;
 }
+
 .pay-method{
   margin-top: 30px;
   width: 100%;
@@ -1048,6 +1052,7 @@ height: 40px;
   background-color: var(--background-color-tree-brown);
   color: white;
 }
+
 .ship-confirmed-info{
   display: none;
   background-repeat: no-repeat;
@@ -1059,8 +1064,8 @@ height: 40px;
   padding : 10px 0;
   visibility: hidden;
   transition: linear 0.5s;
-
 }
+
 .ship-confirmed-box{
   display: flex;
   align-items: center;

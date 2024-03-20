@@ -139,7 +139,7 @@ function createitemCard(i) {
   const itemContainer = document.querySelector(".category-box");
 
   // category-card 요소를 생성합니다.
-  const itemCard = document.createElement('span');
+  const itemCard = document.createElement('li');
 
   // 현재 주소 불러오기
   const nowlocation = window.location.pathname;
@@ -147,24 +147,24 @@ function createitemCard(i) {
   if(nowlocation.lastIndexOf("category-page-login.html")) {
     itemCard.innerHTML = `
     <a href="item-page-login.html">
-      <li class="category-box-item" style="background-image:url(../img/shoes${i+1}.png)">
+      <div class="category-box-item" style="background-image:url(../img/shoes${i+1}.png)">
         <div class="category-box-text">
           <div class="card-price">100만원</div>
           <div class="card-name">신발이름!</div>
         </div>
-      </li>
+      </div>
     </a>
     `;
   } 
   else if (nowlocation.lastIndexOf("category-page-logout.html")) {
     itemCard.innerHTML = `
     <a href="item-page-logout.html">
-      <li class="category-box-item" style="background-image:url(../img/shoes${i+1}.png)">
+      <div class="category-box-item" style="background-image:url(../img/shoes${i+1}.png)">
         <div class="category-box-text">
           <div class="card-price">100만원</div>
           <div class="card-name">신발이름!</div>
         </div>
-      </li>
+      </div>
     </a>
   `;
   }
@@ -253,12 +253,12 @@ function Signin() {
 // 로그인 종료
 
 // 엔터시 검색 시작
-document.getElementById("search-input").addEventListener("keypress", function(event) {
+document.querySelector("#search-input").addEventListener("keypress", function(event) {
   if (event.keyCode === 13) {
     event.preventDefault();
     var searchInputValue = document.getElementById("search-input").value;
     if (searchInputValue.trim() !== "") { 
-      var searchUrl = "./category-page-logout.html?q=" + encodeURIComponent(searchInputValue);
+      var searchUrl = "category-page-logout.html?q=" + encodeURIComponent(searchInputValue);
       window.location.href = searchUrl;
     }
   }

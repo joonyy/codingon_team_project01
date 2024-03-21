@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
         // 가로 스크롤이 가장 오른쪽에 있고, 스크롤 방향이 아래쪽으로 이동할 때
         window.scrollBy({ top: delta, left: 0});
       } else {
-        container.scrollLeft += (delta > 0 ? 1 : -1) * 40; // 가로 스크롤 이동
+        container.scrollLeft += (delta > 0 ? 1 : -1) * 50; // 가로 스크롤 이동
       }
     });
   });
@@ -72,7 +72,7 @@ for (let i = 0; i < catnum; i++) {
         <div class="main-card-info-box">
           <a href="${nowpage[nowpage.length - 1].includes('login') ? 'item-page-login.html' : 'item-page-logout.html'}" class="text-btn card-text-btn">
             <div class="main-card-info main-card-info-head">
-              에어포스 1
+              <span>${Data[num-1].name}</span>
             </div>
             <div class="main-card-info main-card-info-body">
               <div class="sizes">240 245 250 255 260 265 270 275 280 285</div>
@@ -81,7 +81,7 @@ for (let i = 0; i < catnum; i++) {
               </div>
             </div>
             <div class="main-card-info main-card-info-footer">
-              136,000깃털
+            <p>${Data[num-1].price}깃털</p>
             </div>
           </a>
         </div>

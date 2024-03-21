@@ -1,3 +1,5 @@
+console.log("working");
+
 // Signin-popup, Login-popup 페이지 보이기, 숨기기 시작
 function LoginPopupOpen() {
   var LoginPopup = document.querySelector('.login-popup-background');
@@ -48,18 +50,58 @@ function showCategory(categoryId) {
       selectedCategory.style.display = 'block';
   }
 }
+
+// 찜목록 JS
+function addToCart() {
+  const cartSection = document.getElementById('장바구니');
+  cartSection.style.display = 'block'; 
+  cartSection.scrollIntoView({ behavior: 'smooth' });
+  if (!document.querySelector('.divider')) {
+    createDivider();
+  }
+}
+function createDivider() {
+  const divider = document.createElement('div');
+  divider.classList.add('divider'); 
+  const favoriteList = document.getElementById('찜한 목록');
+  favoriteList.parentNode.insertBefore(divider, favoriteList.nextSibling);
+}
+function checkout() {
+  window.location.href = 'pay.html';
+}
+// 찜목록 JS 종료
+
+// 장바구니 JS
+function checkout() {
+  window.location.href = 'pay.html';
+}
+// 장바구니 JS 종료
+
+// 주문 내역 JS 없음 X
+
 // 회원정보 
 function login() {
   var username = document.getElementById("username").value;
   var password = document.getElementById("password").value;
+  
+  var user1 = {
+      name: "kim",
+      password: "jun"
+    };
+    var user2 = {
+      name: "ningdol",
+      password: "qwer2024!"
+    };
 
-  if (username === "kdt" && password === "12") {
-      // 로그인 성공 시
+  if ((username === "bae" && password === "dong") || 
+      (username === user1.name && password === user1.password) ||
+      (username === user2.name && password === user2.password)) {
+      // 로그인 성공
       document.getElementById("change-info").style.display = "block"; 
       document.getElementById("change-password").style.display = "block"; 
       alert("로그인 되었습니다.");
   } else {
-      // 로그인 실패 시
+      // 로그인 실패
       alert("아이디 또는 비밀번호가 올바르지 않습니다.");
   }
 }
@@ -83,19 +125,8 @@ function changePassword() {
 
 // 계정 탈퇴
 function showConfirmation() {
-    var overlay = document.getElementById('overlay');
-    overlay.style.display = 'flex';
-}
-
-function cancelDeletion() {
-    var overlay = document.getElementById('overlay');
-    overlay.style.display = 'none';
-}
-
-function deleteAccount() {
-
-    alert('계정이 탈퇴되었습니다.');
-    var overlay = document.getElementById('overlay');
-    overlay.style.display = 'none';
+  if (confirm("계정을 탈퇴하시겠습니까?")) {
+      window.location.href = "main-page-logout.html";
+  }
 }
 // 계정탈퇴종료

@@ -179,7 +179,7 @@ const numberofcategory = 10;
 for (let i = 0; i < numberofcategory; i++)   {
   createitemCard(i);
 }
-// item-page-card 갯수 만들기 끝
+// category-page 갯수 만들기 끝
 
 // 로그인 시작
 function checklogin(userId, userPw) {

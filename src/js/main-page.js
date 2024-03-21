@@ -63,14 +63,14 @@ for (let i = 0; i < catnum; i++) {
 
   for (let j = 0; j < numberOfCards[countedcat[i]].length; j++) {
     let num = numberOfCards[countedcat[i]][j] + 1;
-
+    
     let cardHtml = `
       <div class="main-card">
-        <a href="${nowpage[nowpage.length - 1].includes('login') ? 'item-page-login.html' : 'item-page-logout.html'}">
+        <a href="${nowpage[nowpage.length - 1].includes('login') ? 'item-page-login.html?data=' + encodeURIComponent(JSON.stringify(Data[num-1])) : 'item-page-logout.html?data=' + encodeURIComponent(JSON.stringify(Data[num-1]))}">
           <img src="../img/shoes${num}.png" alt="shoes${num}">
         </a>
         <div class="main-card-info-box">
-          <a href="${nowpage[nowpage.length - 1].includes('login') ? 'item-page-login.html' : 'item-page-logout.html'}" class="text-btn card-text-btn">
+          <a href="${nowpage[nowpage.length - 1].includes('login') ? 'item-page-login.html?data=' + encodeURIComponent(JSON.stringify(Data[num-1])) : 'item-page-logout.html?data=' + encodeURIComponent(JSON.stringify(Data[num-1]))}" class="text-btn card-text-btn">
             <div class="main-card-info main-card-info-head">
               <span>${Data[num-1].name}</span>
             </div>

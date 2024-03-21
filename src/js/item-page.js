@@ -1,3 +1,90 @@
+// item-page 만들기 시작
+// URL에서 쿼리 문자열 파싱
+const urlParams = new URLSearchParams(window.location.search);
+// 'data' 매개변수에서 데이터 가져오기
+const dataParam = urlParams.get('data');
+// JSON 문자열을 JavaScript 객체로 변환
+const data = JSON.parse(decodeURIComponent(dataParam));
+
+const main = document.querySelector("body");
+
+const itembox = document.createElement("section");
+console.log(data);
+
+itembox.innerHTML = `
+<section class="item-top-container">
+<!-- 상단 좌측 -->
+<div class="item-container" style="background-image: url(${data.imgUrl}); background-size: cover; background-repeat: no-repeat;">
+  <div class="item-summary">
+    <ul>
+    <li class="item-name">${data.name}</li>
+    <li class="item-price">${data.price}</li>
+    <li class="item-color"></li>
+    </ul>   
+  </div>
+</div>
+<!-- 상단 우측 -->
+<div class="item-order-container">
+  <p style="font-weight: bold;">사이즈 옵션</p>
+  <div class="size-option route-to-main-login">
+    <button class="size-option-btn" onclick="selectSize(245)">245</button>
+    <button class="size-option-btn" onclick="selectSize(250)">250</button>
+    <button class="size-option-btn" onclick="selectSize(255)">255</button>
+    <button class="size-option-btn" onclick="selectSize(260)">260</button>
+    <button class="size-option-btn" onclick="selectSize(265)">265</button>
+    <button class="size-option-btn" onclick="selectSize(270)">270</button>
+    <button class="size-option-btn" onclick="selectSize(275)">275</button>
+    <button class="size-option-btn" onclick="selectSize(280)">280</button>
+    <button class="size-option-btn" onclick="selectSize(295)">295</button>
+  </div>
+  <br/>
+  <div class="color-option">
+    <p style="font-weight: bold;">컬러 옵션</p>
+    <input type="color" id="selectedColor">
+  </div>
+  <div class="chosen-option">
+    <p style="font-weight: bold;">선택된 옵션</p>
+    <span id="selectedSize">Size : </span>
+    <div class="selectedcolor-box">
+      <p>색상 : <div id="changedColor"></div></p>
+    </div>
+  </div>
+  <div class="decision">
+    <div class="like">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi" viewBox="0 0 16 16" id="heart">
+        <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
+      </svg>
+    </div>
+    <div class="wishlist route-to-main-login"><img src="../img/shopping cart.png" alt="장바구니"></div>
+  </div>
+</section>
+<main class="item-bottom-container">
+  <header>
+    <button class="more-info-select selected">상세정보</button>
+    <button class="review-select">리뷰</button>
+  </header>
+  <section class="item-details">
+    <p>${data.contents}</p>
+  </section>
+  <section class="review">
+  </section>
+</main>`;
+main.appendChild(itembox);
+
+const review = document.querySelector('.review');
+reviews(review);
+
+function reviews(review) {
+  const reviewsBox = document.createElement('div');
+  let ptag = document.createElement('p');
+  for(let i=0;i<(data.reviews).length;i++) {
+    ptag = `<p>${data.reviews[i].stars}개 <br>${data.reviews[i].contents}</p>`;
+    reviewsBox.innerHTML += ptag;
+  }
+  review.appendChild(reviewsBox);
+}
+// item-page 만들기 끝
+
 // 찜하기 버튼 시작
 const heart = document.querySelector("#heart");
 heart.addEventListener('click', function() {

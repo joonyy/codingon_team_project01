@@ -222,6 +222,7 @@ button {
 
 .category-box a {
   text-decoration: none;
+  color: var(--color-btn);
 }
 
 .category-box-text{
@@ -231,6 +232,8 @@ button {
   align-items: center;
   justify-content: space-around;
 }
+
+.category-box-text div
 
 .category-box-item-sort {
   border: 1px solid black;
@@ -709,13 +712,12 @@ height: 40px;
 
 /* item-top-container 좌측 */
 .item-container{
-  width:400px;
-  height: 550px;;
+  width:310px;
+  height: 530px;;
   background-color: red;
   display: flex;
   flex-direction: column-reverse;
   justify-content: space-between;
-  background-image: url("/src/img/shoes1.png");
   background-size: 100% 100%;
   color: antiquewhite;
 }

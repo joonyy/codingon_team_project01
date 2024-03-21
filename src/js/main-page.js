@@ -20,78 +20,77 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   });
 });
-// 메인페이지 카드 가로 스크롤로 세로스크롤 이동하기 끝
+// 가로 스크롤 끝
 
-// main-page-card 갯수 만들기 시작
-// main-card를 삽입할 부모 요소를 선택합니다.
-const numofcardcontainer = document.querySelectorAll(".card-container").length;
-const numberOfCards = 5;
-
-// 새로운 main-card를 만들기 위한 함수를 정의합니다.
-let maincardno = 1;
-
-for(let i=0;i<numofcardcontainer;i++) {
-  for(let j=1;j<=numberOfCards;j++) {
-    createMainCard(i);
-    maincardno++;
+// main-page-card 다시 만들기 시작
+let catnum = 0;
+let countedcat = [];
+function shoecat() {
+  for(let i=0;i<Data.length;i++) {
+    if(Data[i].cat && !countedcat.includes(Data[i].cat)) {
+      catnum ++;
+      countedcat.push(Data[i].cat);
+    }
   }
 }
 
-function createMainCard(i) {
-  const cardContainer = document.querySelectorAll(".card-container")[i];
+shoecat();
 
-  // main-card 요소를 생성합니다.
-  const mainCard = document.createElement('div');
-  mainCard.classList.add('main-card');
+let numberOfCards = {};
+for(let i=0;i<Data.length;i++) {
+  let item = Data[i];
+  let category = item.cat;
+
+  if(!numberOfCards[category]) {
+    numberOfCards[category] = [];
+  }
+  
+  numberOfCards[category].push(i);
+}
+
+const main = document.querySelector("main");
+
+for (let i = 0; i < catnum; i++) {
+  const mainCardContainer = document.createElement('section');
+  mainCardContainer.classList.add('body-main-page-card');
+  mainCardContainer.classList.add('main-card-container');
+  
+  const cardContainer = document.createElement('div');
+  cardContainer.classList.add('card-container');
 
   const nowlocation = window.location.pathname;
   const nowpage = nowlocation.split("/");
 
-  // main-card 내부의 요소들을 생성 및 추가합니다.
-  if(nowpage[nowpage.length - 1] === "main-page-login.html") {
-    mainCard.innerHTML = ` 
-    <a href="item-page-login.html">
-      <img src="../img/shoes${maincardno}.png" alt="shoes${maincardno}">
-    </a>
-    <div class="main-card-info-box">
-      <a href="item-page-login.html" class="text-btn card-text-btn">
-        <div class="main-card-info main-card-info-head">
-          에어포스 1
+  for (let j = 0; j < numberOfCards[countedcat[i]].length; j++) {
+    let num = numberOfCards[countedcat[i]][j] + 1;
+
+    let cardHtml = `
+      <div class="main-card">
+        <a href="${nowpage[nowpage.length - 1].includes('login') ? 'item-page-login.html' : 'item-page-logout.html'}">
+          <img src="../img/shoes${num}.png" alt="shoes${num}">
+        </a>
+        <div class="main-card-info-box">
+          <a href="${nowpage[nowpage.length - 1].includes('login') ? 'item-page-login.html' : 'item-page-logout.html'}" class="text-btn card-text-btn">
+            <div class="main-card-info main-card-info-head">
+              에어포스 1
+            </div>
+            <div class="main-card-info main-card-info-body">
+              <div class="sizes">240 245 250 255 260 265 270 275 280 285</div>
+              <div class="colors">
+                RED BLACK WHITE IVORY
+              </div>
+            </div>
+            <div class="main-card-info main-card-info-footer">
+              136,000깃털
+            </div>
+          </a>
         </div>
-        <div class="main-card-info main-card-info-body">
-          <div class="sizes">240 245 250 255 260 265 270 275 280 285</div>
-          <div class="colors">
-            RED BLACK WHITE IVORY
-          </div>
-        </div>
-        <div class="main-card-info main-card-info-footer">
-          136,000깃털
-        </div>
-      </a>
-    </div>`;
+      </div>`;
+
+    cardContainer.innerHTML += cardHtml;
   }
-  else if(nowpage[nowpage.length - 1] === "main-page-logout.html") {
-    mainCard.innerHTML = `
-    <a href="item-page-logout.html">
-      <img src="../img/shoes${maincardno}.png" alt="shoes${maincardno}">
-    </a>
-    <div class="main-card-info-box">
-      <a href="item-page-logout.html" class="text-btn card-text-btn">
-        <div class="main-card-info main-card-info-head">
-          에어포스 1
-        </div>
-        <div class="main-card-info main-card-info-body">
-          <div class="sizes">240 245 250 255 260 265 270 275 280 285</div>
-          <div class="colors">
-            RED BLACK WHITE IVORY
-          </div>
-        </div>
-        <div class="main-card-info main-card-info-footer">
-          136,000깃털
-        </div>
-      </a>
-    </div>`;
-  }  
-  cardContainer.appendChild(mainCard);
+
+  mainCardContainer.appendChild(cardContainer);
+  main.appendChild(mainCardContainer);
 }
-// main-page-card 갯수 만들기 끝
+// main-page-card 다시 만들기 끝

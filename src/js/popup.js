@@ -48,4 +48,3 @@ document.querySelector("#search-input").addEventListener("keypress", function(ev
   }
 });
 // 엔터시 검색 종료
-

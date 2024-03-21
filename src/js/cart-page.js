@@ -1,3 +1,4 @@
+//전체선택, 전체해제 기능 구현
 document.querySelector('#checkAll');
 
 checkAll.addEventListener('click', function(){
@@ -17,7 +18,12 @@ checkAll.addEventListener('click', function(){
     }
   }
 })
+//전체선택, 전체해제 기능 마무리
 
+//아이템 추가 구현
+
+
+//카운터 기능 구현
 function count1(type) {
   const resultElement = document.getElementsByClassName('quantity-result')[0];
 

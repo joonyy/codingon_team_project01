@@ -1,9 +1,9 @@
 // 로그인 시작
+var userpasswd = localStorage.getItem('userpasswd');
+
 function checklogin(userId, userPw) {
-  for(let i=0;i<userInfo.length;i++) {
-    if(userInfo[i].userid === userId && userInfo[i].userpasswd === userPw) {
+    if(userId === localStorage.getItem('username') && userPw === localStorage.getItem('userpasswd')) {
       return true;
-    }
   }
   return false;
 }
@@ -13,7 +13,8 @@ function login() {
   const userPw = document.querySelector("#login-pw").value;
 
   if (checklogin(userId, userPw)) {
-    const loginpage = window.location
+    localStorage.setItem('isLoggedIn', 'true');
+    localStorage.setItem('username', userId);
     window.location.href="main-page-login.html"
   } 
   
@@ -23,18 +24,14 @@ function login() {
 }
 
 function SigninCheck(signinId, signinPw, signinPwCheck) {
-  for(let i=0;i<userInfo.length;i++) {
-    if(userInfo[i].userid == signinId) {
-      console.log(userInfo[i].userid);
-      console.log(signinId);
-      return 1;
-    }
-    else if(signinPw != signinPwCheck) {
-      return 2;
-    }
-    else {
-      return 3;
-    }
+  if(localStorage.getItem('username') == signinId) {
+    return 1;
+  }
+  else if(signinPw != signinPwCheck) {
+    return 2;
+  }
+  else {
+    return 3;
   }
 }
 
@@ -57,13 +54,8 @@ function Signin() {
 
     case 3: {
       window.alert("넌 이제 내친구!");
-      let newUser = {
-        username: signinName,
-        userid: signinId,
-        userpasswd: signinPw,
-      }
-      userInfo.push(newUser);
-      console.log(userInfo);
+      localStorage.setItem('username',signinId);
+      localStorage.setItem('userpasswd',signinPw);
       SigninPopupClose();
       LoginPopupOpen();
       break;
@@ -71,3 +63,8 @@ function Signin() {
   }
 }
 // 로그인 종료
+
+function isLoggedIn(){
+  if(localStorage.getItem('isLoggedIn')) return true;
+  return false;
+}

@@ -1,4 +1,4 @@
-// main-page-card 다시 만들기 시작
+// category-page-card 다시 만들기 시작
 const categoryBox = document.querySelector(".category-box");
 
 const nowlocation = window.location.pathname;
@@ -18,4 +18,4 @@ for (let i = 0; i <Data.length; i++) {
   </a>`;
   categoryBox.appendChild(itemCard);
 }
-// main-page-card 다시 만들기 끝
+// category-page-card 다시 만들기 끝

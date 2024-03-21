@@ -1,9 +1,6 @@
 // item-page 만들기 시작
-// URL에서 쿼리 문자열 파싱
 const urlParams = new URLSearchParams(window.location.search);
-// 'data' 매개변수에서 데이터 가져오기
 const dataParam = urlParams.get('data');
-// JSON 문자열을 JavaScript 객체로 변환
 const data = JSON.parse(decodeURIComponent(dataParam));
 
 const main = document.querySelector("body");

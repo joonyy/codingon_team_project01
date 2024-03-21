@@ -1,17 +1,24 @@
 let Data = [];
 //신발 객체 틀을 생성하는 함수
-const shoes = function(imgNum, name, price, contents, reviews){
+const shoes = function(imgNum, name, price, contents, cat){
   this.imgUrl = (`../img/shoes${imgNum}.png`);
   this.name = name;
   this.price = price;
   this.contents = contents;
-  this.reviews = reviews;
+  this.cat = cat;
+  this.reviews = [];
 };
 for(let i=1;i<=20;i++){
   Data[i-1] = new shoes(i);
+  for(j=0;j<3;j++){
+    Data[i-1].reviews.push({
+      stars:Math.floor(Math.random() * 5) + 1,
+      contents : `Review ${j+1} for shoe ${i}`
+    })
+  }
 }
-console.log(Data[1]);
 
+Data[0].reviews[1].stars = 5;
 Data[0].name = "솔라 스트라이드 (Solar Stride)";
 Data[0].price = 800;
 Data[0].contents = "고품질 태양열 축전판이 장착된 발걸음을 가벼운 태양으로 변환하여 편안함과 에너지를 제공하는 신발입니다. 올빼미 꼬리 모양의 디테일이 감각을 더합니다.";

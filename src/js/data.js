@@ -17,6 +17,7 @@ for(let i=1;i<=20;i++){
     })
   }
 }
+let fav = [];
 
 Data[0].reviews[1].stars = 5;
 Data[0].name = "솔라 스트라이드 (Solar Stride)";

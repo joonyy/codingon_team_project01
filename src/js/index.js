@@ -63,14 +63,40 @@ document.addEventListener("DOMContentLoaded", function() {
 // 메인페이지 카드 가로 스크롤로 세로스크롤 이동하기 끝
 
 // main-page-card 갯수 만들기 시작
-// main-card를 삽입할 부모 요소를 선택합니다.
-const numofcardcontainer = document.querySelectorAll(".card-container").length;
-const numberOfCards = 5;
-
 // 새로운 main-card를 만들기 위한 함수를 정의합니다.
-let maincardno = 1;
+let catnum = 0;
+let countedcat = [];
+function shoecat() {
+  for(let i=0;i<Data.length;i++) {
+    if(Data[i].cat && !countedcat.includes(Data[i].cat)) {
+      catnum ++;
+      countedcat.push(Data[i].cat);
+      console.log(catnum);
+    }
+  }
+}
 
-for(let i=0;i<numofcardcontainer;i++) {
+let itemnum = 0;
+let numberOfCards = [];
+for(let i=0;i<catnum;i++) {
+  const cardContainer = document.createElement('section');
+  cardContainer.classList('body-main-page-card main-card-container');
+  function cardcnt() {
+    for(let j=0;j<Data.length;j++) {
+      if(Data[j].cat == countedcat[i]) {
+        numberOfCards.push(j);
+      }
+    }
+  }
+}
+
+console.log(catnum);
+console.log(numberOfCards);
+
+{/* <div class="card-container">
+      </div> */}
+
+for(let i=0;i<catnum;i++) {
   for(let j=1;j<=numberOfCards;j++) {
     createMainCard(i);
     maincardno++;

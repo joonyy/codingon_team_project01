@@ -74,6 +74,8 @@ for(let i=0;i<numofcardcontainer;i++) {
   for(let j=1;j<=numberOfCards;j++) {
     createMainCard(i);
     maincardno++;
+    let cat = Data.filter(cat => cat.price == 800);
+    console.log(cat);
   }
 }
 

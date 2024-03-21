@@ -101,7 +101,7 @@ button {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  left: 330px;
+  left: 335px;
   bottom: 535.5px;
   transform: scale(0);
   transition: all .2s ease;
@@ -109,10 +109,15 @@ button {
 }
 
 .main-card-info-head {
-  margin-top: 10px;
+  width: 310px;
   height: 100px;
-  font-size: 40px;
+  margin-top: 10px;
+  font-size: 30px;
   line-height: 40px;
+}
+
+.main-card-info-head span {
+  white-space: pre-wrap;
 }
 
 .main-card-info-body {

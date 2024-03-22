@@ -1,6 +1,7 @@
 let Data = [];
 //신발 객체 틀을 생성하는 함수
 const shoes = function(imgNum, name, price, contents, cat){
+  this.id = imgNum;
   this.imgUrl = (`../img/shoes${imgNum}.png`);
   this.name = name;
   this.price = price;
@@ -17,7 +18,7 @@ for(let i=1;i<=20;i++){
     })
   }
 }
-let fav = [];
+let userFav = [];
 
 Data[0].reviews[1].stars = 5;
 Data[0].name = "솔라 스트라이드 (Solar Stride)";
@@ -119,3 +120,8 @@ Data[19].name = "화이트 위스퍼 (White Whisper)";
 Data[19].price = 740;
 Data[19].contents = "하얀 속삭임처럼 가볍고 시원한 화이트 위스퍼는 튼튼한 소재와 섬세한 디자인이 특징인 스니커즈입니다. 발뒤축의 올빼미 깃털 장식이 돋보입니다.";
 Data[19].cat = "slipper";
+
+//localStorage 객체에 배열 저장하기
+if(!localStorage.getItem('data')){
+  localStorage.setItem('data',JSON.stringify(Data));
+}

@@ -85,6 +85,9 @@ function reviews(review) {
 const heart = document.querySelector("#heart");
 heart.addEventListener('click', function() {
   heart.classList.toggle("bi-heart-fill");
+  var storedUserFav = JSON.parse(localStorage.userFav);
+  storedUserFav.push(data.id);
+  localStorage.setItem('userFav', JSON.stringify(storedUserFav));
 });
 // 찜하기 버튼 끝
 

@@ -15,7 +15,8 @@ function login() {
   if (checklogin(userId, userPw)) {
     localStorage.setItem('isLoggedIn', 'true');
     localStorage.setItem('username', userId);
-    window.location.href="main-page-login.html"
+    window.location.href="main-page-login.html";
+    localStorage.setItem('userFav', JSON.stringify(userFav));
   } 
   
   else {

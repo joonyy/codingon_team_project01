@@ -76,7 +76,7 @@ function reviews(review) {
   const reviewsBox = document.createElement('div');
   let ptag = document.createElement('p');
   for(let i=0;i<(data.reviews).length;i++) {
-    ptag = `<p>${data.reviews[i].stars}개 <br>${data.reviews[i].contents}</p>`;
+    ptag = `<p>별점 : ${data.reviews[i].stars}점 <br>${data.reviews[i].contents}</p>`;
     reviewsBox.innerHTML += ptag;
   }
   review.appendChild(reviewsBox);
@@ -176,5 +176,10 @@ function addFav() {
     Fav.push(data.id);
     localStorage.setItem('userFav', JSON.stringify(Fav));
     alert("장바구니에 추가되었습니다.");
+    let moveToCart = confirm("장바구니로 이동하시겠습니까?");
+    if(moveToCart) {
+      window.location.href = "cart-page.html";
+    }
   }
 }
+// 장바구니 추가 끝

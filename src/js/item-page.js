@@ -148,7 +148,7 @@ function showSection(section) {
   if (section === 'item-details') {
     document.querySelector('.item-details').style.display = 'block';
     document.querySelector('.review').style.display = 'none';
-  } else if (section === 'review') {
+  } else if (section === 'reviews') {
     document.querySelector('.item-details').style.display = 'none';
     document.querySelector('.review').style.display = 'block';
   }

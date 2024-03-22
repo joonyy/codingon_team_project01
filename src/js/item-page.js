@@ -87,9 +87,22 @@ function reviews(review) {
 const heart = document.querySelector("#heart");
 heart.addEventListener('click', function() {
   heart.classList.toggle("bi-heart-fill");
-  var storedUserFav = JSON.parse(localStorage.userFav);
-  storedUserFav.push(data.id);
-  localStorage.setItem('userFav', JSON.stringify(storedUserFav));
+  let Like = [];
+  if(heart.classList.contains("bi-heart-fill")) {
+    Like.push(data.id);
+    localStorage.setItem('userLike', JSON.stringify(Like));
+    alert("찜목록에 추가되었습니다.")
+  }
+  else if(!heart.classList.contains("hi-heart-fill")) {
+    for(let i=0;i<Like.length;i++) {
+      if(Like[i] == data.id) {
+        Like.splice(i,1);
+        i--;
+      }
+    }
+    localStorage.setItem('userLike', JSON.stringify(Like));
+    alert("찜목록에서 제거되었습니다.");
+  }
 });
 // 찜하기 버튼 끝
 
@@ -148,6 +161,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // 장바구니 추가 시작
 function addFav() {
+  var storedUserFav = JSON.parse(localStorage.userFav);
+  localStorage.setItem('userFav', JSON.stringify(storedUserFav));
   let userFav = localStorage.getItem('userFav');
   let Fav = [];
 

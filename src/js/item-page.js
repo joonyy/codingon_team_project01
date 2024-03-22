@@ -6,7 +6,6 @@ const data = JSON.parse(decodeURIComponent(dataParam));
 const main = document.querySelector("body");
 
 const itembox = document.createElement("section");
-console.log(data);
 
 itembox.innerHTML = `
 <section class="item-top-container">
@@ -57,8 +56,8 @@ itembox.innerHTML = `
 </section>
 <main class="item-bottom-container">
   <header>
-    <button class="more-info-select selected">상세정보</button>
-    <button class="review-select">리뷰</button>
+    <button class="more-info-select selected" onclick="showSection('item-details')">상세정보</button>
+    <button class="review-select" onclick="showSection('reviews')">리뷰</button>
   </header>
   <section class="item-details">
     <p>${data.contents}</p>
@@ -125,3 +124,19 @@ button2.addEventListener('click', () => {
   button2.classList.add("selected");
 });
 // 상세정보 리뷰 선택 끝
+
+// 상세정보, 리뷰클릭시 해당섹션 노출
+function showSection(section) {
+  if (section === 'item-details') {
+    document.querySelector('.item-details').style.display = 'block';
+    document.querySelector('.review').style.display = 'none';
+  } else if (section === 'review') {
+    document.querySelector('.item-details').style.display = 'none';
+    document.querySelector('.review').style.display = 'block';
+  }
+}
+// html로드시 디폴트값 상세정보 섹션만 노출
+document.addEventListener("DOMContentLoaded", function() {
+  document.querySelector('.item-details').style.display = 'block';
+  document.querySelector('.review').style.display = 'none';
+});

@@ -14,7 +14,7 @@
     <script defer src="../js/data.js"></script>
     <title>Owl's Shoes</title>
   </head>
-<body>
+<body onchange="finalPrice()">
   <header>
     <nav class="nav-bar">
         <div class="nav-bar-items">
@@ -28,9 +28,9 @@
   </header>
   <main class="list-box-container">
     <table class="wish-list-table cart-table">
-      <thead class="wish-list-table-head">
+      <thead class="wish-list-table-head" onchange="finalPrice()">
         <tr>
-        <th scope="col" class="check-item"><input type="checkbox" class="check" id="checkAll"></th>
+        <th scope="col" class="check-item"><input type="checkbox" class="check" id="checkAll" onclick="checkAllBoxes()" checked></th>
           <th scope="col">상품 이미지</th>
           <th scope="col">상품명</th>
           <th scope="col">상품 가격</th>
@@ -44,18 +44,18 @@
   </main> 
 
   <section class="cart-sum">
-    <div class="items-price">제품 가격 : 1000만원</div>
+    <div id="items-price"></div>
     <div>  + </div>
-    <div class="shipment-price"> 배송비 : 120만원</div>
+    <div id="shipment-price"></div>
     <div> = </div>
-    <div class="total-price">총계 : 3360만원</div>
+    <div id="total-price"></div>
   </section>
   <section class="pay-cart-btn">
     <a href="pay.html"><button class="btn pay-btn">결제하기</button></a>
   </section>
 
   <footer class="pay-footer">
-    <div class="caution-box">
+    <div class="caution-box" onchange="finalPrice()">
       <ul class="caution-list">
         <li>제주, 도서산간 지형은 추가 배송요금이 부과 됩니다.</li>
         <li>2개 이상의 브렌드에서 주문할 경우 개별 배송 요금이 부과됩니다.</li>

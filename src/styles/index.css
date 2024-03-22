@@ -773,6 +773,11 @@ height: 40px;
   padding: 10px 0;
 }
 
+.decision button{
+  background-color: var(--background-color-tree-brown);
+  border: none;
+}
+
 .bi {
   color: white;
 }

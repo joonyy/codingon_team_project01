@@ -14,7 +14,7 @@ itembox.innerHTML = `
   <div class="item-summary">
     <ul>
     <li class="item-name">${data.name}</li>
-    <li class="item-price">${data.price}</li>
+    <li class="item-price">${data.price}깃털</li>
     <li class="item-color"></li>
     </ul>   
   </div>
@@ -51,7 +51,9 @@ itembox.innerHTML = `
         <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
       </svg>
     </div>
-    <div class="wishlist route-to-main-login"><img src="../img/shopping cart.png" alt="장바구니"></div>
+    <button onclick = "addFav(data)">
+      <div class="wishlist route-to-main-login"><img src="../img/shopping cart.png" alt="장바구니"></div>
+    </button>
   </div>
 </section>
 <main class="item-bottom-container">
@@ -143,3 +145,21 @@ document.addEventListener("DOMContentLoaded", function() {
   document.querySelector('.item-details').style.display = 'block';
   document.querySelector('.review').style.display = 'none';
 });
+
+// 장바구니 추가 시작
+function addFav() {
+  let userFav = localStorage.getItem('userFav');
+  let Fav = [];
+
+  if (userFav) {
+    Fav = JSON.parse(userFav);
+  }
+  if(userFav.includes(data.id)) {
+    alert("이미 장바구니 목록에 있는 상품입니다.");
+  }
+  else if(!userFav.includes(data.id)) {
+    Fav.push(data.id);
+    localStorage.setItem('userFav', JSON.stringify(Fav));
+    alert("장바구니에 추가되었습니다.");
+  }
+}

@@ -6,7 +6,6 @@ const data = JSON.parse(decodeURIComponent(dataParam));
 const main = document.querySelector("body");
 
 const itembox = document.createElement("section");
-console.log(data);
 
 itembox.innerHTML = `
 <section class="item-top-container">
@@ -15,7 +14,7 @@ itembox.innerHTML = `
   <div class="item-summary">
     <ul>
     <li class="item-name">${data.name}</li>
-    <li class="item-price">${data.price}</li>
+    <li class="item-price">${data.price}깃털</li>
     <li class="item-color"></li>
     </ul>   
   </div>
@@ -52,13 +51,15 @@ itembox.innerHTML = `
         <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
       </svg>
     </div>
-    <div class="wishlist route-to-main-login"><img src="../img/shopping cart.png" alt="장바구니"></div>
+    <button onclick = "addFav(data)">
+      <div class="wishlist route-to-main-login"><img src="../img/shopping cart.png" alt="장바구니"></div>
+    </button>
   </div>
 </section>
 <main class="item-bottom-container">
   <header>
-    <button class="more-info-select selected">상세정보</button>
-    <button class="review-select">리뷰</button>
+    <button class="more-info-select selected" onclick="showSection('item-details')">상세정보</button>
+    <button class="review-select" onclick="showSection('reviews')">리뷰</button>
   </header>
   <section class="item-details">
     <p>${data.contents}</p>
@@ -86,9 +87,22 @@ function reviews(review) {
 const heart = document.querySelector("#heart");
 heart.addEventListener('click', function() {
   heart.classList.toggle("bi-heart-fill");
-  var storedUserFav = JSON.parse(localStorage.userFav);
-  storedUserFav.push(data.id);
-  localStorage.setItem('userFav', JSON.stringify(storedUserFav));
+  let Like = [];
+  if(heart.classList.contains("bi-heart-fill")) {
+    Like.push(data.id);
+    localStorage.setItem('userLike', JSON.stringify(Like));
+    alert("찜목록에 추가되었습니다.")
+  }
+  else if(!heart.classList.contains("hi-heart-fill")) {
+    for(let i=0;i<Like.length;i++) {
+      if(Like[i] == data.id) {
+        Like.splice(i,1);
+        i--;
+      }
+    }
+    localStorage.setItem('userLike', JSON.stringify(Like));
+    alert("찜목록에서 제거되었습니다.");
+  }
 });
 // 찜하기 버튼 끝
 
@@ -128,3 +142,39 @@ button2.addEventListener('click', () => {
   button2.classList.add("selected");
 });
 // 상세정보 리뷰 선택 끝
+
+// 상세정보, 리뷰클릭시 해당섹션 노출
+function showSection(section) {
+  if (section === 'item-details') {
+    document.querySelector('.item-details').style.display = 'block';
+    document.querySelector('.review').style.display = 'none';
+  } else if (section === 'reviews') {
+    document.querySelector('.item-details').style.display = 'none';
+    document.querySelector('.review').style.display = 'block';
+  }
+}
+// html로드시 디폴트값 상세정보 섹션만 노출
+document.addEventListener("DOMContentLoaded", function() {
+  document.querySelector('.item-details').style.display = 'block';
+  document.querySelector('.review').style.display = 'none';
+});
+
+// 장바구니 추가 시작
+function addFav() {
+  var storedUserFav = JSON.parse(localStorage.userFav);
+  localStorage.setItem('userFav', JSON.stringify(storedUserFav));
+  let userFav = localStorage.getItem('userFav');
+  let Fav = [];
+
+  if (userFav) {
+    Fav = JSON.parse(userFav);
+  }
+  if(userFav.includes(data.id)) {
+    alert("이미 장바구니 목록에 있는 상품입니다.");
+  }
+  else if(!userFav.includes(data.id)) {
+    Fav.push(data.id);
+    localStorage.setItem('userFav', JSON.stringify(Fav));
+    alert("장바구니에 추가되었습니다.");
+  }
+}

@@ -18,7 +18,6 @@ for(let i=1;i<=20;i++){
     })
   }
 }
-let userFav = [];
 
 Data[0].reviews[1].stars = 5;
 Data[0].name = "솔라 스트라이드 (Solar Stride)";
@@ -114,7 +113,7 @@ Data[17].cat = "boots";
 Data[18].name = "크리스털 크래셔 (Crystal Crusher)";
 Data[18].price = 820;
 Data[18].contents = "크리스털을 유리처럼 깨끗하게 부수는 크래셔는 우아한 디자인과 견고한 소재로 제작된 슬리퍼입니다. 발목 부분의 올빼미 깃털 장식이 럭셔리한 느낌을 줍니다.";
-Data[18].cat = "running";
+Data[18].cat = "converse";  
 
 Data[19].name = "화이트 위스퍼 (White Whisper)";
 Data[19].price = 740;

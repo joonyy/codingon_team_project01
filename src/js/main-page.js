@@ -4,18 +4,18 @@ document.addEventListener("DOMContentLoaded", function() {
 
   containers.forEach(function(container) {
     container.addEventListener('wheel', function(event) {
-      event.preventDefault(); // 기본 스크롤 동작 방지
+      event.preventDefault();
 
       var delta = event.deltaY || event.detail || event.wheelDelta;
 
       if (container.scrollLeft === 0 && delta < 0) {
-        // 가로 스크롤이 가장 왼쪽에 있고, 스크롤 방향이 위쪽으로 이동할 때
         window.scrollBy({ top: delta, left: 0});
-      } else if (container.scrollLeft >= (container.scrollWidth - container.clientWidth) && delta > 0) {
-        // 가로 스크롤이 가장 오른쪽에 있고, 스크롤 방향이 아래쪽으로 이동할 때
+      } 
+      else if (container.scrollLeft >= (container.scrollWidth-container.clientWidth-1) && delta > 0) {
         window.scrollBy({ top: delta, left: 0});
-      } else {
-        container.scrollLeft += (delta > 0 ? 1 : -1) * 50; // 가로 스크롤 이동
+      } 
+      else {
+        container.scrollLeft += (delta > 0 ? 1 : -1) * 40;
       }
     });
   });

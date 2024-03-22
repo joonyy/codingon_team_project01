@@ -24,55 +24,49 @@ checkAll.addEventListener('click', function(){
 const data = JSON.parse(localStorage.data);
 const tableBody = document.querySelector('.wish-list-table-body');
 const storedUserFav = JSON.parse(localStorage.userFav);
+const finalOrder = [];
 for(let i = 0;i<storedUserFav.length; i++){
+  finalOrder[i] = {
+    isIncluded:true,
+    howMany : 1,
+    totalPrice : 200,
+  }
   const cartItems = document.createElement('tr');
     cartItems.innerHTML = 
     `<tr>
-    <th scope="col" class="list-box-item check-item" ><input type="checkbox" class="check"></th>
+    <th scope="col" class="list-box-item check-item" ><input type="checkbox" class="check" id="check${i}" onclick="isChecked(${i})"></th>
     <th scope="col" class="list-box-item cart-item-image"><img src="${data[storedUserFav[i]].imgUrl}"></th>
     <th scope="col" class="list-box-item cart-item-name">${data[storedUserFav[i]].name}</th>
     <th scope="col" class="list-box-item cart-item-price">${data[storedUserFav[i]].price}</th>
     <th scope="col" class="list-box-item"><div class="item-quantity-counter">
-      <input type="button" class="calc-btn" onclick="count('minus')" value="-"/>
-      <div class="quantity-result">1</div>
-      <input type="button" class="calc-btn" onclick="count('plus')" value="+"/>
+      <input type="button" class="calc-btn" onclick="count('minus',${i})" value="-"/>
+      <div class="quantity-result" id="quantity-result${i}">${finalOrder[i].howMany}</div>
+      <input type="button" class="calc-btn" onclick="count('plus',${i})" value="+"/>
     </div></th>
     <th scope="col" class="list-box-item cart-item-ship-price">200</th>
     </tr>`;
     tableBody.appendChild(cartItems);
 }
+
 //카운터 기능 구현
-function count1(type) {
-  const resultElement = document.getElementsByClassName('quantity-result')[0];
-
-  let number = resultElement.innerText;
-  if(type==='plus') number = parseInt(number) + 1;
+function count(type, index) {
+  if(type==='plus') finalOrder[index].howMany +=1;
   if(type==='minus') {
-    if(number>0)number = parseInt(number) -1;
+    if(finalOrder[index].howMany > 0)finalOrder[index].howMany -= 1;// -버튼을 눌렀는데
+    if(finalOrder[index].howMany === 0){ //1->0이 되었을 때
+      const checkbox = document.getElementById(`check${index}`);
+      checkbox.checked = false;
+    }
   }
-
-  resultElement.innerText = number;
+document.getElementById(`quantity-result${index}`).innerText = finalOrder[index].howMany;
 }
 
-function count2(type) {
-  const resultElement = document.getElementsByClassName('quantity-result')[1];
-
-  let number = resultElement.innerText;
-  if(type==='plus') number = parseInt(number) + 1;
-  if(type==='minus') {
-    if(number>0)number = parseInt(number) -1;
+function isChecked(index){
+  const checkbox = document.getElementById(`check${index}`);
+  if(checkbox){//false -> true로 갈 때
+    if(finalOrder[index].howMany === 0){ // 0개였다면
+      finalOrder[index].howMany++; // 자동으로 count 1개추가
+      document.getElementById(`quantity-result${index}`).innerText = finalOrder[index].howMany;//리렌더링
+    }
   }
-
-  resultElement.innerText = number;
-}
-function count3(type) {
-  const resultElement = document.getElementsByClassName('quantity-result')[2];
-
-  let number = resultElement.innerText;
-  if(type==='plus') number = parseInt(number) + 1;
-  if(type==='minus') {
-    if(number>0)number = parseInt(number) -1;
-  }
-
-  resultElement.innerText = number;
 }

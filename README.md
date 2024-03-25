@@ -1,34 +1,31 @@
-# codingon_team_project01
-HTML, CSS, JS를 활용한 웹페이지 만들기
+# 🦉 부엉이 신발장
 
-<!-- 기획서 들어갈 내용, 형식-->
-# 홈페이지 개발 기획서
+![alt text](src/img/OOTD.jpg)
 
-## 1. 소개
-- 프로젝트 개요: 신발 쇼핑몰
-- 목적 및 목표: 사용자가 봤을때 이쁜 쇼핑몰
-- 대상 사용자: 20대 ~ 30대
 
-## 2. 프로젝트 개발 일정
-- 계획 수립 날짜: 3-11
-- 개발 시작 날짜: 3-12 ~ 3-19
-- 예상 완료 날짜: 3-20
+## 웹개발 팀원 소개
 
-## 3. 팀 정보
-- 팀 이름: 남정내들
-- 팀원
-  - 김준영 : 리뷰, 프로젝트 관리
-  - 배동명 : 프로젝트 관리
-  - 이준규 : 일정관리, 리더
+> 코딩온 12기
+>
+> 김준영, 배동명, 이준규
+>
 
-## 4. 기능 요구 사항
-- 필수 기능 : 상품 디스플레이, 회원가입, 로그인(클릭으로 화면만 전환), 모션그래픽
-- 선택적 기능 : 찜하기, AOS활용, 가로스크롤(좌우 투명하게), 상품 검색, 카테고리
-- 확장 가능한 기능 : 신발 커스텀, 스크롤 방향
+## 프로젝트 배포 주소
 
-## 5. 기술적 요구 사항
-- 개발 플랫폼 : vscode
-- 프로그래밍 언어 : HTML, CSS, JS
+## 프로젝트 소개
+- 신발 쇼핑몰 **부엉이 신발장**으로 놀러오세요!
+- 팝업을 통한 로그인, 카테고리별 분류, 클릭 시 이동하는 아이템 페이지! 평범하지만 귀엽고 단순한 부엉이 신발장 쇼핑몰입니다.
+- 가로스크롤 전환 등의 효과를 보실 수 있습니다.
 
-------------------------------------------------------
-쇼핑몰 이름 : 부엉이 신발장
+## 개발 환경
+*Environments
+
+![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
+
+Stack
+
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)![jQuery](https://img.shields.io/badge/jquery-%230769AD.svg?style=for-the-badge&logo=jquery&logoColor=white)
+  
+Communication
+
+![Slack](https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=white)

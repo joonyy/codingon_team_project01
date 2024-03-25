@@ -2,7 +2,7 @@ let Data = [];
 //신발 객체 틀을 생성하는 함수
 const shoes = function(imgNum, name, price, contents, cat){
   this.id = imgNum;
-  this.imgUrl = (`../img/shoes${imgNum}.png`);
+  this.imgUrl = (`../img/shoes${imgNum}.svg`);
   this.name = name;
   this.price = price;
   this.contents = contents;
@@ -18,6 +18,8 @@ for(let i=1;i<=20;i++){
     })
   }
 }
+let fav = [];
+localStorage.setItem('userFav', '');
 
 Data[0].reviews[1].stars = 5;
 Data[0].name = "솔라 스트라이드 (Solar Stride)";

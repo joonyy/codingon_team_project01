@@ -1,7 +1,7 @@
 // item-page 만들기 시작
-const urlParams = new URLSearchParams(window.location.search);
-const dataParam = urlParams.get('data');
-const data = JSON.parse(decodeURIComponent(dataParam));
+const data = JSON.parse(localStorage.getItem('data'));
+
+const num = JSON.parse(localStorage.getItem('currentItemNumber'))-1;
 
 const main = document.querySelector("body");
 
@@ -10,11 +10,11 @@ const itembox = document.createElement("section");
 itembox.innerHTML = `
 <section class="item-top-container">
 <!-- 상단 좌측 -->
-<div class="item-container" style="background-image: url(${data.imgUrl}); background-size: cover; background-repeat: no-repeat;">
+<div class="item-container" style="background-image: url(${data[num].imgUrl}); background-size: cover; background-repeat: no-repeat;">
   <div class="item-summary">
     <ul>
-    <li class="item-name">${data.name}</li>
-    <li class="item-price">${data.price}깃털</li>
+    <li class="item-name">${data[num].name}</li>
+    <li class="item-price">${data[num].price}깃털</li>
     <li class="item-color"></li>
     </ul>   
   </div>
@@ -51,7 +51,7 @@ itembox.innerHTML = `
         <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
       </svg>
     </div>
-    <button onclick = "addFav(data)">
+    <button onclick = "addFav(data[num])">
       <div class="wishlist route-to-main-login"><img src="../img/shopping cart.png" alt="장바구니"></div>
     </button>
   </div>
@@ -62,7 +62,7 @@ itembox.innerHTML = `
     <button class="review-select" onclick="showSection('reviews')">리뷰</button>
   </header>
   <section class="item-details">
-    <p>${data.contents}</p>
+    <p>${data[num].contents}</p>
   </section>
   <section class="review">
   </section>
@@ -75,8 +75,8 @@ reviews(review);
 function reviews(review) {
   const reviewsBox = document.createElement('div');
   let ptag = document.createElement('p');
-  for(let i=0;i<(data.reviews).length;i++) {
-    ptag = `<p>별점 : ${data.reviews[i].stars}점 <br>${data.reviews[i].contents}</p>`;
+  for(let i=0;i<(data[num].reviews).length;i++) {
+    ptag = `<p>별점 : ${data[num].reviews[i].stars}점 <br>${data[num].reviews[i].contents}</p>`;
     reviewsBox.innerHTML += ptag;
   }
   review.appendChild(reviewsBox);
@@ -89,13 +89,13 @@ heart.addEventListener('click', function() {
   heart.classList.toggle("bi-heart-fill");
   let Like = [];
   if(heart.classList.contains("bi-heart-fill")) {
-    Like.push(data.id);
+    Like.push(data[num].id);
     localStorage.setItem('userLike', JSON.stringify(Like));
     alert("찜목록에 추가되었습니다.")
   }
   else if(!heart.classList.contains("hi-heart-fill")) {
     for(let i=0;i<Like.length;i++) {
-      if(Like[i] == data.id) {
+      if(Like[i] == data[num].id) {
         Like.splice(i,1);
         i--;
       }
@@ -161,7 +161,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // 장바구니 추가 시작
 function addFav() {
-  var storedUserFav = JSON.parse(localStorage.userFav);
+  var storedUserFav = localStorage.userFav?JSON.parse(localStorage.userFav):[];
   localStorage.setItem('userFav', JSON.stringify(storedUserFav));
   let userFav = localStorage.getItem('userFav');
   let Fav = [];
@@ -169,11 +169,11 @@ function addFav() {
   if (userFav) {
     Fav = JSON.parse(userFav);
   }
-  if(userFav.includes(data.id)) {
+  if(userFav.includes(data[num].id)) {
     alert("이미 장바구니 목록에 있는 상품입니다.");
   }
-  else if(!userFav.includes(data.id)) {
-    Fav.push(data.id);
+  else if(!userFav.includes(data[num].id)) {
+    Fav.push(data[num].id);
     localStorage.setItem('userFav', JSON.stringify(Fav));
     alert("장바구니에 추가되었습니다.");
     let moveToCart = confirm("장바구니로 이동하시겠습니까?");

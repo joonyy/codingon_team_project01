@@ -1393,7 +1393,7 @@ height: 40px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-image: url(/src/img/mail.jpeg);
+  background-image: url(../img/mail.jpeg);
   width:100%;
   height: 100%;
   

@@ -1,0 +1,19 @@
+{
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5",
+    "parcel-plugin-static-files-copy": "^2.6.0"
+  },
+  "staticFiles": {
+    "staticPath": "static"
+  },
+  "name": "codingon_team_project01",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "parcel ./src/main-page-logout.html",
+    "build": "parcel build ./src/main-page-logout.html"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.24.3"
+  }
+}

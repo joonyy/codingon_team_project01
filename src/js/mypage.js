@@ -126,7 +126,7 @@ function changePassword() {
 // 계정 탈퇴
 function showConfirmation() {
   if (confirm("계정을 탈퇴하시겠습니까?")) {
-      window.location.href = "main-page-logout.html";
+      window.location.href = "./main-page-logout.html";
   }
 }
 // 계정탈퇴종료

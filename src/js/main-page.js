@@ -23,6 +23,14 @@ document.addEventListener("DOMContentLoaded", function() {
 // 가로 스크롤 끝
 
 // main-page-card 다시 만들기 시작
+function goto(num){
+  localStorage.setItem('currentItemNumber', num);
+  if(localStorage.isLoggedIn==='true') window.location.href = './item-page-login.html';
+  else {
+    console.log('실행됩니다.');
+    window.location.href = './pages/item-page-logout.html';
+  }
+}
 let catnum = 0;
 let countedcat = [];
 function shoecat() {
@@ -58,19 +66,17 @@ for (let i = 0; i < catnum; i++) {
   const cardContainer = document.createElement('div');
   cardContainer.classList.add('card-container');
 
-  const nowlocation = window.location.pathname;
-  const nowpage = nowlocation.split("/");
-
   for (let j = 0; j < numberOfCards[countedcat[i]].length; j++) {
     let num = numberOfCards[countedcat[i]][j] + 1;
+    const imageLink = (localStorage.isLoggedIn ==="true")?`../img/shoes${num}.svg`:`./img/shoes${num}.svg`;
     
     let cardHtml = `
-      <div class="main-card">
-        <a href="${nowpage[nowpage.length - 1].includes('login') ? 'item-page-login.html?data=' + encodeURIComponent(JSON.stringify(Data[num-1])) : 'item-page-logout.html?data=' + encodeURIComponent(JSON.stringify(Data[num-1]))}">
-          <img src="../img/shoes${num}.png" alt="shoes${num}">
-        </a>
+      <div class="main-card" onclick="goto(${num})">
+        <span>
+          <img src="${imageLink}" alt="shoes${num}">
+        </span>
         <div class="main-card-info-box">
-          <a href="${nowpage[nowpage.length - 1].includes('login') ? 'item-page-login.html?data=' + encodeURIComponent(JSON.stringify(Data[num-1])) : 'item-page-logout.html?data=' + encodeURIComponent(JSON.stringify(Data[num-1]))}" class="text-btn card-text-btn">
+          <span class="text-btn card-text-btn">
             <div class="main-card-info main-card-info-head">
               <span>${Data[num-1].name}</span>
             </div>
@@ -83,7 +89,7 @@ for (let i = 0; i < catnum; i++) {
             <div class="main-card-info main-card-info-footer">
             <p>${Data[num-1].price}깃털</p>
             </div>
-          </a>
+          </span>
         </div>
       </div>`;
 
@@ -93,4 +99,5 @@ for (let i = 0; i < catnum; i++) {
   mainCardContainer.appendChild(cardContainer);
   main.appendChild(mainCardContainer);
 }
+
 // main-page-card 다시 만들기 끝

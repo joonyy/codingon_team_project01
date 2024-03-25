@@ -70,13 +70,6 @@ function checkout() {
   window.location.href = 'pay.html';
 }
 // 찜목록 JS 종료
-
-// 장바구니 JS
-function checkout() {
-  window.location.href = 'pay.html';
-}
-// 장바구니 JS 종료
-
 // 주문 내역 JS 없음 X
 
 // 회원정보 

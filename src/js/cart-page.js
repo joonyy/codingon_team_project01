@@ -8,7 +8,7 @@ function checkAllBoxes(){
       }
     }
     else{
-      for(const checkbox of checkboxes){
+      for(checkbox of checkboxes){
         checkbox.checked =false;
       }
     }
@@ -23,10 +23,9 @@ const data = JSON.parse(localStorage.data);
 const tableBody = document.querySelector('.wish-list-table-body');
 const storedUserFav = JSON.parse(localStorage.userFav);
 const finalOrder = [];
-console.log(storedUserFav)
 for(let i = 0;i<storedUserFav.length; i++){
   finalOrder[i] = {
-    productPrice:data[storedUserFav[i]-1].price,
+    productPrice:data[storedUserFav[i]].price,
     isIncluded:true,
     howMany : 1,
     totalPrice : 200,
@@ -34,14 +33,14 @@ for(let i = 0;i<storedUserFav.length; i++){
   const cartItems = document.createElement('tr');
     cartItems.innerHTML = 
     `<tr onchange="finalPrice()">
-    <th scope="col" class="list-box-item check-item" ><input type="checkbox" class="check" id="check${i}" onclick="checkCheckbox(${i})" checked></th>
-    <th scope="col" class="list-box-item cart-item-image"><img src="${data[storedUserFav[i]-1].imgUrl}"></th>
-    <th scope="col" class="list-box-item cart-item-name">${data[storedUserFav[i]-1].name}</th>
+    <th scope="col" class="list-box-item check-item" ><input type="checkbox" class="check" id="check${i}" onclick="checkCheckbox(${i})" onchange="finalPrice()" checked></th>
+    <th scope="col" class="list-box-item cart-item-image"><img src="${data[storedUserFav[i]].imgUrl}"></th>
+    <th scope="col" class="list-box-item cart-item-name">${data[storedUserFav[i]].name}</th>
     <th scope="col" class="list-box-item cart-item-price" id="cart-item-price${i}">${finalOrder[i].productPrice}</th>
     <th scope="col" class="list-box-item"><div class="item-quantity-counter">
-      <input type="button" class="calc-btn" onclick="count('minus',${i})" onclick="finalPrice()" value="-"/>
+      <input type="button" class="calc-btn" onclick="count('minus',${i})" value="-"/>
       <div class="quantity-result" id="quantity-result${i}">${finalOrder[i].howMany}</div>
-      <input type="button" class="calc-btn" onclick="count('plus',${i})" onclick="finalPrice()" value="+"/>
+      <input type="button" class="calc-btn" onclick="count('plus',${i})" value="+"/>
     </div></th>
     <th scope="col" class="list-box-item cart-item-ship-price">200</th>
     </tr>`;
@@ -65,7 +64,7 @@ function count(type, index) {
   }
 document.getElementById(`quantity-result${index}`).innerText = finalOrder[index].howMany;
 document.getElementById(`cart-item-price${index}`).innerText = finalOrder[index].productPrice * finalOrder[index].howMany;
-} 
+}
 
 function checkCheckbox(index){
   const checkbox = document.getElementById(`check${index}`);
@@ -87,8 +86,8 @@ function finalPrice(){
     shipSum += finalOrder[i].howMany * 200;
   }
   totalSum = productSum + shipSum;
-  document.getElementById('items-price').innerHTML = `제품 가격 :${productSum}깃털`;
-  document.getElementById('shipment-price').innerHTML = `배송비 :${shipSum}깃털`;
-  document.getElementById('total-price').innerHTML = `총 ${totalSum}깃털`;
+  document.getElementById('items-price').innerText = `제품 가격 :${productSum}깃털`;
+  document.getElementById('shipment-price').innerText = `배송비 :${shipSum}깃털`
+  document.getElementById('total-price').innerText = `총 ${totalSum}깃털`
 }
 finalPrice();

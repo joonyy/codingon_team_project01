@@ -1,0 +1,23 @@
+{
+  "name": "codingon_team_project01",
+  "version": "1.0.0",
+  "description": "HTML, CSS, JS를 활용한 웹페이지 만들기",
+  "main": "index.js",
+  "targets": {
+    "main": false
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  },
+  "parcel": {
+    "transformers": {
+      "images": true
+    }
+  }
+}
